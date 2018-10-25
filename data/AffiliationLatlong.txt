@@ -1,0 +1,3400 @@
+latlong["01124466"]={
+    "latitude":-23.5607,
+    "longitude":-46.7218
+}
+latlong["04756336"]={
+    "latitude":35.7081,
+    "longitude":139.767
+}
+latlong["0403197E"]={
+    "latitude":46.2333,
+    "longitude":6.05
+}
+latlong["05282E0D"]={
+    "latitude":30.2787,
+    "longitude":-97.7311
+}
+latlong["05DBB954"]={
+    "latitude":34.8173,
+    "longitude":135.526
+}
+latlong["0154426A"]={
+    "latitude":35.0232,
+    "longitude":135.784
+}
+latlong["01A8C383"]={
+    "latitude":42.2756,
+    "longitude":-83.7346
+}
+latlong["0349EE07"]={
+    "latitude":37.8022,
+    "longitude":-122.271
+}
+latlong["03D00B37"]={
+    "latitude":42.359,
+    "longitude":-71.0935
+}
+latlong["0C01DCFD"]={
+    "latitude":47.6568,
+    "longitude":-122.312
+}
+latlong["05C86094"]={
+    "latitude":37.4296,
+    "longitude":-122.165
+}
+latlong["0B0ADEB6"]={
+    "latitude":43.6678,
+    "longitude":-79.3986
+}
+latlong["4CD2C7C1"]={
+    "latitude":42.3374,
+    "longitude":-71.1058
+}
+latlong["08A948CC"]={
+    "latitude":39.3292,
+    "longitude":-76.6179
+}
+latlong["0810AAFA"]={
+    "latitude":43.0758,
+    "longitude":-89.3976
+}
+latlong["084D01D3"]={
+    "latitude":37.46,
+    "longitude":126.95
+}
+latlong["0966B229"]={
+    "latitude":40.1091,
+    "longitude":-88.2194
+}
+latlong["05E79D01"]={
+    "latitude":39.9919,
+    "longitude":116.313
+}
+latlong["0C03398D"]={
+    "latitude":38.2542,
+    "longitude":140.874
+}
+latlong["07C34834"]={
+    "latitude":44.9776,
+    "longitude":-93.2357
+}
+latlong["0489A984"]={
+    "latitude":30.2636,
+    "longitude":120.121
+}
+latlong["0965EC45"]={
+    "latitude":50.6407,
+    "longitude":5.57539
+}
+latlong["031EE95E"]={
+    "latitude":39.994,
+    "longitude":-83.0211
+}
+latlong["0003B055"]={
+    "latitude":52.2027,
+    "longitude":0.10739
+}
+latlong["02642F55"]={
+    "latitude":51.759,
+    "longitude":-1.264
+}
+latlong["099D876D"]={
+    "latitude":34.074,
+    "longitude":-118.438
+}
+latlong["05EDB3A0"]={
+    "latitude":50.8777,
+    "longitude":4.7005
+}
+latlong["02B09E25"]={
+    "latitude":51.5523,
+    "longitude":-0.16523
+}
+latlong["01FACAD8"]={
+    "latitude":29.6497,
+    "longitude":-82.3412
+}
+latlong["007D2F41"]={
+    "latitude":48.1504,
+    "longitude":11.5806
+}
+latlong["05B090CE"]={
+    "latitude":37.8694,
+    "longitude":-122.258
+}
+latlong["07CB626B"]={
+    "latitude":40.7996,
+    "longitude":-77.8607
+}
+latlong["4FF45383"]={
+    "latitude":42.1071,
+    "longitude":-76.0446
+}
+latlong["0134B592"]={
+    "latitude":39.9868,
+    "longitude":116.298
+}
+latlong["0C4400FF"]={
+    "latitude":42.4464,
+    "longitude":-76.4827
+}
+latlong["346D1394"]={
+    "latitude":-23.5607,
+    "longitude":-46.7218
+}
+latlong["00FF56A8"]={
+    "latitude":25.0168,
+    "longitude":121.533
+}
+latlong["04BE3F72"]={
+    "latitude":39.953,
+    "longitude":-75.194
+}
+latlong["0815134D"]={
+    "latitude":33.6278,
+    "longitude":130.423
+}
+latlong["0875EA92"]={
+    "latitude":49.2618,
+    "longitude":-123.253
+}
+latlong["0229448F"]={
+    "latitude":32.8782,
+    "longitude":-117.237
+}
+latlong["335ED749"]={
+    "latitude":41.9015,
+    "longitude":12.5123
+}
+latlong["03959311"]={
+    "latitude":35.1547,
+    "longitude":136.967
+}
+latlong["004CA7A3"]={
+    "latitude":45.5073,
+    "longitude":-73.6144
+}
+latlong["050513B0"]={
+    "latitude":38.5367,
+    "longitude":-121.749
+}
+latlong["09E3EE34"]={
+    "latitude":1.29718,
+    "longitude":103.778
+}
+latlong["012F592B"]={
+    "latitude":55.7028,
+    "longitude":37.5319
+}
+latlong["0D109F83"]={
+    "latitude":40.4293,
+    "longitude":-86.9144
+}
+latlong["03FD8454"]={
+    "latitude":38.9878,
+    "longitude":-76.9389
+}
+latlong["04AF010A"]={
+    "latitude":40.808,
+    "longitude":-73.9637
+}
+latlong["0AE9651A"]={
+    "latitude":31.2052,
+    "longitude":121.426
+}
+latlong["056D3FC6"]={
+    "latitude":30.6128,
+    "longitude":-96.3396
+}
+latlong["01328BF3"]={
+    "latitude":40.3471,
+    "longitude":-74.6576
+}
+latlong["01B1760F"]={
+    "latitude":53.4707,
+    "longitude":-2.23557
+}
+latlong["0D57443D"]={
+    "latitude":49.4175,
+    "longitude":8.66779
+}
+latlong["01F164D0"]={
+    "latitude":51.0477,
+    "longitude":3.72727
+}
+latlong["07B99BFA"]={
+    "latitude":-33.8848,
+    "longitude":151.191
+}
+latlong["4F4B6B43"]={
+    "latitude":44.0224,
+    "longitude":-92.467
+}
+latlong["0C3D6366"]={
+    "latitude":43.0747,
+    "longitude":141.341
+}
+latlong["00FA1C18"]={
+    "latitude":32.1144,
+    "longitude":34.8035
+}
+latlong["07F892EC"]={
+    "latitude":60.1698,
+    "longitude":24.9486
+}
+latlong["09E1988B"]={
+    "latitude":-37.7971,
+    "longitude":144.96
+}
+latlong["093456D7"]={
+    "latitude":53.525,
+    "longitude":-113.525
+}
+latlong["06CBEAA9"]={
+    "latitude":35.9087,
+    "longitude":-79.0301
+}
+latlong["01CC0228"]={
+    "latitude":42.6833,
+    "longitude":23.3072
+}
+latlong["1450A0C3"]={
+    "latitude":37.8728,
+    "longitude":-122.256
+}
+latlong["0B2D8123"]={
+    "latitude":55.7064,
+    "longitude":13.1939
+}
+latlong["0011EAC4"]={
+    "latitude":34.023,
+    "longitude":-118.291
+}
+latlong["0839CEE3"]={
+    "latitude":32.2318,
+    "longitude":-110.955
+}
+latlong["0ACFCEA7"]={
+    "latitude":-22.8176,
+    "longitude":-47.0683
+}
+latlong["0B8CC95E"]={
+    "latitude":37.562,
+    "longitude":126.94
+}
+latlong["01ADCAFB"]={
+    "latitude":59.3479,
+    "longitude":18.0293
+}
+latlong["0AC4CEEF"]={
+    "latitude":37.7632,
+    "longitude":-122.458
+}
+latlong["0A2510E5"]={
+    "latitude":40.4406,
+    "longitude":-79.954
+}
+latlong["07CC4A10"]={
+    "latitude":53.8079,
+    "longitude":-1.55212
+}
+latlong["09D7E4FA"]={
+    "latitude":-27.4667,
+    "longitude":153.024
+}
+latlong["34DF872C"]={
+    "latitude":52.3688,
+    "longitude":4.89013
+}
+latlong["07CA5884"]={
+    "latitude":33.7713,
+    "longitude":-84.3944
+}
+latlong["0764F090"]={
+    "latitude":55.6887,
+    "longitude":12.5811
+}
+latlong["02D4EDF8"]={
+    "latitude":51.5002,
+    "longitude":-0.17894
+}
+latlong["348EB203"]={
+    "latitude":32.0561,
+    "longitude":118.775
+}
+latlong["03C0079C"]={
+    "latitude":48.1486,
+    "longitude":11.5686
+}
+latlong["07C665E3"]={
+    "latitude":-30.0324,
+    "longitude":-51.2193
+}
+latlong["0389C918"]={
+    "latitude":19.5107,
+    "longitude":-99.1251
+}
+latlong["0532D181"]={
+    "latitude":42.7295,
+    "longitude":-84.4804
+}
+latlong["06ACAD91"]={
+    "latitude":42.0617,
+    "longitude":-87.6771
+}
+latlong["02D828C1"]={
+    "latitude":30.51,
+    "longitude":114.41
+}
+latlong["06D39D72"]={
+    "latitude":35.6057,
+    "longitude":139.683
+}
+latlong["0267A61E"]={
+    "latitude":41.7901,
+    "longitude":-87.6012
+}
+latlong["34ED541F"]={
+    "latitude":50.7773,
+    "longitude":6.07782
+}
+latlong["017C99DB"]={
+    "latitude":31.2989,
+    "longitude":121.499
+}
+latlong["0088BF3F"]={
+    "latitude":19.3324,
+    "longitude":-99.1893
+}
+latlong["074BDB0A"]={
+    "latitude":34.1359,
+    "longitude":-118.126
+}
+latlong["07427AD9"]={
+    "latitude":52.1703,
+    "longitude":4.47861
+}
+latlong["06918666"]={
+    "latitude":-19.9233,
+    "longitude":-43.9291
+}
+latlong["081E3F30"]={
+    "latitude":42.3756,
+    "longitude":-71.1233
+}
+latlong["087AC4EF"]={
+    "latitude":52.9341,
+    "longitude":-1.20404
+}
+latlong["080E155C"]={
+    "latitude":50.7339,
+    "longitude":7.10222
+}
+latlong["4CD84994"]={
+    "latitude":35.9333,
+    "longitude":-84.3167
+}
+latlong["0747B7A8"]={
+    "latitude":-22.8629,
+    "longitude":-43.2288
+}
+latlong["044A9E97"]={
+    "latitude":41.3861,
+    "longitude":2.16346
+}
+latlong["04BEE6D7"]={
+    "latitude":52.4488,
+    "longitude":-1.93192
+}
+latlong["0228E4F2"]={
+    "latitude":51.4597,
+    "longitude":-2.60523
+}
+latlong["0564D70F"]={
+    "latitude":30.0236,
+    "longitude":31.2308
+}
+latlong["07874D3C"]={
+    "latitude":41.6625,
+    "longitude":-91.5365
+}
+latlong["5019D871"]={
+    "latitude":35.8334,
+    "longitude":-106.251
+}
+latlong["01E46A0B"]={
+    "latitude":-33.917,
+    "longitude":151.226
+}
+latlong["021CC5D8"]={
+    "latitude":47.3763,
+    "longitude":8.54805
+}
+latlong["05E1B1D9"]={
+    "latitude":55.9452,
+    "longitude":-3.18804
+}
+latlong["08B4B7FF"]={
+    "latitude":42.3355,
+    "longitude":-71.1045
+}
+latlong["0C37CBAD"]={
+    "latitude":45.747,
+    "longitude":126.631
+}
+latlong["075ABF1F"]={
+    "latitude":59.8583,
+    "longitude":17.6296
+}
+latlong["0A4ACFBD"]={
+    "latitude":1.34476,
+    "longitude":103.682
+}
+latlong["06194FDE"]={
+    "latitude":40.5017,
+    "longitude":-74.4481
+}
+latlong["0B46561F"]={
+    "latitude":31.8108,
+    "longitude":47.1758
+}
+latlong["004E3300"]={
+    "latitude":46.5196,
+    "longitude":6.56625
+}
+latlong["0BC1D058"]={
+    "latitude":31.7758,
+    "longitude":35.2
+}
+latlong["4CC3C85D"]={
+    "latitude":42.3628,
+    "longitude":-71.0687
+}
+latlong["07BC3356"]={
+    "latitude":48.2039,
+    "longitude":16.3167
+}
+latlong["005237C4"]={
+    "latitude":43.1252,
+    "longitude":-77.6314
+}
+latlong["4E55E3A2"]={
+    "latitude":34.6519,
+    "longitude":-1.89613
+}
+latlong["056EA0E2"]={
+    "latitude":53.381,
+    "longitude":-1.48911
+}
+latlong["0477FFD3"]={
+    "latitude":40.4411,
+    "longitude":-79.9419
+}
+latlong["08BDCA25"]={
+    "latitude":53.4031,
+    "longitude":-2.96319
+}
+latlong["0A2FAFA5"]={
+    "latitude":36.0001,
+    "longitude":-78.9306
+}
+latlong["092F5EFF"]={
+    "latitude":36.6718,
+    "longitude":117.054
+}
+latlong["0B3CDF24"]={
+    "latitude":40.0105,
+    "longitude":-105.276
+}
+latlong["0B8B0D91"]={
+    "latitude":52.0858,
+    "longitude":5.13084
+}
+latlong["08B1D62B"]={
+    "latitude":51.8231,
+    "longitude":5.8625
+}
+latlong["350410CF"]={
+    "latitude":22.2837,
+    "longitude":114.138
+}
+latlong["01F71AD0"]={
+    "latitude":41.3145,
+    "longitude":-72.9233
+}
+latlong["01C3C549"]={
+    "latitude":48.8415,
+    "longitude":2.34382
+}
+latlong["0312B01D"]={
+    "latitude":38.0362,
+    "longitude":-78.5016
+}
+latlong["0741BB65"]={
+    "latitude":40.4371,
+    "longitude":-3.72398
+}
+latlong["0296D744"]={
+    "latitude":50.9343,
+    "longitude":-1.39633
+}
+latlong["00784876"]={
+    "latitude":55.8822,
+    "longitude":-4.27631
+}
+latlong["00783204"]={
+    "latitude":52.5267,
+    "longitude":13.3797
+}
+latlong["083839C7"]={
+    "latitude":35.7868,
+    "longitude":-78.6644
+}
+latlong["08443C72"]={
+    "latitude":45.4066,
+    "longitude":11.8768
+}
+latlong["078A8AE9"]={
+    "latitude":31.843,
+    "longitude":117.27
+}
+latlong["09676E2E"]={
+    "latitude":22.6199,
+    "longitude":120.266
+}
+latlong["01710C78"]={
+    "latitude":30.6302,
+    "longitude":104.09
+}
+latlong["0C280BFF"]={
+    "latitude":35.6458,
+    "longitude":139.746
+}
+latlong["0D52D485"]={
+    "latitude":40.7655,
+    "longitude":-111.85
+}
+latlong["02AFF078"]={
+    "latitude":43.7777,
+    "longitude":11.2593
+}
+latlong["0352694C"]={
+    "latitude":33.4219,
+    "longitude":-111.935
+}
+latlong["0B97151C"]={
+    "latitude":43.6566,
+    "longitude":126.148
+}
+latlong["0A97E0C1"]={
+    "latitude":22.4188,
+    "longitude":114.206
+}
+latlong["0ACF7BFE"]={
+    "latitude":49.5971,
+    "longitude":11.0047
+}
+latlong["0619822C"]={
+    "latitude":49.0094,
+    "longitude":8.41167
+}
+latlong["09630970"]={
+    "latitude":36.372,
+    "longitude":127.363
+}
+latlong["0A5DAC76"]={
+    "latitude":42.0227,
+    "longitude":-93.6391
+}
+latlong["05DB33D4"]={
+    "latitude":43.2579,
+    "longitude":-79.9195
+}
+latlong["4C6B6145"]={
+    "latitude":41.708,
+    "longitude":-87.9766
+}
+latlong["043A55FE"]={
+    "latitude":45.5073,
+    "longitude":-73.6144
+}
+latlong["023B9EF3"]={
+    "latitude":30.5408,
+    "longitude":114.361
+}
+latlong["0A0D2BAD"]={
+    "latitude":51.075,
+    "longitude":-114.129
+}
+latlong["08D69EB4"]={
+    "latitude":37.8776,
+    "longitude":-122.252
+}
+latlong["0C14EACF"]={
+    "latitude":47.3748,
+    "longitude":8.54858
+}
+latlong["8626355D"]={
+    "latitude":48.3035,
+    "longitude":17.5841
+}
+latlong["4D489BF0"]={
+    "latitude":41.6846,
+    "longitude":-86.2521
+}
+latlong["0C2C9DD2"]={
+    "latitude":33.6493,
+    "longitude":-117.842
+}
+latlong["090B77B3"]={
+    "latitude":43.4689,
+    "longitude":-80.5395
+}
+latlong["05DCD65A"]={
+    "latitude":52.0055,
+    "longitude":4.36933
+}
+latlong["4FA33633"]={
+    "latitude":38.888,
+    "longitude":-77.03
+}
+latlong["007B68B5"]={
+    "latitude":48.5244,
+    "longitude":9.05996
+}
+latlong["0B05FE67"]={
+    "latitude":59.9376,
+    "longitude":10.7219
+}
+latlong["01EE3848"]={
+    "latitude":33.5059,
+    "longitude":-86.7996
+}
+latlong["0AF6A309"]={
+    "latitude":51.5045,
+    "longitude":-0.11325
+}
+latlong["070DD774"]={
+    "latitude":-35.2739,
+    "longitude":149.121
+}
+latlong["339CD1B3"]={
+    "latitude":52.3348,
+    "longitude":4.86649
+}
+latlong["0A188E08"]={
+    "latitude":53.2191,
+    "longitude":6.56334
+}
+latlong["06C0EC61"]={
+    "latitude":34.3822,
+    "longitude":132.458
+}
+latlong["067461C8"]={
+    "latitude":43.7166,
+    "longitude":10.3988
+}
+latlong["3333E44B"]={
+    "latitude":37.2279,
+    "longitude":-80.4223
+}
+latlong["00C50601"]={
+    "latitude":42.3402,
+    "longitude":-71.089
+}
+latlong["0578DF46"]={
+    "latitude":22.9989,
+    "longitude":120.219
+}
+latlong["4CC89935"]={
+    "latitude":38.6591,
+    "longitude":-76.5321
+}
+latlong["05364FE4"]={
+    "latitude":34.25,
+    "longitude":108
+}
+latlong["01776B6C"]={
+    "latitude":42.3858,
+    "longitude":-72.5226
+}
+latlong["09368EC9"]={
+    "latitude":34.413,
+    "longitude":-119.847
+}
+latlong["013CF852"]={
+    "latitude":38.637,
+    "longitude":-90.2646
+}
+latlong["04BD3A9F"]={
+    "latitude":51.4875,
+    "longitude":-3.18038
+}
+latlong["08B9DFEF"]={
+    "latitude":36.1114,
+    "longitude":140.104
+}
+latlong["35E9831D"]={
+    "latitude":51.4461,
+    "longitude":7.25879
+}
+latlong["0259891E"]={
+    "latitude":41.8743,
+    "longitude":-87.6569
+}
+latlong["08D7E515"]={
+    "latitude":24.7894,
+    "longitude":121
+}
+latlong["09E0E324"]={
+    "latitude":33.9572,
+    "longitude":-83.3741
+}
+latlong["0BF6BC56"]={
+    "latitude":36.139,
+    "longitude":-86.805
+}
+latlong["4E7E575E"]={
+    "latitude":41.5029,
+    "longitude":-81.6215
+}
+latlong["077EC9E4"]={
+    "latitude":43.0084,
+    "longitude":-81.2635
+}
+latlong["01A842AA"]={
+    "latitude":41.8274,
+    "longitude":-71.4047
+}
+latlong["4C6E8511"]={
+    "latitude":37.686,
+    "longitude":-121.71
+}
+latlong["03839B48"]={
+    "latitude":41.4999,
+    "longitude":-81.6032
+}
+latlong["0C33D1B1"]={
+    "latitude":44.2278,
+    "longitude":-76.4956
+}
+latlong["097CD675"]={
+    "latitude":53.5655,
+    "longitude":9.98663
+}
+latlong["0AD23220"]={
+    "latitude":29.7108,
+    "longitude":-95.3967
+}
+latlong["04946B1E"]={
+    "latitude":38.9444,
+    "longitude":-92.3292
+}
+latlong["0478D4F8"]={
+    "latitude":35.9576,
+    "longitude":-83.9271
+}
+latlong["0755844E"]={
+    "latitude":41.5036,
+    "longitude":2.10053
+}
+latlong["4D0FB79F"]={
+    "latitude":10.8572,
+    "longitude":78.6983
+}
+latlong["09995E41"]={
+    "latitude":47.9952,
+    "longitude":7.84802
+}
+latlong["4C7D4F86"]={
+    "latitude":42.3359,
+    "longitude":-71.1075
+}
+latlong["035F81F4"]={
+    "latitude":-27.4978,
+    "longitude":153.013
+}
+latlong["04634070"]={
+    "latitude":36.0602,
+    "longitude":140.133
+}
+latlong["0BC3491B"]={
+    "latitude":37.588,
+    "longitude":127.036
+}
+latlong["01FF3308"]={
+    "latitude":-29.7174,
+    "longitude":-53.7171
+}
+latlong["09C2F114"]={
+    "latitude":34.6857,
+    "longitude":133.919
+}
+latlong["4F372D4A"]={
+    "latitude":36.0076,
+    "longitude":-78.9376
+}
+latlong["0A63B3A3"]={
+    "latitude":32.7775,
+    "longitude":35.0217
+}
+latlong["050BB43F"]={
+    "latitude":39.6208,
+    "longitude":19.9239
+}
+latlong["059E9386"]={
+    "latitude":41.3027,
+    "longitude":-72.936
+}
+latlong["09B52E07"]={
+    "latitude":39.1082,
+    "longitude":117.179
+}
+latlong["01444027"]={
+    "latitude":50.0862,
+    "longitude":14.4236
+}
+latlong["0742D5C5"]={
+    "latitude":30.4158,
+    "longitude":-91.1775
+}
+latlong["09800845"]={
+    "latitude":35.6311,
+    "longitude":140.097
+}
+latlong["09287CDD"]={
+    "latitude":52.6219,
+    "longitude":-1.12599
+}
+latlong["088AA042"]={
+    "latitude":38.039,
+    "longitude":-84.5067
+}
+latlong["0B546E88"]={
+    "latitude":54.7752,
+    "longitude":-1.57025
+}
+latlong["031FD638"]={
+    "latitude":-25.4101,
+    "longitude":-49.2489
+}
+latlong["04F2C66A"]={
+    "latitude":51.4478,
+    "longitude":5.48522
+}
+latlong["003E9FBD"]={
+    "latitude":-27.598,
+    "longitude":-48.5162
+}
+latlong["03C436D1"]={
+    "latitude":43,
+    "longitude":-78.79
+}
+latlong["069F11AE"]={
+    "latitude":42.3502,
+    "longitude":-71.0989
+}
+latlong["00F5A2C2"]={
+    "latitude":39.4795,
+    "longitude":-0.364728
+}
+latlong["03EC9BA0"]={
+    "latitude":34.7281,
+    "longitude":135.235
+}
+latlong["04905D15"]={
+    "latitude":32.0578,
+    "longitude":118.789
+}
+latlong["085ADB71"]={
+    "latitude":41.8094,
+    "longitude":-72.2605
+}
+latlong["02290965"]={
+    "latitude":4.6298,
+    "longitude":-74.0694
+}
+latlong["373A6845"]={
+    "latitude":51.3386,
+    "longitude":12.3798
+}
+latlong["0AC8AD72"]={
+    "latitude":50.9283,
+    "longitude":6.92833
+}
+latlong["02965656"]={
+    "latitude":46.7798,
+    "longitude":-71.2695
+}
+latlong["05F6E42A"]={
+    "latitude":48.7818,
+    "longitude":9.17581
+}
+latlong["08530CBF"]={
+    "latitude":28.173,
+    "longitude":112.925
+}
+latlong["08BA2180"]={
+    "latitude":38.9611,
+    "longitude":-95.2511
+}
+latlong["0486EC92"]={
+    "latitude":52.4481,
+    "longitude":13.286
+}
+latlong["0582A04E"]={
+    "latitude":40.5781,
+    "longitude":-105.094
+}
+latlong["092FD9CF"]={
+    "latitude":-36.8526,
+    "longitude":174.77
+}
+latlong["018A6121"]={
+    "latitude":24.7966,
+    "longitude":120.997
+}
+latlong["4CA3343B"]={
+    "latitude":38.9985,
+    "longitude":-105.548
+}
+latlong["0B0DA3DC"]={
+    "latitude":42.3568,
+    "longitude":-83.0649
+}
+latlong["07862589"]={
+    "latitude":54.5844,
+    "longitude":-5.93438
+}
+latlong["0056B275"]={
+    "latitude":-34.9172,
+    "longitude":138.606
+}
+latlong["03376F29"]={
+    "latitude":31.9045,
+    "longitude":34.8085
+}
+latlong["0C3BAC1F"]={
+    "latitude":39.1011,
+    "longitude":117.165
+}
+latlong["4F8FBAE3"]={
+    "latitude":40.7641,
+    "longitude":-73.9568
+}
+latlong["038CB6F6"]={
+    "latitude":40.9142,
+    "longitude":-73.1162
+}
+latlong["0A9A3087"]={
+    "latitude":-31.9771,
+    "longitude":115.814
+}
+latlong["09299093"]={
+    "latitude":45.4226,
+    "longitude":-75.6843
+}
+latlong["0C2DEF79"]={
+    "latitude":56.1693,
+    "longitude":10.1982
+}
+latlong["06D27A8D"]={
+    "latitude":46.1944,
+    "longitude":6.1409
+}
+latlong["0045D019"]={
+    "latitude":37.5564,
+    "longitude":127.044
+}
+latlong["05B3DFF1"]={
+    "latitude":50.67,
+    "longitude":4.61553
+}
+latlong["0A546C41"]={
+    "latitude":61.1043,
+    "longitude":-94.0348
+}
+latlong["03C3607B"]={
+    "latitude":39.1343,
+    "longitude":-84.5163
+}
+latlong["06D18AFD"]={
+    "latitude":40.8175,
+    "longitude":-96.7014
+}
+latlong["04F0A8A0"]={
+    "latitude":39.98,
+    "longitude":116.341
+}
+latlong["04B01E55"]={
+    "latitude":51.0271,
+    "longitude":13.7265
+}
+latlong["4EF77785"]={
+    "latitude":41.4934,
+    "longitude":2.06326
+}
+latlong["34898359"]={
+    "latitude":57.6986,
+    "longitude":11.9708
+}
+latlong["0388650E"]={
+    "latitude":13.0343,
+    "longitude":77.5704
+}
+latlong["0368E8BE"]={
+    "latitude":40.7298,
+    "longitude":-73.9972
+}
+latlong["0508EA45"]={
+    "latitude":38.9327,
+    "longitude":-76.9975
+}
+latlong["050F3ADA"]={
+    "latitude":54.9796,
+    "longitude":-1.6144
+}
+latlong["0626251D"]={
+    "latitude":30.4407,
+    "longitude":-84.2909
+}
+latlong["09A1B954"]={
+    "latitude":59.3629,
+    "longitude":18.0581
+}
+latlong["03E20219"]={
+    "latitude":36.5961,
+    "longitude":140.652
+}
+latlong["345636E5"]={
+    "latitude":23.9091,
+    "longitude":-102.633
+}
+latlong["0474FB72"]={
+    "latitude":29.719,
+    "longitude":-95.398
+}
+latlong["000CF342"]={
+    "latitude":37.5872,
+    "longitude":126.994
+}
+latlong["08F7F83A"]={
+    "latitude":33.7896,
+    "longitude":-84.3256
+}
+latlong["025B9122"]={
+    "latitude":52.3837,
+    "longitude":-1.56259
+}
+latlong["052F5108"]={
+    "latitude":59.3457,
+    "longitude":18.072
+}
+latlong["0C103FFF"]={
+    "latitude":50.0814,
+    "longitude":14.4142
+}
+latlong["0000CC65"]={
+    "latitude":-23.5689,
+    "longitude":-46.6439
+}
+latlong["34340A06"]={
+    "latitude":22.0681,
+    "longitude":88.1371
+}
+latlong["07D2B6B9"]={
+    "latitude":44.5645,
+    "longitude":-123.275
+}
+latlong["4CE6FC2D"]={
+    "latitude":47.6396,
+    "longitude":-122.128
+}
+latlong["07802943"]={
+    "latitude":39.9578,
+    "longitude":116.308
+}
+latlong["02C1AEE3"]={
+    "latitude":49.8097,
+    "longitude":-97.1334
+}
+latlong["08B17323"]={
+    "latitude":48.199,
+    "longitude":16.37
+}
+latlong["071126B7"]={
+    "latitude":46.9506,
+    "longitude":7.43739
+}
+latlong["01739E09"]={
+    "latitude":-34.5997,
+    "longitude":-58.3731
+}
+latlong["01AEE39C"]={
+    "latitude":40.7481,
+    "longitude":-73.9704
+}
+latlong["0BC2EB17"]={
+    "latitude":49.9887,
+    "longitude":8.23106
+}
+latlong["05615F59"]={
+    "latitude":63.8221,
+    "longitude":20.3054
+}
+latlong["07DEF9D7"]={
+    "latitude":50.8148,
+    "longitude":4.37999
+}
+latlong["03FC3F40"]={
+    "latitude":57.6895,
+    "longitude":11.9732
+}
+latlong["0A0E755C"]={
+    "latitude":22.3387,
+    "longitude":114.172
+}
+latlong["06CA964A"]={
+    "latitude":31.3183,
+    "longitude":121.387
+}
+latlong["0043A363"]={
+    "latitude":60.3832,
+    "longitude":5.33135
+}
+latlong["4F3BE6AD"]={
+    "latitude":51.455,
+    "longitude":5.4497
+}
+latlong["0045D9F6"]={
+    "latitude":52.5127,
+    "longitude":13.3269
+}
+latlong["048AB435"]={
+    "latitude":50.9291,
+    "longitude":11.5787
+}
+latlong["020C2C91"]={
+    "latitude":50.847,
+    "longitude":5.68655
+}
+latlong["07679147"]={
+    "latitude":31.263,
+    "longitude":34.8022
+}
+latlong["06F892B4"]={
+    "latitude":31.2844,
+    "longitude":121.502
+}
+latlong["33B1A617"]={
+    "latitude":32.8127,
+    "longitude":-96.8386
+}
+latlong["0527EA39"]={
+    "latitude":39.6669,
+    "longitude":-75.7528
+}
+latlong["0A1AB335"]={
+    "latitude":35.0834,
+    "longitude":-106.62
+}
+latlong["0AD3BA36"]={
+    "latitude":55.8615,
+    "longitude":-4.24725
+}
+latlong["36729DCA"]={
+    "latitude":51.9851,
+    "longitude":5.66401
+}
+latlong["0099FA30"]={
+    "latitude":36.5625,
+    "longitude":136.656
+}
+latlong["01461554"]={
+    "latitude":40.63,
+    "longitude":22.9581
+}
+latlong["004B1A5C"]={
+    "latitude":35.234,
+    "longitude":129.079
+}
+latlong["03496C27"]={
+    "latitude":45.0667,
+    "longitude":7.7
+}
+latlong["0027E0B8"]={
+    "latitude":28.0611,
+    "longitude":-82.4131
+}
+latlong["066A71BC"]={
+    "latitude":41.6979,
+    "longitude":-86.2387
+}
+latlong["06967BF9"]={
+    "latitude":35.7908,
+    "longitude":51.3125
+}
+latlong["08FC2C82"]={
+    "latitude":35.7067,
+    "longitude":139.722
+}
+latlong["04592826"]={
+    "latitude":46.7299,
+    "longitude":-117.158
+}
+latlong["00D956B2"]={
+    "latitude":22.3029,
+    "longitude":114.178
+}
+latlong["0C34AB7F"]={
+    "latitude":63.4196,
+    "longitude":10.4019
+}
+latlong["0BF77E37"]={
+    "latitude":22.3356,
+    "longitude":114.264
+}
+latlong["08B64D4F"]={
+    "latitude":-20.7603,
+    "longitude":-42.8678
+}
+latlong["03CAFC05"]={
+    "latitude":40.5458,
+    "longitude":-3.69347
+}
+latlong["09490884"]={
+    "latitude":33.9983,
+    "longitude":-81.028
+}
+latlong["035B7FBD"]={
+    "latitude":23.0375,
+    "longitude":72.5442
+}
+latlong["3679E6DC"]={
+    "latitude":51.917,
+    "longitude":4.52328
+}
+latlong["05DD2DB2"]={
+    "latitude":65.0566,
+    "longitude":25.4681
+}
+latlong["09E1E653"]={
+    "latitude":42.7316,
+    "longitude":-73.6839
+}
+latlong["4C81EC14"]={
+    "latitude":47.5535,
+    "longitude":7.95903
+}
+latlong["04416949"]={
+    "latitude":37.8677,
+    "longitude":138.943
+}
+latlong["05C31D4B"]={
+    "latitude":55.7844,
+    "longitude":12.5246
+}
+latlong["08E4D2D6"]={
+    "latitude":51.1773,
+    "longitude":4.41632
+}
+latlong["09AA300F"]={
+    "latitude":-33.4965,
+    "longitude":-70.6076
+}
+latlong["04C1EC81"]={
+    "latitude":43.5279,
+    "longitude":-80.2231
+}
+latlong["031AFA6D"]={
+    "latitude":53.9459,
+    "longitude":-1.04607
+}
+latlong["03CC949B"]={
+    "latitude":31.1132,
+    "longitude":77.1398
+}
+latlong["0112E226"]={
+    "latitude":49.2774,
+    "longitude":-122.92
+}
+latlong["0653F611"]={
+    "latitude":28.5988,
+    "longitude":-81.2025
+}
+latlong["05A3DA1F"]={
+    "latitude":52.2396,
+    "longitude":6.85107
+}
+latlong["0BA67E13"]={
+    "latitude":57.1647,
+    "longitude":-2.10056
+}
+latlong["02A66F75"]={
+    "latitude":29.7216,
+    "longitude":-95.3438
+}
+latlong["0489B9A5"]={
+    "latitude":48.2196,
+    "longitude":16.3519
+}
+latlong["0073ECCC"]={
+    "latitude":47.5014,
+    "longitude":19.0464
+}
+latlong["04C900C3"]={
+    "latitude":-45.8669,
+    "longitude":170.511
+}
+latlong["4CABD435"]={
+    "latitude":37.4573,
+    "longitude":-122.17
+}
+latlong["07BE273D"]={
+    "latitude":44.6345,
+    "longitude":-63.594
+}
+latlong["04B1BEA6"]={
+    "latitude":54.9796,
+    "longitude":-1.6144
+}
+latlong["12EA7AEC"]={
+    "latitude":34.5876,
+    "longitude":135.507
+}
+latlong["094732A1"]={
+    "latitude":60.4552,
+    "longitude":22.2825
+}
+latlong["05B9651E"]={
+    "latitude":32.8139,
+    "longitude":130.728
+}
+latlong["0C33EF81"]={
+    "latitude":48.8502,
+    "longitude":2.34363
+}
+latlong["09E03D32"]={
+    "latitude":45.4991,
+    "longitude":-122.688
+}
+latlong["0B4CEC90"]={
+    "latitude":39.1861,
+    "longitude":-96.5833
+}
+latlong["07BF4570"]={
+    "latitude":40.8511,
+    "longitude":-73.8444
+}
+latlong["029BFCF4"]={
+    "latitude":32.7861,
+    "longitude":129.866
+}
+latlong["048AEF89"]={
+    "latitude":36.0466,
+    "longitude":103.858
+}
+latlong["0C2FE58D"]={
+    "latitude":38.6478,
+    "longitude":-90.3013
+}
+latlong["00090A43"]={
+    "latitude":39.1685,
+    "longitude":-86.5199
+}
+latlong["0C3C3D64"]={
+    "latitude":43.6678,
+    "longitude":-79.3986
+}
+latlong["0084A3B8"]={
+    "latitude":35.2104,
+    "longitude":-97.446
+}
+latlong["01F1D439"]={
+    "latitude":52.1299,
+    "longitude":-106.633
+}
+latlong["043F74E8"]={
+    "latitude":40.8472,
+    "longitude":14.2569
+}
+latlong["06041575"]={
+    "latitude":53.3086,
+    "longitude":-6.22065
+}
+latlong["01741490"]={
+    "latitude":39.7756,
+    "longitude":-86.1767
+}
+latlong["041C3083"]={
+    "latitude":51.4864,
+    "longitude":11.9689
+}
+latlong["0762929E"]={
+    "latitude":36.0109,
+    "longitude":129.323
+}
+latlong["0A146396"]={
+    "latitude":43.3318,
+    "longitude":-2.97298
+}
+latlong["0617689C"]={
+    "latitude":48.6999,
+    "longitude":2.17331
+}
+latlong["016D6331"]={
+    "latitude":35.7035,
+    "longitude":51.3927
+}
+latlong["01AFAF1B"]={
+    "latitude":51.2422,
+    "longitude":-0.59519
+}
+latlong["36FBD70F"]={
+    "latitude":34.07,
+    "longitude":134.56
+}
+latlong["06CCE1C6"]={
+    "latitude":50.1189,
+    "longitude":8.65547
+}
+latlong["062D596B"]={
+    "latitude":33.9756,
+    "longitude":-117.331
+}
+latlong["04EAD036"]={
+    "latitude":32.6041,
+    "longitude":-85.4819
+}
+latlong["0AC7AC2B"]={
+    "latitude":48.6596,
+    "longitude":14.3437
+}
+latlong["078DF811"]={
+    "latitude":39.2882,
+    "longitude":-76.6247
+}
+latlong["049573B2"]={
+    "latitude":40.2078,
+    "longitude":-8.42556
+}
+latlong["087E04C5"]={
+    "latitude":48.7169,
+    "longitude":2.21841
+}
+latlong["351E811C"]={
+    "latitude":57.0154,
+    "longitude":9.98658
+}
+latlong["096500C2"]={
+    "latitude":-33.9577,
+    "longitude":18.4612
+}
+latlong["0180C94B"]={
+    "latitude":45.1865,
+    "longitude":9.15576
+}
+latlong["0BB40DCF"]={
+    "latitude":48.4245,
+    "longitude":9.95295
+}
+latlong["0100E2FE"]={
+    "latitude":56.3408,
+    "longitude":-2.80845
+}
+latlong["09EA1A37"]={
+    "latitude":51.5229,
+    "longitude":-0.04023
+}
+latlong["06A1F65B"]={
+    "latitude":35.1764,
+    "longitude":126.908
+}
+latlong["08FBF17B"]={
+    "latitude":-15.7633,
+    "longitude":-47.8666
+}
+latlong["039459BF"]={
+    "latitude":39.4823,
+    "longitude":-0.34602
+}
+latlong["043C2E9C"]={
+    "latitude":51.4455,
+    "longitude":-0.95262
+}
+latlong["0531364E"]={
+    "latitude":37.4853,
+    "longitude":126.812
+}
+latlong["4D0C933D"]={
+    "latitude":10.0535,
+    "longitude":76.3344
+}
+latlong["4C7A9B63"]={
+    "latitude":31.281,
+    "longitude":-89.2673
+}
+latlong["08ADCF85"]={
+    "latitude":25.7211,
+    "longitude":-80.2799
+}
+latlong["089249D9"]={
+    "latitude":52.769,
+    "longitude":-1.22418
+}
+latlong["0B9CA1B5"]={
+    "latitude":41.8963,
+    "longitude":-87.6193
+}
+latlong["4F4069DE"]={
+    "latitude":19.0425,
+    "longitude":72.9141
+}
+latlong["0A968F8B"]={
+    "latitude":56.4572,
+    "longitude":-2.98028
+}
+latlong["04B9147D"]={
+    "latitude":37.3815,
+    "longitude":-5.98981
+}
+latlong["0BBD8EF9"]={
+    "latitude":50.8653,
+    "longitude":4.67932
+}
+latlong["0A9418E0"]={
+    "latitude":45.0626,
+    "longitude":7.66252
+}
+latlong["017F2ECE"]={
+    "latitude":51.7611,
+    "longitude":-1.25333
+}
+latlong["01DF6D2D"]={
+    "latitude":35.8914,
+    "longitude":128.611
+}
+latlong["092D7CCF"]={
+    "latitude":46.0497,
+    "longitude":14.5042
+}
+latlong["0407352D"]={
+    "latitude":41.0129,
+    "longitude":28.9639
+}
+latlong["077C8BDD"]={
+    "latitude":35.7015,
+    "longitude":139.764
+}
+latlong["0999D47E"]={
+    "latitude":13.0065,
+    "longitude":80.2424
+}
+latlong["03F6ECEE"]={
+    "latitude":39.8961,
+    "longitude":32.7336
+}
+latlong["0C1EB600"]={
+    "latitude":45.7481,
+    "longitude":4.85235
+}
+latlong["043B1E1B"]={
+    "latitude":43.0405,
+    "longitude":-76.1367
+}
+latlong["04468646"]={
+    "latitude":32.528,
+    "longitude":-92.0754
+}
+latlong["02585490"]={
+    "latitude":52.5174,
+    "longitude":13.3937
+}
+latlong["06156041"]={
+    "latitude":43.3191,
+    "longitude":11.3328
+}
+latlong["0B003FA6"]={
+    "latitude":38.9077,
+    "longitude":-77.0715
+}
+latlong["36D0A3A4"]={
+    "latitude":39.9497,
+    "longitude":-75.1949
+}
+latlong["0A4E43E2"]={
+    "latitude":59.9417,
+    "longitude":30.301
+}
+latlong["025F5CB1"]={
+    "latitude":48.8472,
+    "longitude":2.35639
+}
+latlong["0AC1438B"]={
+    "latitude":53.1679,
+    "longitude":8.64809
+}
+latlong["003E1361"]={
+    "latitude":44.8184,
+    "longitude":20.4574
+}
+latlong["0B78A521"]={
+    "latitude":43.7717,
+    "longitude":-79.4986
+}
+latlong["007B4591"]={
+    "latitude":34.68,
+    "longitude":-82.8352
+}
+latlong["4F076E00"]={
+    "latitude":31.8058,
+    "longitude":34.7582
+}
+latlong["0B659C39"]={
+    "latitude":24.4383,
+    "longitude":118.093
+}
+latlong["092321E1"]={
+    "latitude":32.7856,
+    "longitude":-79.9468
+}
+latlong["083956B4"]={
+    "latitude":36.2511,
+    "longitude":137.979
+}
+latlong["4E78BE27"]={
+    "latitude":42.3382,
+    "longitude":-71.1088
+}
+latlong["00470615"]={
+    "latitude":52.2397,
+    "longitude":21.017
+}
+latlong["057692B0"]={
+    "latitude":24.1564,
+    "longitude":120.681
+}
+latlong["08EAA2CB"]={
+    "latitude":39.9076,
+    "longitude":116.368
+}
+latlong["0404AD5B"]={
+    "latitude":54.0107,
+    "longitude":-2.7881
+}
+latlong["02870E7F"]={
+    "latitude":35.4641,
+    "longitude":136.739
+}
+latlong["0B04728E"]={
+    "latitude":37.5435,
+    "longitude":-77.4503
+}
+latlong["070DD5D4"]={
+    "latitude":-6.15526,
+    "longitude":106.761
+}
+latlong["4D1139C8"]={
+    "latitude":44.9134,
+    "longitude":-93.1931
+}
+latlong["09E0EB5B"]={
+    "latitude":36.4303,
+    "longitude":139.045
+}
+latlong["500F4F9C"]={
+    "latitude":47.1127,
+    "longitude":-122.633
+}
+latlong["00B89992"]={
+    "latitude":39.646,
+    "longitude":-79.9681
+}
+latlong["11088B38"]={
+    "latitude":33.7934,
+    "longitude":-84.3221
+}
+latlong["06167391"]={
+    "latitude":58.3977,
+    "longitude":15.5766
+}
+latlong["0CA4B187"]={
+    "latitude":48.4669,
+    "longitude":-123.308
+}
+latlong["0224BB57"]={
+    "latitude":6.26458,
+    "longitude":-75.5683
+}
+latlong["01815C1D"]={
+    "latitude":39.9583,
+    "longitude":116.363
+}
+latlong["03135E95"]={
+    "latitude":51.3768,
+    "longitude":-2.32504
+}
+latlong["06415983"]={
+    "latitude":35.7002,
+    "longitude":139.756
+}
+latlong["09F07E1F"]={
+    "latitude":40.4431,
+    "longitude":-79.9613
+}
+latlong["0262E086"]={
+    "latitude":-22.9101,
+    "longitude":-43.2373
+}
+latlong["09E439DE"]={
+    "latitude":29.5043,
+    "longitude":-98.5768
+}
+latlong["03FED160"]={
+    "latitude":45.3835,
+    "longitude":-75.6972
+}
+latlong["08ABF65F"]={
+    "latitude":30.028,
+    "longitude":31.2091
+}
+latlong["0A6C6FB4"]={
+    "latitude":38.2863,
+    "longitude":21.7779
+}
+latlong["0977BD3A"]={
+    "latitude":29.5509,
+    "longitude":106.519
+}
+latlong["0963D13D"]={
+    "latitude":36.8229,
+    "longitude":10.1793
+}
+latlong["0A3EE016"]={
+    "latitude":40.7606,
+    "longitude":-78.4213
+}
+latlong["0153C041"]={
+    "latitude":24.9683,
+    "longitude":121.196
+}
+latlong["05D0BAAA"]={
+    "latitude":46.5233,
+    "longitude":6.5855
+}
+latlong["001C3B8F"]={
+    "latitude":47.5587,
+    "longitude":7.58387
+}
+latlong["0B890E85"]={
+    "latitude":38.9007,
+    "longitude":-77.0477
+}
+latlong["031BDE5D"]={
+    "latitude":40.0025,
+    "longitude":116.353
+}
+latlong["0395F208"]={
+    "latitude":45.4974,
+    "longitude":-73.5771
+}
+latlong["00BBEBAA"]={
+    "latitude":33.5789,
+    "longitude":-101.888
+}
+latlong["4DA9DEC2"]={
+    "latitude":55.8477,
+    "longitude":-4.29706
+}
+latlong["09DC92C5"]={
+    "latitude":39.1664,
+    "longitude":-86.5269
+}
+latlong["07698D3B"]={
+    "latitude":51.5523,
+    "longitude":-0.16523
+}
+latlong["07C4E139"]={
+    "latitude":3.00082,
+    "longitude":101.722
+}
+latlong["09FFB116"]={
+    "latitude":19.0241,
+    "longitude":72.8571
+}
+latlong["0C355FDC"]={
+    "latitude":-34.4083,
+    "longitude":150.881
+}
+latlong["02047FF4"]={
+    "latitude":3.1273,
+    "longitude":101.662
+}
+latlong["0092C1B8"]={
+    "latitude":41.3894,
+    "longitude":2.11583
+}
+latlong["018C5555"]={
+    "latitude":49.7881,
+    "longitude":9.93528
+}
+latlong["0708D687"]={
+    "latitude":47.5497,
+    "longitude":7.65806
+}
+latlong["0ACF14C4"]={
+    "latitude":45.8102,
+    "longitude":15.9698
+}
+latlong["0A6604CB"]={
+    "latitude":37.9785,
+    "longitude":23.7732
+}
+latlong["016D0C5B"]={
+    "latitude":50.7346,
+    "longitude":-3.52884
+}
+latlong["0108016A"]={
+    "latitude":33.2151,
+    "longitude":-87.5464
+}
+latlong["0507BBD7"]={
+    "latitude":39.9803,
+    "longitude":-75.1575
+}
+latlong["0179F162"]={
+    "latitude":47.5014,
+    "longitude":19.0464
+}
+latlong["08E5641F"]={
+    "latitude":39.9485,
+    "longitude":-75.1577
+}
+latlong["342F3CE8"]={
+    "latitude":52.2312,
+    "longitude":-107.323
+}
+latlong["087095C7"]={
+    "latitude":38.7339,
+    "longitude":-9.15999
+}
+latlong["088F1129"]={
+    "latitude":25.0332,
+    "longitude":121.611
+}
+latlong["0C2D7F2F"]={
+    "latitude":43.0455,
+    "longitude":-88.0232
+}
+latlong["0ACD6604"]={
+    "latitude":44.0455,
+    "longitude":-123.072
+}
+latlong["09B136B8"]={
+    "latitude":50.8646,
+    "longitude":-0.08103
+}
+latlong["09DAE0E3"]={
+    "latitude":43.3679,
+    "longitude":-5.84192
+}
+latlong["004101D2"]={
+    "latitude":40.7649,
+    "longitude":-73.9551
+}
+latlong["0B6FD996"]={
+    "latitude":37.4494,
+    "longitude":126.654
+}
+latlong["01059CAC"]={
+    "latitude":37.4787,
+    "longitude":-121.925
+}
+latlong["05F5F76A"]={
+    "latitude":40.2524,
+    "longitude":-111.65
+}
+latlong["0581F5D5"]={
+    "latitude":39.9889,
+    "longitude":116.356
+}
+latlong["4E9992C8"]={
+    "latitude":38.8935,
+    "longitude":-77.0468
+}
+latlong["00CD8766"]={
+    "latitude":50.8247,
+    "longitude":4.39739
+}
+latlong["0435E318"]={
+    "latitude":35.7483,
+    "longitude":51.3812
+}
+latlong["040AF21A"]={
+    "latitude":60.1866,
+    "longitude":24.8269
+}
+latlong["08820D32"]={
+    "latitude":38.2135,
+    "longitude":-85.7573
+}
+latlong["074492CB"]={
+    "latitude":18.5649,
+    "longitude":73.8307
+}
+latlong["05E74909"]={
+    "latitude":-33.7736,
+    "longitude":151.112
+}
+latlong["4ECD74BC"]={
+    "latitude":28.4994,
+    "longitude":77.0726
+}
+latlong["09989277"]={
+    "latitude":-27.4766,
+    "longitude":153.027
+}
+latlong["0156CBB8"]={
+    "latitude":51.964,
+    "longitude":7.613
+}
+latlong["06910155"]={
+    "latitude":28.5893,
+    "longitude":77.1663
+}
+latlong["099A9C9D"]={
+    "latitude":-22.8966,
+    "longitude":-43.1267
+}
+latlong["11CCA825"]={
+    "latitude":59.8132,
+    "longitude":17.6569
+}
+latlong["045716B5"]={
+    "latitude":39.9538,
+    "longitude":-75.1871
+}
+latlong["06E20357"]={
+    "latitude":36.1262,
+    "longitude":-97.0719
+}
+latlong["0662D0FC"]={
+    "latitude":31.5717,
+    "longitude":130.545
+}
+latlong["07938BEB"]={
+    "latitude":-23.3274,
+    "longitude":-51.1956
+}
+latlong["4E5CAEBC"]={
+    "latitude":41.8364,
+    "longitude":-88.2467
+}
+latlong["07850863"]={
+    "latitude":-13.0047,
+    "longitude":-38.5088
+}
+latlong["3653C029"]={
+    "latitude":52.3348,
+    "longitude":4.85969
+}
+latlong["0C0CFC14"]={
+    "latitude":-33.8759,
+    "longitude":150.915
+}
+latlong["0B7B2289"]={
+    "latitude":-26.1872,
+    "longitude":28.0279
+}
+latlong["079A63AE"]={
+    "latitude":41.5333,
+    "longitude":-93.6481
+}
+latlong["04D537E8"]={
+    "latitude":30.9745,
+    "longitude":41.0479
+}
+latlong["0BF1D8BD"]={
+    "latitude":18.404,
+    "longitude":-66.0494
+}
+latlong["0A5DBE7D"]={
+    "latitude":34.1472,
+    "longitude":131.469
+}
+latlong["0C2AE079"]={
+    "latitude":52.0243,
+    "longitude":-0.7104
+}
+latlong["00D4F325"]={
+    "latitude":32.0678,
+    "longitude":34.8451
+}
+latlong["074491E2"]={
+    "latitude":42.4089,
+    "longitude":-71.1182
+}
+latlong["09B2D407"]={
+    "latitude":38.835,
+    "longitude":-77.3112
+}
+latlong["04254A53"]={
+    "latitude":-25.7559,
+    "longitude":28.2311
+}
+latlong["075B9796"]={
+    "latitude":-23.4109,
+    "longitude":-51.9394
+}
+latlong["0011114D"]={
+    "latitude":52.6238,
+    "longitude":1.24054
+}
+latlong["05BDC90E"]={
+    "latitude":25.1193,
+    "longitude":121.513
+}
+latlong["4CCD6AF0"]={
+    "latitude":42.338,
+    "longitude":-71.1072
+}
+latlong["0054DD96"]={
+    "latitude":41.1201,
+    "longitude":16.869
+}
+latlong["0B08755E"]={
+    "latitude":36.9775,
+    "longitude":-122.054
+}
+latlong["0143616E"]={
+    "latitude":40.0006,
+    "longitude":116.326
+}
+latlong["0AA4D3ED"]={
+    "latitude":34.7463,
+    "longitude":136.523
+}
+latlong["341E1277"]={
+    "latitude":-34.9133,
+    "longitude":-57.9517
+}
+latlong["04B11BDC"]={
+    "latitude":36.0703,
+    "longitude":-94.1771
+}
+latlong["00B28C35"]={
+    "latitude":-27.9714,
+    "longitude":153.41
+}
+latlong["021327C3"]={
+    "latitude":52.3838,
+    "longitude":9.80668
+}
+latlong["0207FCCD"]={
+    "latitude":35.7022,
+    "longitude":139.761
+}
+latlong["012F9023"]={
+    "latitude":43.6319,
+    "longitude":3.86389
+}
+latlong["08B22DAB"]={
+    "latitude":22.3097,
+    "longitude":87.2958
+}
+latlong["36A19626"]={
+    "latitude":10.05,
+    "longitude":-12.8667
+}
+latlong["0C41D2F4"]={
+    "latitude":-32.0068,
+    "longitude":115.889
+}
+latlong["0BB40002"]={
+    "latitude":36.3689,
+    "longitude":127.346
+}
+latlong["03FC4F79"]={
+    "latitude":31.2281,
+    "longitude":121.4
+}
+latlong["04CE0776"]={
+    "latitude":36.629,
+    "longitude":127.457
+}
+latlong["07B6A2A8"]={
+    "latitude":61.4498,
+    "longitude":23.8591
+}
+latlong["018E2322"]={
+    "latitude":-33.9338,
+    "longitude":18.8633
+}
+latlong["026CB1B0"]={
+    "latitude":35.0228,
+    "longitude":135.77
+}
+latlong["0147F037"]={
+    "latitude":43.5163,
+    "longitude":5.46677
+}
+latlong["030C9F14"]={
+    "latitude":-40.3848,
+    "longitude":175.617
+}
+latlong["0557A80F"]={
+    "latitude":35.334,
+    "longitude":139.618
+}
+latlong["4F6FF56A"]={
+    "latitude":42.1457,
+    "longitude":-80.0259
+}
+latlong["087D87F2"]={
+    "latitude":45.6584,
+    "longitude":13.7929
+}
+latlong["047329C0"]={
+    "latitude":51.5424,
+    "longitude":9.93387
+}
+latlong["0BBB6080"]={
+    "latitude":-37.7263,
+    "longitude":145.051
+}
+latlong["0B56FA70"]={
+    "latitude":47.2628,
+    "longitude":11.3851
+}
+latlong["5014F7E4"]={
+    "latitude":29.708,
+    "longitude":-95.3975
+}
+latlong["037FF1C8"]={
+    "latitude":36.372,
+    "longitude":127.363
+}
+latlong["06761B1F"]={
+    "latitude":52.2204,
+    "longitude":21.011
+}
+latlong["00FD6FCE"]={
+    "latitude":28.1803,
+    "longitude":112.953
+}
+latlong["09A9661F"]={
+    "latitude":3.37164,
+    "longitude":-76.5296
+}
+latlong["0298727C"]={
+    "latitude":33.85,
+    "longitude":132.771
+}
+latlong["4E592AE2"]={
+    "latitude":35.6645,
+    "longitude":139.685
+}
+latlong["08FA558A"]={
+    "latitude":42.3502,
+    "longitude":-71.0989
+}
+latlong["022B685F"]={
+    "latitude":32.0333,
+    "longitude":118.852
+}
+latlong["06D835C2"]={
+    "latitude":29.9354,
+    "longitude":-90.1232
+}
+latlong["08859D90"]={
+    "latitude":22.6199,
+    "longitude":120.266
+}
+latlong["01AB9591"]={
+    "latitude":24.7242,
+    "longitude":46.6247
+}
+latlong["065700BC"]={
+    "latitude":36.0902,
+    "longitude":-80.2686
+}
+latlong["0C073747"]={
+    "latitude":39.8914,
+    "longitude":32.7847
+}
+latlong["01E93C2F"]={
+    "latitude":25.1046,
+    "longitude":55.1638
+}
+latlong["038AE3AA"]={
+    "latitude":51.5331,
+    "longitude":-0.4684
+}
+latlong["07F57F7B"]={
+    "latitude":35.7018,
+    "longitude":51.3514
+}
+latlong["4E15D391"]={
+    "latitude":51.4267,
+    "longitude":-0.1722
+}
+latlong["01109E6D"]={
+    "latitude":43.6044,
+    "longitude":1.44389
+}
+latlong["06288C9F"]={
+    "latitude":45.4631,
+    "longitude":9.17667
+}
+latlong["025139D2"]={
+    "latitude":34.5197,
+    "longitude":113.841
+}
+latlong["01E0D8CE"]={
+    "latitude":49.875,
+    "longitude":8.65652
+}
+latlong["0B46E8A6"]={
+    "latitude":32.7289,
+    "longitude":-97.1152
+}
+latlong["863E4E67"]={
+    "latitude":7.37678,
+    "longitude":80.5005
+}
+latlong["09B0BBA7"]={
+    "latitude":32.9902,
+    "longitude":-96.748
+}
+latlong["863C435D"]={
+    "latitude":37.3797,
+    "longitude":-121.991
+}
+latlong["0B0E659A"]={
+    "latitude":-43.5234,
+    "longitude":172.58
+}
+latlong["090B2C79"]={
+    "latitude":45.7722,
+    "longitude":126.675
+}
+latlong["039DB9B6"]={
+    "latitude":49.0002,
+    "longitude":12.0924
+}
+latlong["066AF386"]={
+    "latitude":43.7029,
+    "longitude":-72.2894
+}
+latlong["0A30F1FC"]={
+    "latitude":22.4959,
+    "longitude":88.3712
+}
+latlong["06E3CF01"]={
+    "latitude":33.0185,
+    "longitude":119.491
+}
+latlong["02AA1FA9"]={
+    "latitude":4.79835,
+    "longitude":6.98043
+}
+latlong["0B06DFB6"]={
+    "latitude":40.9614,
+    "longitude":-5.66745
+}
+latlong["03D374B7"]={
+    "latitude":7.64112,
+    "longitude":125.007
+}
+latlong["0AD27695"]={
+    "latitude":33.7532,
+    "longitude":-84.3849
+}
+latlong["034BDB0A"]={
+    "latitude":29.311,
+    "longitude":-94.7766
+}
+latlong["012CE579"]={
+    "latitude":21.0022,
+    "longitude":105.841
+}
+latlong["080DBBEF"]={
+    "latitude":45.3814,
+    "longitude":-71.9311
+}
+latlong["0240B99C"]={
+    "latitude":39.8759,
+    "longitude":116.482
+}
+latlong["07454816"]={
+    "latitude":41.741,
+    "longitude":-111.815
+}
+latlong["078BB68A"]={
+    "latitude":50.0608,
+    "longitude":19.9326
+}
+latlong["036FE573"]={
+    "latitude":37.2813,
+    "longitude":127.046
+}
+latlong["0A1AFEAE"]={
+    "latitude":-35.0185,
+    "longitude":138.573
+}
+latlong["34C5E004"]={
+    "latitude":2.92887,
+    "longitude":101.779
+}
+latlong["0045D4A2"]={
+    "latitude":1.57127,
+    "longitude":103.619
+}
+latlong["0C3E2EEC"]={
+    "latitude":36.0739,
+    "longitude":140.121
+}
+latlong["0B23EC19"]={
+    "latitude":49.623,
+    "longitude":6.11223
+}
+latlong["0A4C8709"]={
+    "latitude":-36.828,
+    "longitude":-73.0394
+}
+latlong["0204A40F"]={
+    "latitude":35.139,
+    "longitude":136.935
+}
+latlong["0571FF56"]={
+    "latitude":25.2709,
+    "longitude":82.9838
+}
+latlong["06083C34"]={
+    "latitude":47.4871,
+    "longitude":19.0673
+}
+latlong["00460217"]={
+    "latitude":35.515,
+    "longitude":134.172
+}
+latlong["09B4B990"]={
+    "latitude":24.1241,
+    "longitude":120.675
+}
+latlong["4EEDFEA8"]={
+    "latitude":43.6574,
+    "longitude":-79.3903
+}
+latlong["01A4CB11"]={
+    "latitude":51.8923,
+    "longitude":-8.49278
+}
+latlong["06B4FE31"]={
+    "latitude":38.2544,
+    "longitude":140.348
+}
+latlong["03381F1C"]={
+    "latitude":49.9268,
+    "longitude":11.5866
+}
+latlong["016F28BA"]={
+    "latitude":37.5419,
+    "longitude":127.076
+}
+latlong["003BDEE2"]={
+    "latitude":25.0971,
+    "longitude":121.542
+}
+latlong["017889A7"]={
+    "latitude":13.0065,
+    "longitude":80.2424
+}
+latlong["0B845BA3"]={
+    "latitude":46.0694,
+    "longitude":11.1211
+}
+latlong["0B185497"]={
+    "latitude":40.6072,
+    "longitude":-75.3789
+}
+latlong["0690C9F1"]={
+    "latitude":41.0781,
+    "longitude":-81.5114
+}
+latlong["04EEEE54"]={
+    "latitude":36.72,
+    "longitude":-4.41611
+}
+latlong["022BD15B"]={
+    "latitude":17.3854,
+    "longitude":78.4736
+}
+latlong["08589E37"]={
+    "latitude":52.3536,
+    "longitude":9.72417
+}
+latlong["0B8BA2BB"]={
+    "latitude":51.5637,
+    "longitude":5.04198
+}
+latlong["09B48D0B"]={
+    "latitude":19.1376,
+    "longitude":72.9099
+}
+latlong["0845F019"]={
+    "latitude":54.6038,
+    "longitude":-5.92963
+}
+latlong["096EAD68"]={
+    "latitude":35.7044,
+    "longitude":51.409
+}
+latlong["35B27DA4"]={
+    "latitude":-34.5979,
+    "longitude":-58.4161
+}
+latlong["01A9ADBA"]={
+    "latitude":-31.6549,
+    "longitude":-60.7077
+}
+latlong["027B658D"]={
+    "latitude":38.4578,
+    "longitude":27.2102
+}
+latlong["05A55A03"]={
+    "latitude":62.2363,
+    "longitude":25.7327
+}
+latlong["0133076F"]={
+    "latitude":52.0388,
+    "longitude":8.49507
+}
+latlong["084DE468"]={
+    "latitude":5.36296,
+    "longitude":100.31
+}
+latlong["017E189A"]={
+    "latitude":33.4783,
+    "longitude":-82.0238
+}
+latlong["08EC4F5B"]={
+    "latitude":-38.1987,
+    "longitude":144.298
+}
+latlong["071EBB71"]={
+    "latitude":32.032,
+    "longitude":118.837
+}
+latlong["04F89294"]={
+    "latitude":40.763,
+    "longitude":-73.9565
+}
+latlong["05E740A3"]={
+    "latitude":33.4541,
+    "longitude":-88.792
+}
+latlong["07BC9DE3"]={
+    "latitude":-42.9041,
+    "longitude":147.325
+}
+latlong["03864254"]={
+    "latitude":41.256,
+    "longitude":-95.9758
+}
+latlong["0975B154"]={
+    "latitude":13.7387,
+    "longitude":100.53
+}
+latlong["07C6567A"]={
+    "latitude":47.5689,
+    "longitude":-52.7339
+}
+latlong["07FE697C"]={
+    "latitude":39.5477,
+    "longitude":-119.821
+}
+latlong["0216C308"]={
+    "latitude":-5.84394,
+    "longitude":-35.1985
+}
+latlong["07162905"]={
+    "latitude":38.7367,
+    "longitude":-9.13889
+}
+latlong["012C9CDF"]={
+    "latitude":25.761,
+    "longitude":-80.3764
+}
+latlong["08E4E4DD"]={
+    "latitude":39.9378,
+    "longitude":32.8262
+}
+latlong["0847D5FE"]={
+    "latitude":37.5582,
+    "longitude":126.95
+}
+latlong["02A71496"]={
+    "latitude":50.1022,
+    "longitude":14.3885
+}
+latlong["0AF04895"]={
+    "latitude":47.0423,
+    "longitude":-122.951
+}
+latlong["04F1BEA5"]={
+    "latitude":-37.8084,
+    "longitude":144.963
+}
+latlong["095CC809"]={
+    "latitude":40.3455,
+    "longitude":-74.771
+}
+latlong["05CEA7C0"]={
+    "latitude":53.2249,
+    "longitude":-4.13226
+}
+latlong["0642BA52"]={
+    "latitude":51.0098,
+    "longitude":2.34489
+}
+latlong["00B5EF91"]={
+    "latitude":51.1072,
+    "longitude":17.0613
+}
+latlong["02B8785E"]={
+    "latitude":-30.0576,
+    "longitude":-51.1753
+}
+latlong["0A475496"]={
+    "latitude":39.2178,
+    "longitude":9.11461
+}
+latlong["0BC22D41"]={
+    "latitude":35.1564,
+    "longitude":136.925
+}
+latlong["0A942FE1"]={
+    "latitude":45.1917,
+    "longitude":5.77298
+}
+latlong["0B908117"]={
+    "latitude":39.6151,
+    "longitude":20.8464
+}
+latlong["0474BFAF"]={
+    "latitude":32.9302,
+    "longitude":-96.7547
+}
+latlong["06A156A2"]={
+    "latitude":44.4754,
+    "longitude":-73.2006
+}
+latlong["042826F4"]={
+    "latitude":35.6167,
+    "longitude":139.377
+}
+latlong["0194F011"]={
+    "latitude":32.7721,
+    "longitude":-117.072
+}
+latlong["0A0BAF8E"]={
+    "latitude":37.0463,
+    "longitude":-84.9661
+}
+latlong["4C77ECDA"]={
+    "latitude":34.0753,
+    "longitude":-118.381
+}
+latlong["4D66E94F"]={
+    "latitude":34.9642,
+    "longitude":138.432
+}
+latlong["03E10F89"]={
+    "latitude":30.5205,
+    "longitude":114.396
+}
+latlong["040F37A8"]={
+    "latitude":-18.155,
+    "longitude":-47.9312
+}
+latlong["013A0DA1"]={
+    "latitude":51.2981,
+    "longitude":1.06877
+}
+latlong["4F899223"]={
+    "latitude":53.2209,
+    "longitude":6.57709
+}
+latlong["087067C3"]={
+    "latitude":51.7532,
+    "longitude":-0.24313
+}
+latlong["0646B19F"]={
+    "latitude":33.1831,
+    "longitude":130.325
+}
+latlong["040C1309"]={
+    "latitude":37.5089,
+    "longitude":126.964
+}
+latlong["071E8012"]={
+    "latitude":45.4384,
+    "longitude":11.0042
+}
+latlong["0C355AD0"]={
+    "latitude":30.476,
+    "longitude":114.353
+}
+latlong["4E7E7781"]={
+    "latitude":47.0958,
+    "longitude":-122.63
+}
+latlong["071A92E9"]={
+    "latitude":-69,
+    "longitude":39.58
+}
+latlong["068E815A"]={
+    "latitude":51.8759,
+    "longitude":0.95804
+}
+latlong["0298F6CF"]={
+    "latitude":43.0747,
+    "longitude":-87.8828
+}
+latlong["075CFC38"]={
+    "latitude":33.2112,
+    "longitude":-97.1491
+}
+latlong["05304067"]={
+    "latitude":39.735,
+    "longitude":-77.7264
+}
+latlong["067186B9"]={
+    "latitude":41.6501,
+    "longitude":-4.73968
+}
+latlong["00B64D85"]={
+    "latitude":18.9078,
+    "longitude":72.8052
+}
+latlong["06943C23"]={
+    "latitude":37.7104,
+    "longitude":-89.2193
+}
+latlong["4FC22A88"]={
+    "latitude":40.6156,
+    "longitude":-73.9868
+}
+latlong["05B34272"]={
+    "latitude":39.9422,
+    "longitude":32.8243
+}
+latlong["0315146E"]={
+    "latitude":39.7319,
+    "longitude":-104.939
+}
+latlong["0B66187C"]={
+    "latitude":53.7695,
+    "longitude":-0.3682
+}
+latlong["09346CBE"]={
+    "latitude":40.0948,
+    "longitude":-80.7254
+}
+latlong["003E7116"]={
+    "latitude":47.0696,
+    "longitude":15.4506
+}
+latlong["0A13D24B"]={
+    "latitude":51.3443,
+    "longitude":-0.18921
+}
+latlong["06EB0D45"]={
+    "latitude":41.8536,
+    "longitude":12.6033
+}
+latlong["059DE5E4"]={
+    "latitude":26.5114,
+    "longitude":80.2349
+}
+latlong["4E475723"]={
+    "latitude":35.1541,
+    "longitude":-90.0398
+}
+latlong["0B7986A0"]={
+    "latitude":-12.0532,
+    "longitude":-77.0812
+}
+latlong["4CD00850"]={
+    "latitude":15.3526,
+    "longitude":44.2044
+}
+latlong["0357CA53"]={
+    "latitude":58.3811,
+    "longitude":26.7204
+}
+latlong["0BCA536D"]={
+    "latitude":40.8472,
+    "longitude":14.2569
+}
+latlong["091AAC75"]={
+    "latitude":22.649,
+    "longitude":120.31
+}
+latlong["4C9C25FD"]={
+    "latitude":41.8745,
+    "longitude":-87.6682
+}
+latlong["0BF76680"]={
+    "latitude":50.5808,
+    "longitude":8.67676
+}
+latlong["09C2ACF6"]={
+    "latitude":36.629,
+    "longitude":127.457
+}
+latlong["08802AB2"]={
+    "latitude":35.3418,
+    "longitude":25.1312
+}
+latlong["065FC05B"]={
+    "latitude":45.946,
+    "longitude":-66.641
+}
+latlong["0005FC5A"]={
+    "latitude":42.685,
+    "longitude":-73.8239
+}
+latlong["0844D3A3"]={
+    "latitude":48.1117,
+    "longitude":21.8766
+}
+latlong["093B0B5A"]={
+    "latitude":25.014,
+    "longitude":121.541
+}
+latlong["033EFB02"]={
+    "latitude":53.4844,
+    "longitude":-2.27217
+}
+latlong["0B8A5790"]={
+    "latitude":38.368,
+    "longitude":27.2017
+}
+latlong["0527654D"]={
+    "latitude":-19.326,
+    "longitude":146.757
+}
+latlong["00962EEC"]={
+    "latitude":32.036,
+    "longitude":118.814
+}
+latlong["35C150D1"]={
+    "latitude":36.1385,
+    "longitude":-86.804
+}
+latlong["0262EA12"]={
+    "latitude":40.3317,
+    "longitude":-74.6678
+}
+latlong["094E946B"]={
+    "latitude":35.2277,
+    "longitude":-88.2305
+}
+latlong["070A9F1F"]={
+    "latitude":42.2627,
+    "longitude":-71.4126
+}
+latlong["0B4803CE"]={
+    "latitude":40.483,
+    "longitude":-3.36298
+}
+latlong["06CD3667"]={
+    "latitude":52.3821,
+    "longitude":9.71773
+}
+latlong["0D8F2D0E"]={
+    "latitude":50.907,
+    "longitude":8.02792
+}
+latlong["00F133C8"]={
+    "latitude":34.5415,
+    "longitude":135.509
+}
+latlong["04B854A6"]={
+    "latitude":39.581,
+    "longitude":-3.00458
+}
+latlong["015B46C7"]={
+    "latitude":39.3246,
+    "longitude":-82.0964
+}
+latlong["010CF393"]={
+    "latitude":41.4806,
+    "longitude":-71.5255
+}
+latlong["01E89DDF"]={
+    "latitude":54.3387,
+    "longitude":10.123
+}
+latlong["0A25A483"]={
+    "latitude":-34.8088,
+    "longitude":138.62
+}
+latlong["02A35E59"]={
+    "latitude":51.1917,
+    "longitude":6.79318
+}
+latlong["0A513231"]={
+    "latitude":25.0336,
+    "longitude":121.388
+}
+latlong["04BEE805"]={
+    "latitude":34.7217,
+    "longitude":-92.3411
+}
+latlong["0699B629"]={
+    "latitude":48.8514,
+    "longitude":2.34056
+}
+latlong["4C9AA917"]={
+    "latitude":39.141,
+    "longitude":-84.5021
+}
+latlong["0969FB3B"]={
+    "latitude":40.8415,
+    "longitude":-73.9411
+}
+latlong["046F75BC"]={
+    "latitude":42.3066,
+    "longitude":-83.0659
+}
+latlong["066BB112"]={
+    "latitude":30.0758,
+    "longitude":31.2875
+}
+latlong["0A2B3EBD"]={
+    "latitude":49.0314,
+    "longitude":-122.285
+}
+latlong["0585314E"]={
+    "latitude":35.6989,
+    "longitude":139.518
+}
+latlong["06CBC4BA"]={
+    "latitude":-33.8848,
+    "longitude":151.191
+}
+latlong["047E5F6B"]={
+    "latitude":39.9689,
+    "longitude":116.415
+}
+latlong["09998A84"]={
+    "latitude":43.1365,
+    "longitude":-70.9305
+}
+latlong["025C0B1D"]={
+    "latitude":51.6079,
+    "longitude":-3.97879
+}
+latlong["099D30C9"]={
+    "latitude":33.9569,
+    "longitude":131.188
+}
+latlong["4F799D2F"]={
+    "latitude":42.0658,
+    "longitude":-88.0516
+}
+latlong["01370496"]={
+    "latitude":37.9548,
+    "longitude":-91.7737
+}
+latlong["0413376A"]={
+    "latitude":19.5072,
+    "longitude":-99.1288
+}
+latlong["06904DB0"]={
+    "latitude":5.02947,
+    "longitude":-75.4575
+}
+latlong["08EF72DE"]={
+    "latitude":41.1484,
+    "longitude":-81.3488
+}
+latlong["0AC9113B"]={
+    "latitude":41.8346,
+    "longitude":-87.6289
+}
+latlong["01474A2D"]={
+    "latitude":49.1986,
+    "longitude":16.6049
+}
+latlong["08C05CBF"]={
+    "latitude":37.46,
+    "longitude":126.95
+}
+latlong["0AE14045"]={
+    "latitude":41.1467,
+    "longitude":-8.61556
+}
+latlong["07C29C39"]={
+    "latitude":38.3845,
+    "longitude":-0.51224
+}
+latlong["063814A2"]={
+    "latitude":38.0653,
+    "longitude":128.174
+}
+latlong["0A183231"]={
+    "latitude":39.2979,
+    "longitude":-76.5908
+}
+latlong["4DDC5EF5"]={
+    "latitude":35.9333,
+    "longitude":139.817
+}
+latlong["0874F3C6"]={
+    "latitude":43.0556,
+    "longitude":141.332
+}
+latlong["076D453A"]={
+    "latitude":39.6359,
+    "longitude":2.64702
+}
+latlong["863CDE10"]={
+    "latitude":35.3553,
+    "longitude":-77.714
+}
+latlong["36F47726"]={
+    "latitude":39.7459,
+    "longitude":-105.003
+}
+latlong["00493E54"]={
+    "latitude":29.5708,
+    "longitude":103.458
+}
+latlong["4F079EB1"]={
+    "latitude":42.3748,
+    "longitude":-71.1048
+}
+latlong["09F18F79"]={
+    "latitude":61.4949,
+    "longitude":23.7801
+}
+latlong["04752F4F"]={
+    "latitude":48.1533,
+    "longitude":17.0658
+}
+latlong["009962AC"]={
+    "latitude":32.282,
+    "longitude":-106.755
+}
+latlong["097C1F5E"]={
+    "latitude":45.5073,
+    "longitude":-73.6144
+}
+latlong["056A9763"]={
+    "latitude":41.6631,
+    "longitude":-83.6102
+}
+latlong["00F87E5D"]={
+    "latitude":37.2739,
+    "longitude":-76.7131
+}
+latlong["0BFFF799"]={
+    "latitude":44.8334,
+    "longitude":11.6265
+}
+latlong["05776AD7"]={
+    "latitude":49.2549,
+    "longitude":7.03851
+}
+latlong["04FB01B8"]={
+    "latitude":38.7339,
+    "longitude":-9.15999
+}
+latlong["07634566"]={
+    "latitude":42.0936,
+    "longitude":-75.9676
+}
+latlong["01E50000"]={
+    "latitude":33.5503,
+    "longitude":130.366
+}
+latlong["07DB88BD"]={
+    "latitude":28.4872,
+    "longitude":77.493
+}
+latlong["04C795D5"]={
+    "latitude":35.5801,
+    "longitude":139.657
+}
+latlong["07BA0FD8"]={
+    "latitude":35.571,
+    "longitude":139.725
+}
+latlong["363B46B5"]={
+    "latitude":51.514,
+    "longitude":-0.11645
+}
+latlong["0961A5E3"]={
+    "latitude":31.5512,
+    "longitude":-97.1154
+}
+latlong["01C3C23B"]={
+    "latitude":32.3287,
+    "longitude":-90.1756
+}
+latlong["08BBAB5D"]={
+    "latitude":40.5882,
+    "longitude":140.473
+}
+latlong["041B3329"]={
+    "latitude":28.5458,
+    "longitude":77.1967
+}
+latlong["03B6E7B2"]={
+    "latitude":51.4639,
+    "longitude":7.00611
+}
+latlong["36CF8DE2"]={
+    "latitude":29.7136,
+    "longitude":-95.3977
+}
+latlong["06A6DFA2"]={
+    "latitude":25.46,
+    "longitude":113.02
+}
+latlong["08053B2B"]={
+    "latitude":43.5619,
+    "longitude":1.46833
+}
+latlong["08569CF9"]={
+    "latitude":53.7909,
+    "longitude":-1.76341
+}
+latlong["09889E70"]={
+    "latitude":34.4102,
+    "longitude":35.8464
+}
+latlong["08853520"]={
+    "latitude":51.3443,
+    "longitude":-0.18921
+}
+latlong["03C01CBC"]={
+    "latitude":-8.90585,
+    "longitude":-36.4951
+}
+latlong["0BF148CF"]={
+    "latitude":19.3617,
+    "longitude":-99.0744
+}
+latlong["0A251809"]={
+    "latitude":52.1763,
+    "longitude":0.143
+}
+latlong["028F2298"]={
+    "latitude":53.3848,
+    "longitude":-6.26145
+}
+latlong["05B5B032"]={
+    "latitude":52.1413,
+    "longitude":11.6419
+}
+latlong["016A20AF"]={
+    "latitude":45.6651,
+    "longitude":-111.049
+}
+latlong["00C86936"]={
+    "latitude":43.4712,
+    "longitude":-3.80008
+}
+latlong["4F6324E1"]={
+    "latitude":34.4947,
+    "longitude":-82.713
+}
+latlong["028C8F43"]={
+    "latitude":36.6992,
+    "longitude":137.188
+}
+latlong["02D9F3BD"]={
+    "latitude":38.6365,
+    "longitude":-90.233
+}
+latlong["0B002509"]={
+    "latitude":51.4255,
+    "longitude":-0.56789
+}
+latlong["03569BD4"]={
+    "latitude":53.0031,
+    "longitude":-2.27107
+}
+latlong["0B153984"]={
+    "latitude":25.0971,
+    "longitude":121.542
+}
+latlong["02007869"]={
+    "latitude":13.0122,
+    "longitude":80.2403
+}
+latlong["056FA77A"]={
+    "latitude":32.762,
+    "longitude":35.0183
+}
+latlong["04C3CCF3"]={
+    "latitude":45.5378,
+    "longitude":10.2177
+}
+latlong["04E79119"]={
+    "latitude":52.0673,
+    "longitude":-0.63461
+}
+latlong["04D98949"]={
+    "latitude":36.8903,
+    "longitude":-76.305
+}
+latlong["070A58AF"]={
+    "latitude":40.7428,
+    "longitude":-74.1762
+}
+latlong["01C641C3"]={
+    "latitude":47.4833,
+    "longitude":19.0634
+}
+latlong["00C3D61B"]={
+    "latitude":41.3113,
+    "longitude":-105.582
+}
+latlong["02EA5807"]={
+    "latitude":41.1072,
+    "longitude":29.0209
+}
+latlong["04EE4600"]={
+    "latitude":3.0668,
+    "longitude":101.508
+}
+latlong["025B3E2B"]={
+    "latitude":48.3116,
+    "longitude":16.259
+}
+latlong["36F83BAF"]={
+    "latitude":42.9845,
+    "longitude":11.9234
+}
+latlong["4F94386B"]={
+    "latitude":59.3524,
+    "longitude":18.032
+}
+latlong["4E9F4E92"]={
+    "latitude":-31.9617,
+    "longitude":115.871
+}
+latlong["006952C5"]={
+    "latitude":42.3659,
+    "longitude":-71.255
+}
+latlong["093E8B32"]={
+    "latitude":46.7255,
+    "longitude":-117.01
+}
+latlong["4FE184F4"]={
+    "latitude":40.8414,
+    "longitude":-73.9426
+}
+latlong["07E9603F"]={
+    "latitude":47.5535,
+    "longitude":21.6215
+}
+latlong["0C2535A1"]={
+    "latitude":39.727,
+    "longitude":140.133
+}
+latlong["04866877"]={
+    "latitude":34.7322,
+    "longitude":135.732
+}
+latlong["33F927B9"]={
+    "latitude":42.3953,
+    "longitude":-71.1494
+}
+latlong["08377B3D"]={
+    "latitude":38.923,
+    "longitude":-77.0212
+}
+latlong["0877C406"]={
+    "latitude":22.7141,
+    "longitude":120.336
+}
+latlong["05E11067"]={
+    "latitude":33.9,
+    "longitude":35.4823
+}
+latlong["0DEEAC00"]={
+    "latitude":4.62921,
+    "longitude":-74.063
+}
+latlong["088C134C"]={
+    "latitude":47.2622,
+    "longitude":11.3856
+}
+latlong["0231D08D"]={
+    "latitude":47.6578,
+    "longitude":-122.196
+}
+latlong["041C0D9D"]={
+    "latitude":48.5803,
+    "longitude":7.76444
+}
+latlong["01838F76"]={
+    "latitude":13.7945,
+    "longitude":100.326
+}
+latlong["0C56C959"]={
+    "latitude":33.8942,
+    "longitude":130.839
+}
+latlong["0274013C"]={
+    "latitude":-41.2953,
+    "longitude":174.775
+}
+latlong["036AC4C4"]={
+    "latitude":46.8904,
+    "longitude":-96.7983
+}
+latlong["08786941"]={
+    "latitude":32.0578,
+    "longitude":118.789
+}
+latlong["034AE6A8"]={
+    "latitude":35.8342,
+    "longitude":128.758
+}
+latlong["03DEB25F"]={
+    "latitude":34.5042,
+    "longitude":135.794
+}
+latlong["0661DECB"]={
+    "latitude":42.2727,
+    "longitude":-71.8079
+}
+latlong["061C10C2"]={
+    "latitude":41.931,
+    "longitude":-88.7622
+}
+latlong["062BC2E4"]={
+    "latitude":42.3422,
+    "longitude":-71.1936
+}
+latlong["0ABDAF90"]={
+    "latitude":35.4184,
+    "longitude":139.609
+}
+latlong["4E352951"]={
+    "latitude":17.4424,
+    "longitude":78.4392
+}
+latlong["03FE7DA4"]={
+    "latitude":36.8544,
+    "longitude":51.409
+}
+latlong["4D1AF4AA"]={
+    "latitude":35.0885,
+    "longitude":137.165
+}
+latlong["05A45DE2"]={
+    "latitude":35.1195,
+    "longitude":-89.9389
+}
+latlong["0403A9D4"]={
+    "latitude":51.014,
+    "longitude":7
+}
+latlong["15FC0F56"]={
+    "latitude":34.365,
+    "longitude":-89.5324
+}
+latlong["0A2233D7"]={
+    "latitude":32.7201,
+    "longitude":51.5322
+}
+latlong["00B88707"]={
+    "latitude":56.1487,
+    "longitude":-3.92867
+}
+latlong["031119AF"]={
+    "latitude":30.758,
+    "longitude":76.7682
+}
+latlong["4D634C00"]={
+    "latitude":17.3209,
+    "longitude":78.6497
+}
+latlong["00A436F4"]={
+    "latitude":34.7689,
+    "longitude":137.743
+}
+latlong["0A58D126"]={
+    "latitude":47.6568,
+    "longitude":-122.312
+}
+latlong["0B4EC93C"]={
+    "latitude":47.6899,
+    "longitude":9.18654
+}
+latlong["01E76FE2"]={
+    "latitude":9.999,
+    "longitude":-84.1115
+}
+latlong["07790C4E"]={
+    "latitude":51.6827,
+    "longitude":-3.94072
+}
+latlong["000A77C3"]={
+    "latitude":50.0647,
+    "longitude":19.9239
+}
+latlong["00B67360"]={
+    "latitude":47.119,
+    "longitude":-88.5514
+}
+latlong["04F77DC2"]={
+    "latitude":25.7211,
+    "longitude":-80.2799
+}
+latlong["0B40411E"]={
+    "latitude":53.2849,
+    "longitude":-9.06491
+}
+latlong["0BA4B286"]={
+    "latitude":40.7433,
+    "longitude":-74.1913
+}
+latlong["09989592"]={
+    "latitude":55.3692,
+    "longitude":10.4288
+}
+latlong["001D6362"]={
+    "latitude":41.9983,
+    "longitude":-87.6573
+}
+latlong["0B2B81D1"]={
+    "latitude":23.1408,
+    "longitude":113.346
+}
+latlong["4EB60D70"]={
+    "latitude":47.6282,
+    "longitude":-122.374
+}
+latlong["08D3D0B6"]={
+    "latitude":23.5587,
+    "longitude":120.472
+}
+latlong["07FDF9F9"]={
+    "latitude":26.31,
+    "longitude":50.1486
+}
+latlong["03CD1843"]={
+    "latitude":26.1194,
+    "longitude":-80.1413
+}
