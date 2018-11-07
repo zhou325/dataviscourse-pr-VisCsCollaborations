@@ -1,15 +1,15 @@
 console.log("i am here")
 
-d3.json('dataProcessing/data/data.json').then(articleData => {
+d3.json('dataProcessing/data/confArticles.json').then(articleData => {
     console.log(articleData);
-    // for(let i=0; i<articleData.length;i++){
-    //     if(Object.keys(papers).indexOf(articleData[i].title)){
-    //         papers[articleData[i].title] = [articleData[i].name];
-    //     } else {
-    //         papers[articleData[i].title].push(articleData[i].name);
-    //     }
-    // }
-    // console.log(papers);
+});
+
+d3.json('dataProcessing/data/collaborations.json').then(collData => {
+    console.log(collData);
+});
+
+d3.json('dataProcessing/data/collaborationsDetails.json').then(collDeData => {
+    console.log(collDeData);
 });
 
 
