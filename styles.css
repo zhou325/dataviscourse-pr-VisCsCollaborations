@@ -1,0 +1,10 @@
+.sub_view {
+    display: inline-block;
+    width: 40%;
+    position: relative;
+}
+
+.view {
+    display: inline-block;
+    width: 100%;
+}
