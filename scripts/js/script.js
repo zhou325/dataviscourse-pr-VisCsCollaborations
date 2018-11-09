@@ -1,6 +1,3 @@
-console.log("i am here")
-
-
 worldMapLoadData().then(data => {
     const worldMap = new Map(data.world,data.world_aff);
     worldMap.drawMap();
@@ -21,9 +18,9 @@ async function worldMapLoadData() {
 
 // worldMap();
 
-d3.json('data/confArticles.json').then(articleData => {
-    console.log(articleData);
-});
+// d3.json('data/confArticles.json').then(articleData => {
+//     console.log(articleData);
+// });
 
 d3.json('data/collaborations.json').then(collData => {
     console.log(collData);
@@ -31,6 +28,9 @@ d3.json('data/collaborations.json').then(collData => {
 
 d3.json('data/collaborationsDetails.json').then(collDeData => {
     console.log(collDeData);
+    const infoBox = new InfoBox(collDeData);
+    infoBox.drawInfoBox();
+    infoBox.updateInfoBox("Carnegie Mellon University");
 });
 
 

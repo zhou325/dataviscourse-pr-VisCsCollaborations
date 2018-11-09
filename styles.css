@@ -413,3 +413,31 @@ i.europe {
     font-size: 80px;
     opacity: .4;
 }
+
+.sub_view {
+    display: inline-block;
+    width: 40%;
+    position: relative;
+}
+
+.view {
+    display: inline-block;
+    width: 100%;
+}
+
+.name {
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: bold;
+}
+
+.boxframe {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5px;
+}
+
+.textinfo {
+    font-size: 15px;
+    padding-bottom: 15px;
+}
