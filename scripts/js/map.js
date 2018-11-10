@@ -22,14 +22,14 @@ class Map {
         let map_chart = d3.select("#worldMap");
         map_chart.append('svg');
         
-        let width = 2000;
-        let height = 2000;
+        let width = 700;
+        let height = 700;
         let svg = map_chart.select('svg')
             .attr('id','worldmap-svg')   
             .attr('height',height)
             .attr('width',width);
 
-        let projection = d3.geoWinkel3().scale(300).translate([width / 2, height / 2+100]);
+        let projection = d3.geoWinkel3().scale(130).translate([width / 2, height / 2+100]);
         
         let path = d3.geoPath()
             .projection(projection);
