@@ -24,6 +24,8 @@ async function worldMapLoadData() {
 
 d3.json('data/collaborations.json').then(collData => {
     console.log(collData);
+    let chart = new connChar(collData);
+    //chart.create_chart();
 });
 
 d3.json('data/collaborationsDetails.json').then(collDeData => {
@@ -31,6 +33,8 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
     const infoBox = new InfoBox(collDeData);
     infoBox.drawInfoBox();
     infoBox.updateInfoBox("Carnegie Mellon University");
+    let table = new comparsion(collDeData);
+    table.create_comparsion();
 });
 
 

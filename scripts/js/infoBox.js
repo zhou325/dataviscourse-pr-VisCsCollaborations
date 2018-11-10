@@ -55,10 +55,10 @@ class InfoBox{
                 totalPub += infoData[Object.keys(infoData)[i]].total;
             }
 
-            let pieData = [{"label":"AI", "value":378}, 
+            let pieData = [{"label":"Theory", "value":378}, 
             {"label":"System", "value":509}, 
-            {"label":"Theory", "value":764},
-            {"label":"Interdisciplinary", "value":692}];
+            {"label":"Interdisciplinary", "value":764},
+            {"label":"AI", "value":692}];
 
             let pie = d3.pie()
                 .sort(null)
