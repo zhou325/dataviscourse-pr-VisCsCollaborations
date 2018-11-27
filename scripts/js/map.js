@@ -30,6 +30,7 @@ class Map {
         this.group = this.svg.append("g")
 
         this.displaySize = this.width*0.8;
+        this.ifZoomedIn = false;
 
     }
 
@@ -42,7 +43,7 @@ class Map {
             if(['USA','CAN','MEX','DOM','GTM','CUB','HND','HTI','NIC','CRI','SLV','BLZ','JAM','PAN','BHS'].indexOf(countries[i].id)!=-1){
                 countries[i].region = "northamericas"
             }
-            else if (['AUS'].indexOf(countries[i].id)!=-1){
+            else if (['AUS','NZL'].indexOf(countries[i].id)!=-1){
                 countries[i].region = "oceania"
             }
             else if(this.nameArray.indexOf(countries[i].id)!=-1){
@@ -69,18 +70,50 @@ class Map {
             .attr('id',d=>d.id)
             .attr('class',d=>d.region)
             .attr("transform","scale(1.5)")
-            .style("opacity","0.8")
+            .style("opacity","0.6")
             // .on('click',d=>this.updateCountry(d.id));
             .on('click', (d) => {
                 console.log(d)
-                let center = path.centroid(d);
-                console.log(center)
-                if(['USA','CAN'].indexOf(d.id)!=-1){
+                if(this.ifZoomedIn === false){
+                    // let center = path.centroid(d);
                     this.mapgroup.selectAll('path').classed('clicked', false);
                     d3.select(d3.event.target).classed('clicked', true);
+                    if(d.region === 'northamericas'){
+                        this.group
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'translate(-650,-300),scale(3.8)');
+                        this.ifZoomedIn = true;
+                    }
+                    if(d.region === 'americas'){
+                        this.group
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'translate(-1200,-1200),scale(3.5)');
+                        this.ifZoomedIn = true;
+                    }
+                    if(d.region === 'europe'){
+                        this.group
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'translate(-2000,-200),scale(3.5)');
+                        this.ifZoomedIn = true;
+                    }
+                    if(d.region === 'asia'){
+                        this.group
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'translate(-2000,-350),scale(2.5)');
+                        this.ifZoomedIn = true;
+                    }
+                    if(d.region === 'oceania'){
+                        this.group
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'translate(-3000,-1100),scale(3)');
+                        this.ifZoomedIn = true;
+                    }
+                }
+                else{
                     this.group
-                        .transition(d3.transition().duration(1000))
-                        .attr('transform', 'translate(-650,-300),scale(3.8)')
+                            .transition(d3.transition().duration(1000))
+                            .attr('transform', 'scale(1)')
+                    this.ifZoomedIn = false;
                 }
             });
         // let graticule = d3.geoGraticule();
