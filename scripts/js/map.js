@@ -7,10 +7,14 @@ class Map {
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(world,world_aff) {
-        // ******* TODO: PART I *******
+    constructor(world,world_aff,population) {
         this.world = world;
         this.world_aff = world_aff;
+        this.population = population;
+        this.nameArray = this.population.map(d => d.geo.toUpperCase());
+        this.regionArray = this.population.map(d=>d.region);
+
+        console.log(this.nameArray)
 
         this.width = 1400;
         this.height = 800;
@@ -30,7 +34,25 @@ class Map {
     }
 
     drawMap(){            
-        let geojson = topojson.feature(this.world, this.world.objects.countries);        
+        let geojson = topojson.feature(this.world, this.world.objects.countries); 
+        
+        let countries = geojson.features;
+
+        for(let i=0;i<countries.length;i++){
+            if(['USA','CAN','MEX','DOM','GTM','CUB','HND','HTI','NIC','CRI','SLV','BLZ','JAM','PAN','BHS'].indexOf(countries[i].id)!=-1){
+                countries[i].region = "northamericas"
+            }
+            else if (['AUS'].indexOf(countries[i].id)!=-1){
+                countries[i].region = "oceania"
+            }
+            else if(this.nameArray.indexOf(countries[i].id)!=-1){
+                countries[i].region = this.regionArray[this.nameArray.indexOf(countries[i].id)];
+            } else {
+                countries[i].region = "outside"
+            }
+        } 
+
+        console.log(countries)
         
         // let projection =  d3.geoWinkel3().scale(130).translate([width / 2, height / 2+100]);
         let projection = d3.geoPatterson()
@@ -40,13 +62,14 @@ class Map {
         this.mapgroup = this.group.append("g")
             .attr("id","mapgroup")
         this.mapgroup.selectAll("path")
-            .data(geojson.features)
+            .data(countries)
             .enter()
             .append("path")
             .attr("d", path)
             .attr('id',d=>d.id)
-            .attr('fill','#aaaaaa')
+            .attr('class',d=>d.region)
             .attr("transform","scale(1.5)")
+            .style("opacity","0.8")
             // .on('click',d=>this.updateCountry(d.id));
             .on('click', (d) => {
                 console.log(d)
