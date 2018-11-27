@@ -154,13 +154,13 @@ path.hidden {
     margin: auto;
 }
 
-.view {
+/*.view {
     width: 750px;
     /*margin: auto;*/
-    padding: 5px;
+/*    padding: 5px;
     display: inline-block;
     float: left;
-}
+}*/
 
 .innerWrapper {
     width: 790px;
@@ -499,12 +499,12 @@ tbody tr .game {
 
 @font-face {
     font-family: 'font1';
-    src: url('assets/font1.ttf');
+    src: url('../assets/font1.ttf');
 }
 
 @font-face {
     font-family:'font2';
-    src: url('assets/font2.ttf');
+    src: url('../assets/font2.ttf');
 }
 
 h1 {

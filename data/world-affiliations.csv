@@ -4,7 +4,7 @@ Universidade Federal De Santa Catarina,-27.598,-48.5162
 Capital Medical University,47.0423,-122.951
 Queen S University Belfast,54.5844,-5.93438
 Cancer Research Institute,51.3443,-0.18921
-University of North Carolina At Chapel Hill,35.9087,-79.0301
+University of North Carolina,35.9087,-79.0301
 New York University School of Medicine,40.7481,-73.9704
 Czech Technical University In Prague,50.1022,14.3885
 Wayne State University,42.3568,-83.0649
@@ -12,13 +12,13 @@ Chonbuk National University,36.629,127.457
 Rockefeller University,40.763,-73.9565
 University of California,37.8022,-122.271
 Stmicroelectronics,28.4872,77.493
-Delft University of Technology,52.0055,4.36933
+TU Delft,52.0055,4.36933
 Virginia Tech,37.2279,-80.4223
 Imec,50.8653,4.67932
 University of Los andes,3.37164,-76.5296
 University of Vienna,48.2039,16.3167
 University of Sydney,-33.8848,151.191
-New Jersey Institute of Technology,40.7428,-74.1762
+NJIT,40.7428,-74.1762
 Gunadarma University,7.37678,80.5005
 King Fahd University of Petroleum and Minerals,26.31,50.1486
 University of Central Florida,28.5988,-81.2025
@@ -37,7 +37,7 @@ Leipzig University,51.3386,12.3798
 James Cook University,-19.326,146.757
 Radboud University Nijmegen,51.8231,5.8625
 University of New Mexico,35.0834,-106.62
-University of Nebraska Lincoln,40.8175,-96.7014
+University of Nebraska,40.8175,-96.7014
 Mahidol University,13.7945,100.326
 University of Louisville,38.2135,-85.7573
 University of Sao Paulo,-23.5607,-46.7218
@@ -61,7 +61,7 @@ Shanghai Jiao Tong University,31.2052,121.426
 Humboldt University of Berlin,52.5174,13.3937
 University of Geneva,46.1944,6.1409
 Rutgers University,40.5017,-74.4481
-Ben Gurion University of The Negev,31.263,34.8022
+Ben-Gurion University of the Negev,31.263,34.8022
 Kanazawa University,36.5625,136.656
 Genetics Institute Inc,42.3953,-71.1494
 Wellcome Trust,39.735,-77.7264
@@ -77,13 +77,13 @@ University of Trento,46.0694,11.1211
 Nankai University,39.1011,117.165
 Florida State University,30.4407,-84.2909
 University of South Florida,28.0611,-82.4131
-Dresden University of Technology,51.0271,13.7265
+TU Dresden,51.0271,13.7265
 Newcastle University,54.9796,-1.6144
 University of Bath,51.3768,-2.32504
 Sungkyunkwan University,37.5872,126.994
 Jadavpur University,22.4959,88.3712
 Tampere University of Technology,61.4498,23.8591
-Ludwig Maximilian University of Munich,48.1504,11.5806
+TU Munich,48.1504,11.5806
 Harvard Medical School,42.3355,-71.1045
 Beijing University of Chemical Technology,39.9689,116.415
 University of Bristol,51.4597,-2.60523
@@ -99,7 +99,7 @@ Istanbul Technical University,41.1072,29.0209
 Chung Ang University,37.5089,126.964
 The Catholic University of America,38.9327,-76.9975
 University of Tasmania,-42.9041,147.325
-University At Buffalo,43,-78.79
+University at Buffalo,43,-78.79
 Saint Louis University,38.6365,-90.233
 Sun Yat Sen University,22.6199,120.266
 Jagiellonian University,50.0608,19.9326
@@ -117,10 +117,10 @@ University of Zagreb,45.8102,15.9698
 Gifu University,35.4641,136.739
 Paul Sabatier University,43.5619,1.46833
 University of Glasgow,55.8822,-4.27631
-University of Science and Technology of China,31.843,117.27
+USTC,31.843,117.27
 Boston College,42.3422,-71.1936
 University of Ferrara,44.8334,11.6265
-Universidade Federal De Minas Gerais,-19.9233,-43.9291
+UFMG,-19.9233,-43.9291
 Durham University,54.7752,-1.57025
 Amgen,47.6282,-122.374
 Northwestern Polytechnical University,37.4787,-121.925
@@ -150,7 +150,7 @@ Astrazeneca,51.0098,2.34489
 University of Liege,50.6407,5.57539
 Kurume University,33.1831,130.325
 Dublin City University,53.3848,-6.26145
-University of Texas At Austin,30.2787,-97.7311
+University of Texas at Austin,30.2787,-97.7311
 National Cancer Institute,30.0236,31.2308
 Universiti Teknologi Mara,3.0668,101.508
 Sapienza University of Rome,41.9015,12.5123
@@ -159,8 +159,8 @@ Institute of Chemical Technology,19.0241,72.8571
 University of Kentucky,38.039,-84.5067
 University of Palermo,-34.5979,-58.4161
 University of Pennsylvania,39.953,-75.194
-University of California Santa Cruz,36.9775,-122.054
-Federal University of Pernambuco,51.7611,-1.25333
+University of California - Santa Cruz,36.9775,-122.054
+UFPE,51.7611,-1.25333
 Simon Fraser University,49.2774,-122.92
 Karolinska Institutet,59.3479,18.0293
 Novartis,47.5535,7.95903
@@ -170,14 +170,14 @@ Yokohama National University,35.4184,139.609
 University of Bayreuth,49.9268,11.5866
 Temple University,39.9803,-75.1575
 University of Waterloo,43.4689,-80.5395
-University of Texas At Arlington,32.7289,-97.1152
+University of Texas at Arlington,32.7289,-97.1152
 Hebrew University of Jerusalem,31.7758,35.2
 Isfahan University of Technology,32.7201,51.5322
 University of New Hampshire,43.1365,-70.9305
 University of Munster,51.964,7.613
 University of Medicine and Dentistry of New Jersey,40.7433,-74.1913
 Case Western Reserve University,41.4999,-81.6032
-University of Texas At Dallas,32.9902,-96.748
+University of Texas at Dallas,32.9902,-96.748
 Beihang University,39.98,116.341
 University of Ljubljana,46.0497,14.5042
 Dartmouth College,43.7029,-72.2894
@@ -186,7 +186,7 @@ Southeast University,32.0578,118.789
 Keele University,53.0031,-2.27107
 Kaist,36.372,127.363
 Yonsei University,37.562,126.94
-Eindhoven University of Technology,51.4478,5.48522
+TU Eindhoven,51.4478,5.48522
 Catholic University of Korea,37.4853,126.812
 University of Cagliari,39.2178,9.11461
 Niigata University,37.8677,138.943
@@ -207,7 +207,7 @@ Juntendo University,35.7022,139.761
 Umea University,63.8221,20.3054
 Fudan University,31.2989,121.499
 University of Leeds,53.8079,-1.55212
-Pohang University of Science and Technology,36.0109,129.323
+POSTECH,36.0109,129.323
 Sao Paulo State University,-23.5607,-46.7218
 Motorola,42.0658,-88.0516
 University of Toyama,36.6992,137.188
@@ -224,7 +224,7 @@ Free University of Berlin,52.4481,13.286
 Pfizer,48.6596,14.3437
 University of Valencia,39.4795,-0.364728
 Fukuoka University,33.5503,130.366
-University of California San Diego,32.8782,-117.237
+University of California - San Diego,32.8782,-117.237
 Universidade Federal Rural De Pernambuco,-8.90585,-36.4951
 Ankara University,39.9378,32.8262
 Beijing Jiaotong University,40.0006,116.326
@@ -239,12 +239,12 @@ Paris Descartes University,48.8514,2.34056
 University of Alcala,40.483,-3.36298
 South China Normal University,23.1408,113.346
 Indiana University Bloomington,39.1664,-86.5269
-University of Maryland Baltimore,39.2882,-76.6247
-University of California Irvine,33.6493,-117.842
+Univ. of Maryland - Baltimore County,39.2882,-76.6247
+University of California - Irvine,33.6493,-117.842
 Siemens,31.8058,34.7582
 University of Western Australia,-31.9771,115.814
 Langley Research Center,-31.9617,115.871
-Technische Universitat Darmstadt,49.875,8.65652
+TU Darmstadt,49.875,8.65652
 Universiti Teknologi Malaysia,1.57127,103.619
 University of Debrecen,47.5535,21.6215
 Vanderbilt University,36.139,-86.805
@@ -255,7 +255,7 @@ Gazi University,39.9422,32.8243
 Bristol Myers Squibb,40.3455,-74.771
 Martin Luther University of Halle Wittenberg,51.4864,11.9689
 University of Gothenburg,57.6986,11.9708
-Eth Zurich,47.3763,8.54805
+ETH Zurich,47.3763,8.54805
 Yeungnam University,35.8342,128.758
 University of The Witwatersrand,-26.1872,28.0279
 Los Alamos National Laboratory,35.8334,-106.251
@@ -275,16 +275,16 @@ University At Albany Suny,42.685,-73.8239
 Sapporo Medical University,43.0556,141.332
 Universiti Sains Malaysia,5.36296,100.31
 Comenius University In Bratislava,48.1533,17.0658
-Universite Libre De Bruxelles,50.8148,4.37999
+Université libre de Bruxelles,50.8148,4.37999
 Oak Ridge National Laboratory,35.9333,-84.3167
-National Technical University of Athens,37.9785,23.7732
+University of Athens,37.9785,23.7732
 University of Sussex,50.8646,-0.08103
 Alcatel Lucent,28.4994,77.0726
 Baylor University,31.5512,-97.1154
 University of Tubingen,48.5244,9.05996
 National University of San Marcos,-12.0532,-77.0812
 Michigan State University,42.7295,-84.4804
-Universite De Montreal,45.5073,-73.6144
+University of Montreal,45.5073,-73.6144
 Toshiba,10.0535,76.3344
 National Institute For Materials Science,36.0739,140.121
 University of Mainz,49.9887,8.23106
@@ -299,14 +299,14 @@ Lawrence Berkeley National Laboratory,37.8776,-122.252
 Institute of Mathematics,18.5649,73.8307
 Dana Farber Cancer Institute,42.338,-71.1072
 Aix Marseille University,43.5163,5.46677
-College of William Mary,37.2739,-76.7131
+College of William and Mary,37.2739,-76.7131
 University of Warwick,52.3837,-1.56259
 University of Nottingham,52.9341,-1.20404
 La Trobe University,-37.7263,145.051
 University of Warsaw,52.2397,21.017
 Rio De Janeiro State University,-22.9101,-43.2373
 University of Buenos Aires,-34.5997,-58.3731
-Queen S University,44.2278,-76.4956
+Queen’s University,44.2278,-76.4956
 Oregon State University,44.5645,-123.275
 Rmit School of Health Sciences,51.6827,-3.94072
 University of Manchester,53.4707,-2.23557
@@ -353,7 +353,7 @@ Islamic Azad University,35.7908,51.3125
 Virginia Commonwealth University,37.5435,-77.4503
 University of Tampere,61.4949,23.7801
 Cairo University,30.028,31.2091
-Ruhr University Bochum,51.4461,7.25879
+Ruhr-University Bochum,51.4461,7.25879
 Dalhousie University,44.6345,-63.594
 Federal University of Bahia,-13.0047,-38.5088
 University of Antwerp,51.1773,4.41632
@@ -363,7 +363,7 @@ National University of La Plata,-34.9133,-57.9517
 Academy of Sciences of The Czech Republic,50.0814,14.4142
 Showa University,-69,39.58
 American University of Beirut,33.9,35.4823
-Indian Institute of Technology Bombay,19.1376,72.9099
+IIT Bombay,19.1376,72.9099
 Grupo Mexico,23.9091,-102.633
 University of Dundee,56.4572,-2.98028
 Pierre and Marie Curie University,48.8472,2.35639
@@ -372,22 +372,22 @@ University of Jyvaskyla,62.2363,25.7327
 Laboratory of Molecular Biology,52.1763,0.143
 Drexel University,39.9538,-75.1871
 Hiroshima University,34.3822,132.458
-Indian Institute of Technology Delhi,28.5458,77.1967
+IIT Delhi,28.5458,77.1967
 Catholic University of The Sacred Heart,45.4631,9.17667
 China University of Geosciences,30.5205,114.396
-University of Copenhagen,55.6887,12.5811
+IT University of Copenhagen,55.6887,12.5811
 University of Giessen,50.5808,8.67676
 Nagoya Institute of Technology,35.1564,136.925
-University of Wisconsin Madison,43.0758,-89.3976
-Indian Institute of Technology Kanpur,26.5114,80.2349
+University of Wisconsin - Madison,43.0758,-89.3976
+IIT Kanpur,26.5114,80.2349
 University of Birmingham,52.4488,-1.93192
 King Saud University,24.7242,46.6247
 Korea University,37.588,127.036
-University of New South Wales,-33.917,151.226
+UNSW,-33.917,151.226
 Chongqing University,29.5509,106.519
 University of Tsukuba,36.1114,140.104
 San Diego State University,32.7721,-117.072
-University of Western Ontario,43.0084,-81.2635
+Western University,43.0084,-81.2635
 University of Liverpool,53.4031,-2.96319
 Georgia State University,33.7532,-84.3849
 York University,43.7717,-79.4986
@@ -402,14 +402,14 @@ University of Belgrade,44.8184,20.4574
 China Agricultural University,40.0025,116.353
 Brigham Young University,40.2524,-111.65
 University of Gottingen,51.5424,9.93387
-Technion Israel Institute of Technology,32.7775,35.0217
+Technion,32.7775,35.0217
 Toho University,35.571,139.725
 Cern,46.2333,6.05
 Columbia University,40.808,-73.9637
 University of Windsor,42.3066,-83.0659
 Chalmers University of Technology,57.6895,11.9732
 Vienna University of Technology,48.199,16.37
-Federal University of Rio Grande Do Norte,-5.84394,-35.1985
+FURG Federal University of Rio Grande,-5.84394,-35.1985
 Industrial Technology Research Institute,22.7141,120.336
 Utrecht University,52.0858,5.13084
 Chungbuk National University,36.629,127.457
@@ -422,8 +422,8 @@ Universiti Putra Malaysia,3.00082,101.722
 University of Brasilia,-15.7633,-47.8666
 University Medical Center Groningen,53.2209,6.57709
 Mount Sinai Hospital,43.6574,-79.3903
-Mcmaster University,43.2579,-79.9195
-University of Illinois At Chicago,41.8743,-87.6569
+McMaster University,43.2579,-79.9195
+University of Illinois at Chicago,41.8743,-87.6569
 Goethe University Frankfurt,50.1189,8.65547
 University of Oregon,44.0455,-123.072
 Soochow University,25.0971,121.542
@@ -440,7 +440,7 @@ Tel Aviv University,32.1144,34.8035
 Princeton University,40.3471,-74.6576
 University of Konstanz,47.6899,9.18654
 University of Auckland,-36.8526,174.77
-University of Texas Health Science Center At San Antonio,29.5043,-98.5768
+University of Texas at San Antonio,29.5043,-98.5768
 Chungnam National University,36.3689,127.346
 Merck Co,38.9985,-105.548
 University of Wales,53.2249,-4.13226
@@ -458,7 +458,7 @@ Oswaldo Cruz Foundation,-23.5689,-46.6439
 University of Exeter,50.7346,-3.52884
 Nippon Medical School,35.5801,139.657
 University of Stuttgart,48.7818,9.17581
-University of California Berkeley,37.8694,-122.258
+University of California - Berkeley,37.8694,-122.258
 University of Wurzburg,49.7881,9.93528
 University of Zurich,47.3748,8.54858
 East China University of Science and Technology,25.0332,121.611
@@ -466,7 +466,7 @@ Xiamen University,24.4383,118.093
 London School of Economics and Political Science,51.514,-0.11645
 University of Southern California,34.023,-118.291
 Johns Hopkins University,39.3292,-76.6179
-University of California Riverside,33.9756,-117.331
+University of California - Riverside,33.9756,-117.331
 Odense University,55.3692,10.4288
 Ege University,38.4578,27.2102
 University of Paris Sud,48.6999,2.17331
@@ -474,7 +474,7 @@ University of Montpellier,43.6319,3.86389
 University of Virginia,38.0362,-78.5016
 University of Reading,51.4455,-0.95262
 Mayo Clinic,44.0224,-92.467
-Royal Institute of Technology,59.3457,18.072
+KTH Royal Institute of Technology,59.3457,18.072
 Fermilab,41.8364,-88.2467
 Academy of Medical Sciences United Kingdom,55.8477,-4.29706
 University of Pavia,45.1865,9.15576
@@ -504,8 +504,8 @@ University of Louisiana At Monroe,32.528,-92.0754
 Harbin Institute of Technology,45.747,126.631
 University of Pisa,43.7166,10.3988
 Nagoya University,35.1547,136.967
-University of Illinois At Urbana Champaign,40.1091,-88.2194
-Texas A M University,30.6128,-96.3396
+Univ. of Illinois at Urbana-Champaign,40.1091,-88.2194
+Texas A&M University,30.6128,-96.3396
 Anna University,13.0122,80.2403
 Universidade Estadual De Londrina,-23.3274,-51.1956
 Seoul National University,37.46,126.95
@@ -515,7 +515,7 @@ Syracuse University,43.0405,-76.1367
 City University of Hong Kong,22.3387,114.172
 Agriculture and Agri Food Canada,34.4947,-82.713
 Innsbruck Medical University,47.2622,11.3856
-University of California Santa Barbara,34.413,-119.847
+University of California - Santa Barbara,34.413,-119.847
 Panjab University Chandigarh,30.758,76.7682
 Howard University,38.923,-77.0212
 Illinois Institute of Technology,41.8346,-87.6289
@@ -529,11 +529,11 @@ Istanbul University,41.0129,28.9639
 University of California San Francisco,37.7632,-122.458
 Sofia Medical University,42.6833,23.3072
 University of British Columbia,49.2618,-123.253
-The Chinese University of Hong Kong,22.4188,114.206
+Chinese University of Hong Kong,22.4188,114.206
 National Institute of Advanced Industrial Science and Technology,36.0602,140.133
 Jiangnan University,25.46,113.02
 Stellenbosch University,-33.9338,18.8633
-University of Nevada Reno,39.5477,-119.821
+University of Nevada,39.5477,-119.821
 University of Chicago,41.7901,-87.6012
 University of Turin,45.0667,7.7
 Kumamoto University,32.8139,130.728
@@ -542,7 +542,7 @@ Beth Israel Deaconess Medical Center,42.3382,-71.1088
 Ohio University,39.3246,-82.0964
 Dental School,40.0948,-80.7254
 Biotechnology Institute,17.4424,78.4392
-Universidade Federal Do Rio Grande Do Sul,-30.0324,-51.2193
+UFRGS,-30.0324,-51.2193
 National University of Colombia,4.6298,-74.0694
 University of Mississippi,34.365,-89.5324
 Northern Illinois University,41.931,-88.7622
@@ -555,12 +555,12 @@ Duke University,36.0001,-78.9306
 University of Patras,38.2863,21.7779
 University of Costa Rica,9.999,-84.1115
 Northwest University,47.6578,-122.196
-Technical University of Berlin,52.5127,13.3269
+TU Berlin,52.5127,13.3269
 Mitsubishi,35.9333,139.817
 University of Mississippi Medical Center,32.3287,-90.1756
 Universite De Sherbrooke,45.3814,-71.9311
 University of Colorado Boulder,40.0105,-105.276
-Ecole Normale Superieure,48.8415,2.34382
+Ecole Normale Superieure de Lyon,48.8415,2.34382
 Universidade Federal De Santa Maria,-29.7174,-53.7171
 Weill Cornell Medical College,40.7649,-73.9551
 United States Department of Agriculture,38.888,-77.03
@@ -574,7 +574,7 @@ Australian National University,-35.2739,149.121
 Central South University,28.173,112.925
 University of The Fraser Valley,49.0314,-122.285
 Xian Jiao tong University,34.25,108
-Vu University Amsterdam,52.3348,4.86649
+VU Amsterdam,52.3348,4.86649
 Uc Berkeley College of Chemistry,37.8728,-122.256
 Ministry of Education,15.3526,44.2044
 University of Memphis,35.1195,-89.9389
@@ -587,11 +587,11 @@ Jiangsu University,33.0185,119.491
 Sri International,17.3209,78.6497
 Pontifical Xavierian University,4.62921,-74.063
 University of Newcastle,54.9796,-1.6144
-Hong Kong University of Science and Technology,22.3356,114.264
+HKUST,22.3356,114.264
 University of Cologne,50.9283,6.92833
 Monash University,-27.4978,153.013
 Complutense University of Madrid,40.4371,-3.72398
-Federal Fluminense University,-22.8966,-43.1267
+UFF,-22.8966,-43.1267
 United States Naval Research Laboratory,38.6591,-76.5321
 Tufts University,42.4089,-71.1182
 Nanjing Agricultural University,32.032,118.837
@@ -601,7 +601,7 @@ Tianjin University,39.1082,117.179
 National Yang Ming University,25.1193,121.513
 University of Oslo,59.9376,10.7219
 University of Hertfordshire,51.7532,-0.24313
-Ecole Polytechnique Federale De Lausanne,46.5196,6.56625
+EPFL,46.5196,6.56625
 Carleton University,45.3835,-75.6972
 Louisiana State University,30.4158,-91.1775
 University of Bern,46.9506,7.43739
@@ -625,11 +625,11 @@ University of Regensburg,49.0002,12.0924
 Stanford University,37.4296,-122.165
 University of Akron,41.0781,-81.5114
 Cincinnati Children S Hospital Medical Center,39.141,-84.5021
-Indian Institute of Technology Kharagpur,22.3097,87.2958
+IIT Kharagpur,22.3097,87.2958
 Loughborough University,52.769,-1.22418
 Kindai University,10.05,-12.8667
 Massachusetts Institute of Technology,42.359,-71.0935
-University of Maryland College Park,38.9878,-76.9389
+University of Maryland - College Park,38.9878,-76.9389
 Binghamton University,42.0936,-75.9676
 Huazhong Agricultural University,30.476,114.353
 Duke University Hospital,36.0076,-78.9376
@@ -657,19 +657,19 @@ Institut National De La Recherche Agronomique,34.6519,-1.89613
 Macquarie University,-33.7736,151.112
 Thomas Jefferson University,39.9485,-75.1577
 University of Edinburgh,55.9452,-3.18804
-Oregon Health Science University,45.4991,-122.688
+OHSU,45.4991,-122.688
 China Medical University,24.1564,120.681
 University of Nebraska Medical Center,41.256,-95.9758
 Swedish University of Agricultural Sciences,59.8132,17.6569
 Clemson University,34.68,-82.8352
 Newyork Presbyterian Hospital,40.8414,-73.9426
-Washington University In St Louis,38.6478,-90.3013
+Washington University in St. Louis,38.6478,-90.3013
 University of Luxembourg,49.623,6.11223
-Rwth Aachen University,50.7773,6.07782
+RWTH Aachen,50.7773,6.07782
 Southwest University,32.0578,118.789
 Flinders University,-35.0185,138.573
 New Mexico State University,32.282,-106.755
-Missouri University of Science and Technology,37.9548,-91.7737
+Missouri University of Technology,37.9548,-91.7737
 Shandong University,36.6718,117.054
 Osaka University,34.8173,135.526
 University of Coimbra,40.2078,-8.42556
@@ -688,12 +688,12 @@ University of Bari,41.1201,16.869
 University of Naples Federico Ii,40.8472,14.2569
 University of Notre Dame,41.6979,-86.2387
 Cedars Sinai Medical Center,34.0753,-118.381
-Korea Institute of Science and Technology,36.372,127.363
+KAIST,36.372,127.363
 University of Wyoming,41.3113,-105.582
 University of Washington School of Medicine,47.6568,-122.312
 University of North Texas,33.2112,-97.1491
 University of Strathclyde,55.8615,-4.24725
-University of California Davis,38.5367,-121.749
+University of California - Davis,38.5367,-121.749
 University of Texas Southwestern Medical Center,32.8127,-96.8386
 University of Valladolid,41.6501,-4.73968
 Oklahoma State University Stillwater,36.1262,-97.0719
@@ -726,7 +726,7 @@ Carnegie Mellon University,40.4411,-79.9419
 University of Tokushima,34.07,134.56
 University of Brescia,45.5378,10.2177
 Concordia University,45.4974,-73.5771
-University of California Los Angeles,34.074,-118.438
+University of California - Los Angeles,34.074,-118.438
 Sichuan University,30.6302,104.09
 University of Ottawa,45.4226,-75.6843
 Wageningen University and Research Centre,51.9851,5.66401
@@ -736,7 +736,7 @@ Tokyo Institute of Technology,35.6057,139.683
 Enea,5.02947,-75.4575
 University of Salamanca,40.9614,-5.66745
 Sharif University of Technology,35.7018,51.3514
-Indian Institute of Technology Madras,13.0065,80.2424
+IIT Madras,13.0065,80.2424
 Royal Holloway University of London,51.4255,-0.56789
 Kagoshima University,31.5717,130.545
 University of Delhi,28.5893,77.1663
@@ -752,7 +752,7 @@ Bayer,51.014,7
 Vrije Universiteit Brussel,50.8247,4.39739
 University of Rochester,43.1252,-77.6314
 University of Malaga,36.72,-4.41611
-Katholieke Universiteit Leuven,50.8777,4.7005
+KU Leuven,50.8777,4.7005
 Agh University of Science and Technology,50.0647,19.9239
 Rush University Medical Center,41.8745,-87.6682
 University of Puerto Rico,18.404,-66.0494
@@ -769,9 +769,9 @@ East China Normal University,31.2281,121.4
 University of Arkansas,36.0703,-94.1771
 University of Alicante,38.3845,-0.51224
 Hoffmann La Roche,47.5497,7.65806
-Mcgill University,45.5073,-73.6144
-Pontificia Universidade Catolica Do Rio Grande Do Sul,-30.0576,-51.1753
-Universidade Nova De Lisboa,38.7339,-9.15999
+McGill University,45.5073,-73.6144
+PUC-RS,-30.0576,-51.1753
+Universidade de Lisboa,38.7339,-9.15999
 Universidade Estadual De Maringa,-23.4109,-51.9394
 Auburn University,32.6041,-85.4819
 Vu University Medical Center,52.3348,4.85969
@@ -799,11 +799,11 @@ University of Basel,47.5587,7.58387
 Hewlett Packard,41.4934,2.06326
 Toyota,35.0885,137.165
 Lund University,55.7064,13.1939
-Federal University of Rio De Janeiro,-22.8629,-43.2288
+UFRJ,-22.8629,-43.2288
 Emory University School of Medicine,33.7934,-84.3221
 University of Hong Kong,22.2837,114.138
 Indiana University School of Medicine,39.7756,-86.1767
-Universidade Federal De Vicosa,-20.7603,-42.8678
+Universidade Federal de Viçosa,-20.7603,-42.8678
 Banaras Hindu University,25.2709,82.9838
 Queen Mary University of London,51.5229,-0.04023
 All India Institute of Medical Sciences,31.1132,77.1398
@@ -844,8 +844,9 @@ University of Canterbury,-43.5234,172.58
 Nec,-6.15526,106.761
 Texas Tech University,33.5789,-101.888
 Aalborg University,57.0154,9.98658
-Bar Ilan University,32.0678,34.8451
+Bar-Ilan University,32.0678,34.8451
 University of Lausanne,46.5233,6.5855
 University of St andrews,56.3408,-2.80845
 University of Technology Sydney,-33.8848,151.191
 Bulgarian Academy of Sciences,47.5014,19.0464
+Università della Svizzera italiana,46.011,8.958

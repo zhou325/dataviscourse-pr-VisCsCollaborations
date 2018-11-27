@@ -120,10 +120,6 @@ class InfoBox{
                 .attr("dy", 220)
                 .text("Number of Publications: "+totalPub)
 
-                
-            
-            
-
         }
     }
 }

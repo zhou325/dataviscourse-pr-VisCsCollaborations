@@ -1,6 +1,7 @@
 import json
 import numpy as np
-path = '/Users/youjia/Documents/Utah-Soc/Fall2018/CS6630/project/dataProcessing/data/'
+import pandas as pd
+path = '/Users/youjia/Documents/Utah-Soc/Fall2018/CS6630/project/dataviscourse-pr-VisCsCollaborations/data/'
 
 with open(path+"articles.json") as f:
     data = json.load(f)
@@ -83,3 +84,20 @@ for paper in papersJson:
 with open(path+"collaborationsDetails.json","w") as outfile:
     json.dump(collaborationsDetails, outfile)
 outfile.close()
+
+collGeo = pd.read_csv(path+"world-affiliations.csv")
+with open(path+"collaborations.json") as f:
+    collaborations = json.load(f)
+f.close()
+collName = list(collaborations.keys())
+collGeo_new = []
+inName = []
+for i in range(0,len(collGeo)):
+    if collGeo.iloc[i]['aff_name'] in collName:
+        collGeo_new.append(i)
+        inName.append(collGeo.iloc[i]['aff_name'])
+collGeo1 = collGeo.iloc[collGeo_new,]
+collGeo1.index = range(0,len(collGeo1))
+outName = [i for i in collName if i not in inName]
+collGeo1.to_csv(path+"world-affiliationsSub.csv",index = False)
+
