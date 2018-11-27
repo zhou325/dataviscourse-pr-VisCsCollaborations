@@ -7,12 +7,13 @@ class Map {
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(world,world_aff,population) {
+    constructor(world,world_aff,population,collabDetails) {
         this.world = world;
         this.world_aff = world_aff;
         this.population = population;
         this.nameArray = this.population.map(d => d.geo.toUpperCase());
         this.regionArray = this.population.map(d=>d.region);
+        this.collabDetails = collabDetails;
 
         console.log(this.nameArray)
 
@@ -161,5 +162,54 @@ class Map {
             .style("fill", "yellow")
             .attr("transform","scale(1.5)")
             .style("opacity", 0.8);
+
+            console.log('this.world_aff');
+            console.log(this.world_aff);
+            let link_data = Array();
+    
+            Object.keys(this.collabDetails).forEach(aff1 => {
+                Object.keys(this.collabDetails[aff1]).forEach(aff2 => {
+                    let aff1_geo,aff2_geo; 
+                    data.forEach(element => {
+                        if(element.aff_name === aff1){
+                            aff1_geo = element;
+                        }
+                        if(element.aff_name === aff2){
+                            aff2_geo = element;
+                        }
+                    });
+                    if(aff1_geo!=undefined && aff2_geo!=undefined){
+                        let weight = this.collabDetails[aff1][aff2]; 
+                        let elem = {
+                            'aff1_geo':aff1_geo,
+                            'aff2_geo':aff2_geo,
+                            'weight':weight
+                        }
+                        link_data.push(elem)
+                    }
+                });
+            });
+    
+        console.log('link_data');
+        console.log(link_data);
+        this.linkgroup = this.group.append('g')
+            .attr("transform","scale(1.5)")
+            .attr('id','linkgroup');
+        this.linkgroup.selectAll('path')
+            .data(link_data)
+            .enter()
+            .append('path')
+            .classed('aff_link',true)
+            .attr('d',d=>{
+                return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
+                + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1]
+            })
+            .attr('id',d=>{
+                return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
+                + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1];
+            })
+            .style("opacity", 0.1)
+            .attr('stroke','yellow')
+            .attr('stroke-width','0.1');
     }
 }

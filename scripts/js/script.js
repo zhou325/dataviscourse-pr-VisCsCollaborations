@@ -1,5 +1,5 @@
 worldMapLoadData().then(data => {
-    const worldMap = new Map(data.world,data.world_aff,data.population);
+    const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails);
     worldMap.drawMap();
 });
 
@@ -9,11 +9,13 @@ async function worldMapLoadData() {
     let world = await d3.json("data/world.json");
     let world_aff = await d3.csv("data/world-affiliationsSub.csv");
     let pop = await d3.csv('data/pop.csv');
+    let collabDetails = await d3.json('data/collaborationsDetails.json')
 
     return {
         'world':world,
         'world_aff':world_aff,
-        'population': pop
+        'population': pop,
+        'collabDetails': collabDetails,
     };
 
 };
