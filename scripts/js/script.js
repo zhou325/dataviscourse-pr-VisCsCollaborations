@@ -1,6 +1,10 @@
 worldMapLoadData().then(data => {
     const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails);
     worldMap.drawMap();
+    
+    const infoBox = new InfoBox(data.collabDetails, data.inslist);
+    infoBox.drawInfoBox();
+    infoBox.updateInfoBox("Carnegie Mellon University",'2015');
 });
 
 
@@ -9,13 +13,15 @@ async function worldMapLoadData() {
     let world = await d3.json("data/world.json");
     let world_aff = await d3.csv("data/world-affiliationsSub.csv");
     let pop = await d3.csv('data/pop.csv');
-    let collabDetails = await d3.json('data/collaborationsDetails.json')
+    let collabDetails = await d3.json('data/collaborationsDetails.json');
+    let inslist = await d3.csv("data/insList.csv");
 
     return {
         'world':world,
         'world_aff':world_aff,
         'population': pop,
         'collabDetails': collabDetails,
+        'inslist': inslist.map(d=>d.aff_name)
     };
 
 };
@@ -41,11 +47,13 @@ d3.json('data/collaborations.json').then(collData => {
 });
 
 d3.json('data/collaborationsDetails.json').then(collDeData => {
-    // console.log(collDeData);
-    const infoBox = new InfoBox(collDeData);
-    // infoBox.drawInfoBox();
-    // infoBox.updateInfoBox("Carnegie Mellon University");
-    let table = new comparsion(collDeData);
-    // table.create_comparsion();
+    d3.csv("data/insList.csv").then(inslist =>{
+        console.log(collDeData);
+        
+        
+        let table = new comparsion(collDeData);
+        // table.create_comparsion();
+    });
+    
 });
 

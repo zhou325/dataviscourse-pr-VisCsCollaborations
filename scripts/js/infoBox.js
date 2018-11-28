@@ -7,28 +7,47 @@ class InfoBox{
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(data) {
+    constructor(data, inslist) {
         // ******* TODO: PART I *******
         this.data = data;
-        this.nameArray = Object.keys(data);
-        this.width = 2000;
-        this.height = 2000;
-        this.svg = d3.select("#infoBox")
-            .append("svg")
-            .attr("height", this.height)
-            .attr("width", this.width);
+        this.inslist = inslist;
+        this.width = 500;
+        this.height = 800;
+        this.infogroup = d3.select("#worldmap-svg").append("g")
+            .attr("id","infobox");
+        
+        // this.infoButton = d3.select("#infoBoxbutton")
+        // this.infoButton.on("click", function () {
+        //     let ifDisplay = d3.select("#infoBox").classed("show");
+        //     if (ifDisplay === false) {
+        //         this.showButton();
+        //     }
+        //     else {
+        //         this.hideButton();
+        //     }
+        //     this.showButton();
+        // }.bind(this));
 
+    }
+    hideButton() {
+        this.infoButton.transition().duration(350).style("left","0px");
+        this.infoButton.classed("fa-chevron-right",true).classed("fa-chevron-left",false);
+    }
+
+    showButton() {
+        this.infoButton.transition().duration(350).style("left","400px");
+        this.infoButton.classed("fa-chevron-right",false).classed("fa-chevron-left",true);
     }
 
     drawInfoBox(){
-        let boxFrame = this.svg.append("g")
+        let boxFrame = this.infogroup.append("g")
             .classed("textInfo", true);
         boxFrame.append("rect")
             .classed("boxframe", true)
             .attr("x","50")
-            .attr("y","50")
-            .attr("width","500")
-            .attr("height","650");
+            .attr("y","100")
+            .attr("width","300")
+            .attr("height","450");
         boxFrame.append("text")
             .attr("id","univName");
         boxFrame.append("text")
@@ -45,20 +64,27 @@ class InfoBox{
 
     }
 
-    updateInfoBox(activeUniv){
-        if(this.nameArray.indexOf(activeUniv)!=-1){
-            let infoData = this.data[activeUniv];
+    updateInfoBox(activeUniv, activeYear){
+        // this.infoButton.style("visibility", "initial");
+
+        if(this.inslist.indexOf(activeUniv)!=-1){
+            let infoData = this.data[activeYear][activeUniv];
             console.log(infoData);
 
-            let totalPub = 0;
+            let numberofPubs = {'total':0, 'ai':0, 'system':0, 'theory':0, 'interdis':0}
             for(let i=0;i<Object.keys(infoData).length;i++){
-                totalPub += infoData[Object.keys(infoData)[i]].total;
+                numberofPubs.total += infoData[Object.keys(infoData)[i]].total;
+                numberofPubs.ai += infoData[Object.keys(infoData)[i]].ai;
+                numberofPubs.system += infoData[Object.keys(infoData)[i]].system;
+                numberofPubs.theory += infoData[Object.keys(infoData)[i]].theory;
+                numberofPubs.interdis += infoData[Object.keys(infoData)[i]].interdis;
             }
+            console.log(numberofPubs)
 
-            let pieData = [{"label":"Theory", "value":378}, 
-            {"label":"System", "value":509}, 
-            {"label":"Interdisciplinary", "value":764},
-            {"label":"AI", "value":692}];
+            let pieData = [{"label":"Theory", "value":numberofPubs.theory}, 
+            {"label":"System", "value":numberofPubs.system}, 
+            {"label":"Interdisciplinary", "value":numberofPubs.interdis},
+            {"label":"AI", "value":numberofPubs.ai}];
 
             let pie = d3.pie()
                 .sort(null)
@@ -72,10 +98,10 @@ class InfoBox{
 
             let arc = d3.arc()
                 .innerRadius(0)
-                .outerRadius(200)
+                .outerRadius(100)
 
             d3.select("#univPieChart")
-                .attr("transform","translate(250,450)")
+                .attr("transform","translate(10,200)")
                 .selectAll("path")
                 .data(arcs)
                 .enter().append("path")
@@ -85,7 +111,7 @@ class InfoBox{
                     .attr("opacity",0.8);
             
             let pieText = d3.select("#univPieChart")
-            .attr("transform","translate(300,450)")
+            .attr("transform","translate(180,400)")
                 .selectAll("text")
                 .data(arcs)
                 .enter().append("text")
@@ -94,31 +120,36 @@ class InfoBox{
                     d3.select(this)
                         .attr('x', centroid[0]*1.4-50)
                         .attr('y', centroid[1])
-                        .attr('dy', '0.33em')
+                        .attr('dy', '0.03em')
                         .text(d.data.label+": "+d.data.value);
                 })
 
             d3.select("#univName")
-                .attr("dx", 80)
-                .attr("dy", 100)
+                .attr("dx", 60)
+                .attr("dy", 150)
                 .attr("class","name")
-                .text("Institute Name: "+activeUniv)
+                .text(activeUniv)
             d3.select("#selectedPeriod")
-                .attr("dx", 80)
-                .attr("dy", 130)
+                .attr("dx", 60)
+                .attr("dy", 180)
                 .text("Selected Period: 2000-2018")
             d3.select("#csrankings")
-                .attr("dx", 80)
-                .attr("dy", 160)
+                .attr("dx", 60)
+                .attr("dy", 210)
                 .text("CS Rankings: 1")
             d3.select("#numberofColls")
-                .attr("dx", 80)
-                .attr("dy", 190)
+                .attr("dx", 60)
+                .attr("dy", 240)
                 .text("Number of Collaborators: 30")
             d3.select("#numberofPubs")
-                .attr("dx", 80)
-                .attr("dy", 220)
-                .text("Number of Publications: "+totalPub)
+                .attr("dx", 60)
+                .attr("dy", 270)
+                .text("Number of Publications: "+numberofPubs.total)
+            // let isShow = d3.select("#infoBox").classed("show");
+            // if (!isShow) {
+            //     this.showButton();
+            //     $('#infoBoxbutton').trigger("click");
+            // }
 
         }
     }
