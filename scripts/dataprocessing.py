@@ -82,6 +82,15 @@ with open(path+"collaborations.json","w") as outfile:
     json.dump(collaborations, outfile)
 outfile.close()
 
+Ai = ["AAAI","IJCAI","CVPR","ECCV","ICCV","NIPS","ICML","KDD","ACL","EMNLP","NAACL","SIGIR","WWW"]
+System = ["ASPLOS","ISCA","MICRO","HPCA","SIGCOMM","NSDI","CCS","OAKLAND","USENIXSEC","NDSS","SIGMOD","VLDB","ICDE","PODS","DAC","ICCAD","EMSOFT","RTAS","RTSS","HPDC","ICS","SC","MOBICOM","MOBISYS","SENSYS","IMC","SIGMETRICS","OSDI","SOSP","EUROSYS","FAST","USENIXATC","PLDI","POPL","ICFP","OOPSLA","FSE","ICSE","ASE","ISSTA"]
+Theory = ["FOCS","SODA","STOC","CRYPTO","EUROCRYPT","CAV","LICS"]
+Interdisciplinary = ["ISMB","RECOMB","SIGGRAPH","SIGGRAPH-ASIA","EC","WINE","SIGCHI","CHI","UBICOMP","UIST","ICRA","IROS","RSS","VIS","VR"]
+Ai = [i.lower() for i in Ai]
+System = [i.lower() for i in System]
+Theory = [i.lower() for i in Theory]
+Interdisciplinary = [i.lower() for i in Interdisciplinary]
+
 collaborationsDetails = {}
 for year in years:
     if year >= 1980:
@@ -99,13 +108,16 @@ for paper in papersJson:
             for j in ins:
                 if j!= i:
                     if j not in collaborationsDetails[year][i]:
-                        collaborationsDetails[year][i][j] = {}
-                        collaborationsDetails[year][i][j]["total"] = 1
-                    else: collaborationsDetails[year][i][j]["total"] += 1
-                    if paper["area"] not in collaborationsDetails[year][i][j]:
-                        collaborationsDetails[year][i][j][paper["area"]] = 1
-                    else:
-                        collaborationsDetails[year][i][j][paper["area"]] += 1
+                        collaborationsDetails[year][i][j] = {"ai":0, "system":0, "theory":0, "interdis":0, "total":0}
+                    collaborationsDetails[year][i][j]["total"] += 1
+                    if paper["area"] in Ai:
+                        collaborationsDetails[year][i][j]['ai'] += 1
+                    elif paper["area"] in System:
+                        collaborationsDetails[year][i][j]['system'] += 1
+                    elif paper["area"] in Theory:
+                        collaborationsDetails[year][i][j]['theory'] += 1
+                    elif paper["area"] in Interdisciplinary:
+                        collaborationsDetails[year][i][j]['interdis'] += 1
 
 with open(path+"collaborationsDetails.json","w") as outfile:
     json.dump(collaborationsDetails, outfile)
