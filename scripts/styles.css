@@ -39,6 +39,24 @@ path.hidden {
     opacity: .4;
 }
 
+.aff-link {
+    stroke-width: .1;
+    stroke: yellow;
+    opacity: .1;
+}
+
+.aff-link.selected {
+    stroke-width: .5;
+    stroke: yellow;
+    opacity: 1;
+}
+
+.aff-link.unselected {
+    stroke-width: .1;
+    stroke: yellow;
+    opacity: 0;
+}
+
 
 /*ID Styling*/
 

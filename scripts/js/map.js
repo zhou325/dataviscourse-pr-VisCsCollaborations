@@ -33,9 +33,33 @@ class Map {
         this.displaySize = this.width*0.8;
         this.ifZoomedIn = false;
 
+        // Intialize tool-tip
+        this.tip = d3.tip();
+        this.tip.attr('class', 'd3-tip')
+            .direction('se')
+            .offset(function() {
+                return [0,0];
+            })
+
     }
 
+
+    tooltip_render(tooltip_data) {
+        console.log('tooltip_data');
+        console.log(tooltip_data);
+        let text = "<h2 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" + tooltip_data['aff_name'] + "</h2>";
+
+        return text;
+    }
+
+
     drawMap(){            
+        this.svg.call(this.tip);
+
+        this.tip.html((d)=>{
+             return this.tooltip_render(d);
+            });
+
         let geojson = topojson.feature(this.world, this.world.objects.countries); 
         
         let countries = geojson.features;
@@ -56,6 +80,9 @@ class Map {
 
         console.log(countries)
         
+        this.linkgroup = this.group.append('g')
+        .attr("transform","scale(1.5)")
+        .attr('id','linkgroup');
         // let projection =  d3.geoWinkel3().scale(130).translate([width / 2, height / 2+100]);
         let projection = d3.geoPatterson()
         
@@ -84,30 +111,35 @@ class Map {
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-650,-300),scale(3.8)');
                         this.ifZoomedIn = true;
+                        this.updateMap(undefined);
                     }
                     if(d.region === 'americas'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-1200,-1200),scale(3.5)');
                         this.ifZoomedIn = true;
+                        this.updateMap(undefined);
                     }
                     if(d.region === 'europe'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-2000,-200),scale(3.5)');
                         this.ifZoomedIn = true;
+                        this.updateMap(undefined);
                     }
                     if(d.region === 'asia'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-2000,-350),scale(2.5)');
                         this.ifZoomedIn = true;
+                        this.updateMap(undefined);
                     }
                     if(d.region === 'oceania'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-3000,-1100),scale(3)');
                         this.ifZoomedIn = true;
+                        this.updateMap(undefined);
                     }
                 }
                 else{
@@ -140,28 +172,8 @@ class Map {
             .style("fill", "red")
             .attr('stroke-width',0)
             .attr("transform","scale(1.5)")
-            .style("opacity", 0.2)
-            .on('click',(d)=>{
-                console.log(d);
-            });
+            .style("opacity", 0.2);
 
-        this.circlegroup.selectAll("circle .aff-inner-circle")
-            .data(data)
-            .enter()
-            .append("circle")
-            .classed('aff-inner-circle',true)
-            .attr('id',d=>d.aff_name.replace(' ','-'))
-            .attr("cx", function (d) {
-                return projection([d.lon, d.lat])[0];
-            })
-            .attr("cy", function (d) {
-                return projection([d.lon, d.lat])[1];
-            })
-            .attr("r", 1)
-            .attr('stroke-width',0)
-            .style("fill", "yellow")
-            .attr("transform","scale(1.5)")
-            .style("opacity", 0.8);
 
             console.log('this.world_aff');
             console.log(this.world_aff);
@@ -192,24 +204,75 @@ class Map {
     
         console.log('link_data');
         console.log(link_data);
-        this.linkgroup = this.group.append('g')
-            .attr("transform","scale(1.5)")
-            .attr('id','linkgroup');
+
         this.linkgroup.selectAll('path')
             .data(link_data)
             .enter()
             .append('path')
-            .classed('aff_link',true)
+            .attr('class',d=>{
+                let classstr1 = 'link-'+d['aff1_geo'].aff_name;
+                classstr1 = classstr1.replace(/\s+/g,''); 
+                let classstr2 = 'link-'+d['aff2_geo'].aff_name;
+                classstr2 = classstr2.replace(/\s+/g,''); 
+                return classstr1 + ' ' + classstr2 + ' '+ 'aff-link'
+            })
             .attr('d',d=>{
                 return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
                 + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1]
             })
             .attr('id',d=>{
-                return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
-                + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1];
+                let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
+                idstr = idstr.replace(/\s+/g,''); 
+                return 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
             })
-            .style("opacity", 0.1)
-            .attr('stroke','yellow')
             .attr('stroke-width','0.1');
+
+        
+        this.circlegroup.selectAll("circle .aff-inner-circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .classed('aff-inner-circle',true)
+            .attr('id',d=>d.aff_name.replace(' ','-'))
+            .attr("cx", function (d) {
+                return projection([d.lon, d.lat])[0];
+            })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1];
+            })
+            .attr("r", 1)
+            .attr('stroke-width',0)
+            .style("fill", "yellow")
+            .attr("transform","scale(1.5)")
+            .style("opacity", 0.8)
+            .on('mouseover',this.tip.show)
+            .on('mouseleave',this.tip.hide)
+            .on('click',(d)=>{
+                this.updateMap(d);
+            });
+    }
+
+    updateMap(aff_geo){
+        console.log('aff_geo');
+        console.log(aff_geo);
+        if(aff_geo===undefined){
+            console.log('undefined');
+            d3.selectAll('.aff-link')
+                .classed('selected', false);
+            d3.selectAll('.aff-link')
+                .classed('unselected', false);
+        }
+        else{
+            d3.selectAll('.aff-link')
+                .classed('unselected',true)
+            console.log('aff_geo');
+            console.log(aff_geo);
+            let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
+            console.log('classstr');
+            console.log(classstr);
+            d3.selectAll('.'+classstr)
+                .classed('unselected',false)
+                .classed('selected', true);    
+        }
     }
 }
