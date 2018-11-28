@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.js"></script>
+    <script src="https://d3js.org/d3-transition.v1.min.js"></script>
     <script src="scripts/js/script.js" async></script>
     <script src="scripts/js/comparsion.js" async></script>
     <script src="scripts/js/connChar.js" async></script>
@@ -26,10 +27,10 @@
 
     <div id="worldMap" class="view">
             <a href="#" data-target="#infoBox" data-toggle="collapse">
-                    <i id="infoBoxbutton" class="fa fa-chevron-right fa-2x py-2 p-1" style="position:absolute;top:50%;left:0;z-index:999;visibility:hidden"></i>
+                    <span style="font-size: 2.5em; color: grey;">
+                        <i id="infoBoxbutton" class="fas fa-arrow-alt-circle-left" style="position:absolute;top:68%;left:360px;z-index:999;visibility:hidden"></i>
+                    </span>
             </a>
-            <!-- <div id="infoBox" class="view">
-            </div> -->
     </div>
     <div id="connChar" class="view">
     </div>

@@ -356,20 +356,33 @@ i.europe {
 
 /* comparison table*/
 .name {
-    font-size: 18px;
+    font-size: 25px;
     padding-bottom: 15px;
     font-weight: bold;
 }
 
+.backgroundframe {
+    fill:lightgrey;
+    stroke: none;
+    opacity: 0.3;
+}
+
 .boxframe {
     fill: none;
-    stroke: black;
-    stroke-width: 1.5px;
+    stroke: darkgrey;
+    stroke-width: 3px;
 }
 
 .textinfo {
-    font-size: 12px;
+    font-size: 20px;
     padding-bottom: 15px;
+}
+
+.pietext {
+    /* fill:darkred; */
+    font-size: 22px;
+    padding-bottom: 15px;
+    font-weight: bold;
 }
 
 table {
