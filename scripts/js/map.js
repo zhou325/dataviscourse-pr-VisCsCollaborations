@@ -7,13 +7,14 @@ class Map {
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(world,world_aff,population,collabDetails) {
+    constructor(world,world_aff,population,collabDetails, updateUniv) {
         this.world = world;
         this.world_aff = world_aff;
         this.population = population;
         this.nameArray = this.population.map(d => d.geo.toUpperCase());
         this.regionArray = this.population.map(d=>d.region);
         this.collabDetails = collabDetails;
+        this.updateUniv = updateUniv;
 
         console.log(this.nameArray)
 
@@ -395,6 +396,7 @@ class Map {
             .on('mouseleave',this.tip.hide)
             .on('click',(d)=>{
                 this.updateMap(d);
+                this.updateUniv(d.aff_name);
             });
         }
 

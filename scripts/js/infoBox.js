@@ -7,7 +7,7 @@ class InfoBox{
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(data, inslist) {
+    constructor(data, inslist, updateUniv) {
         // ******* TODO: PART I *******
         this.data = data;
         this.inslist = inslist;
@@ -15,6 +15,8 @@ class InfoBox{
         this.height = 800;
         this.infogroup = d3.select("#worldmap-svg").append("g")
             .attr("id","infobox");
+        
+        this.updateUniv = updateUniv
         
         // this.infoButton = d3.select("#infoBoxbutton")
         // this.infoButton.on("click", function () {
@@ -42,6 +44,14 @@ class InfoBox{
     drawInfoBox(){
         let boxFrame = this.infogroup.append("g")
             .classed("textInfo", true);
+        boxFrame.append("rect")
+            .classed("backgroudframe",true)
+            .attr("x","50")
+            .attr("y","100")
+            .attr("width","300")
+            .attr("height","450")
+            .attr("fill","white")
+            .style("opacity",0.8)
         boxFrame.append("rect")
             .classed("boxframe", true)
             .attr("x","50")

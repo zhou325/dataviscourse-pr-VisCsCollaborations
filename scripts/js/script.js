@@ -1,10 +1,20 @@
 worldMapLoadData().then(data => {
-    const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails);
+    this.activeUniv = null;
+    this.activeYear = '2015';
+    let that = this
+
+    function updateUniv(univName) {
+        // that.activeUniv = univName;
+
+        infoBox.updateInfoBox(univName, that.activeYear);
+    }
+
+    const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv);
     worldMap.drawMap();
     
-    const infoBox = new InfoBox(data.collabDetails, data.inslist);
+    const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
     infoBox.drawInfoBox();
-    infoBox.updateInfoBox("Carnegie Mellon University",'2015');
+    // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
 });
 
 
