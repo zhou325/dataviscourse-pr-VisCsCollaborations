@@ -153,6 +153,9 @@ class Map {
         // this.svg.append('path').datum(graticule).attr('class', "graticule").attr('d', path);
         // this.svg.append('path').datum(graticule.outline).classed('stroke',true).attr('d',path);
 
+
+        console.log('this.world_aff');
+        console.log(this.world_aff);
         // Load in affiliations data.
         let data = this.world_aff;
         this.circlegroup = this.group.append("g")
@@ -169,14 +172,11 @@ class Map {
                 return projection([d.lon, d.lat])[1];
             })
             .attr("r", 3)
-            .style("fill", "red")
+            .style("fill", "mediumturquoise")
             .attr('stroke-width',0)
             .attr("transform","scale(1.5)")
             .style("opacity", 0.2);
 
-
-        console.log('this.world_aff');
-        console.log(this.world_aff);
         let link_data = Array();
         console.log('this.collabDetails');
         console.log(this.collabDetails);
@@ -310,24 +310,11 @@ class Map {
                 classstr1 = classstr1.replace(/\s+/g,''); 
                 let classstr2 = 'link-'+d['aff2_geo'].aff_name;
                 classstr2 = classstr2.replace(/\s+/g,'');
-                // // console.log('d'); 
-                // // console.log(d); 
-                // // console.log(Object.keys(d['venue_cnt']));
-                // let area2times = {'AI':0,'System':0,'Theory':0,'Interdisciplinary':0};
-                // Object.keys(d['venue_cnt']).forEach(venue => {
-                //     if(venue2area[venue] === 'AI'){area2times['AI'] = area2times['AI']+1;}
-                //     if(venue2area[venue] === 'System'){area2times['System'] = area2times['System']+1;}
-                //     if(venue2area[venue] === 'Theory'){area2times['Theory'] = area2times['Theory']+1;}
-                //     if(venue2area[venue] === 'Interdisciplinary'){area2times['Interdisciplinary'] = area2times['Interdisciplinary']+1;}
-                // });
-                // // console.log('area2times');
-                // // console.log(area2times);
                 let major_area = 'ai';
-                // console.log(area2times['System']>area2times[major_area]);
                 if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
                 if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
                 if(d['area_cnt']['interdis']>d['area_cnt'][major_area]){major_area = 'interdis';}
-                return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link'
+                return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link' + ' ' + 'unselected'
             })
             .attr('d',d=>{
                 return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
@@ -338,7 +325,11 @@ class Map {
                 idstr = idstr.replace(/\s+/g,''); 
                 return d;
             })
-            .attr('stroke-width','0.1');
+            .attr('opacity',d=>{
+                if(d['area_cnt']['total']>6){return 6;}
+                else{return d['area_cnt']['total'];}
+            })
+            .attr('stroke-width',0.5);
 
         
         this.circlegroup.selectAll("circle .aff-inner-circle")
@@ -373,7 +364,7 @@ class Map {
                 d3.selectAll('.aff-link')
                     .classed('selected', false);
                 d3.selectAll('.aff-link')
-                    .classed('unselected', false);
+                    .classed('unselected', true);
             }
             else{
                 d3.selectAll('.aff-link')

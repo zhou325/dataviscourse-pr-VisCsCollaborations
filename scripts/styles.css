@@ -40,37 +40,27 @@ path.hidden {
 }
 
 .aff-link.ai{
-    stroke-width: .1;
-    stroke: rgb(255, 0, 0);
-    opacity: 0;
+    stroke: red;
 }
 
 .aff-link.system{
-    stroke-width: .1;
-    stroke: springgreen;
-    opacity: 0;
+    stroke: blue;
 }
 
 .aff-link.theroy{
-    stroke-width: .1;
-    stroke: rgb(71, 74, 255);
-    opacity: 0;
+    stroke: green;
 }
 
 .aff-link.interdisciplinary{
-    stroke-width: .1;
     stroke: yellow;
-    opacity: 0;
 }
 
 .aff-link.selected {
     stroke-width: .5;
-    opacity: 1;
 }
 
 .aff-link.unselected {
-    stroke-width: .1;
-    opacity: 0;
+    stroke-width: 0;
 }
 
 
