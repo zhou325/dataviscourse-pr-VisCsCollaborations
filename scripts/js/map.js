@@ -41,6 +41,13 @@ class Map {
                 return [0,0];
             })
 
+        this.link_tip = d3.tip();
+        this.link_tip.attr('class', 'd3-tip')
+        .direction('se')
+        .offset(function() {
+            return [0,0];
+        })
+
     }
 
 
@@ -48,6 +55,7 @@ class Map {
         console.log('tooltip_data');
         console.log(tooltip_data);
         let text = "<h2 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" + tooltip_data['aff_name'] + "</h2>";
+        text += "<h3 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" +'Co-publication:' + tooltip_data['total_pub'] + "</h2>";
 
         return text;
     }
@@ -55,7 +63,6 @@ class Map {
 
     drawMap(){            
         this.svg.call(this.tip);
-
         this.tip.html((d)=>{
              return this.tooltip_render(d);
             });
@@ -158,25 +165,9 @@ class Map {
         console.log(this.world_aff);
         // Load in affiliations data.
         let data = this.world_aff;
-        this.circlegroup = this.group.append("g")
-                .attr("id","circlegroup")
-        this.circlegroup.selectAll("circle")
-            .data(data)
-            .enter()
-            .append("circle")
-            .classed('aff-outer-circle',true)
-            .attr("cx", function (d) {
-                return projection([d.lon, d.lat])[0];
-            })
-            .attr("cy", function (d) {
-                return projection([d.lon, d.lat])[1];
-            })
-            .attr("r", 3)
-            .style("fill", "mediumturquoise")
-            .attr('stroke-width',0)
-            .attr("transform","scale(1.5)")
-            .style("opacity", 0.2);
 
+
+        // data for link, and total co-pub for node
         let link_data = Array();
         console.log('this.collabDetails');
         console.log(this.collabDetails);
@@ -184,6 +175,18 @@ class Map {
             Object.keys(this.collabDetails[year]).forEach(aff1 => {
                 // if(link_data[aff1]===undefined){link_data[aff1] = {};}
                 Object.keys(this.collabDetails[year][aff1]).forEach(aff2 => {
+                    data.forEach(data_elem => {
+                        // console.log('this.collabDetails[year]');
+                        // console.log(this.collabDetails[year]);
+                        // console.log(this.collabDetails[year][aff1]);
+                        // console.log(this.collabDetails[year][aff1][aff2]);
+                        // console.log(this.collabDetails[year][aff1][aff2]['total']);
+                        if(data_elem.aff_name === aff1){
+                            if(data_elem['total_pub'] === undefined){data_elem['total_pub']=this.collabDetails[year][aff1][aff2]['total'];}
+                            else{data_elem['total_pub']+=this.collabDetails[year][aff1][aff2]['total'];}
+                        }
+                        
+                    });
                     let aff1aff2 = [aff1,aff2].sort();
                     if(link_data[aff1aff2]===undefined){
                         link_data[aff1aff2] = {};
@@ -205,18 +208,39 @@ class Map {
                         if(link_data[aff1aff2]['area_cnt'] === undefined){link_data[aff1aff2]['area_cnt'] = this.collabDetails[year][aff1][aff2] ;}
                         else{
                             Object.keys(this.collabDetails[year][aff1][aff2]).forEach(area => {
-                                link_data[aff1aff2]['area_cnt'][area] += this.collabDetails[year][aff1aff2][area]
+                                link_data[aff1aff2]['area_cnt'][area] += this.collabDetails[year][aff1aff2][area];
                             });
                         }
                     }
                 });
             });
         });
+        console.log('data');
+        console.log(data);
         let link_data_copy = link_data;
         link_data = [];
         Object.keys(link_data_copy).forEach(aff1aff2 => {
             link_data.push(link_data_copy[aff1aff2]);
         });
+
+        this.circlegroup = this.group.append("g")
+            .attr("id","circlegroup")
+        this.circlegroup.selectAll("circle")
+            .data(data)
+            .enter()
+            .append("circle")
+            .classed('aff-outer-circle',true)
+            .attr("cx", function (d) {
+                return projection([d.lon, d.lat])[0];
+            })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1];
+            })
+            .attr("r", (d)=>Math.min(Math.sqrt(d.total_pub/20),5))
+            .style("fill", "mediumturquoise")
+            .attr('stroke-width',0)
+            .attr("transform","scale(1.5)")
+            .style("opacity", 0.2);
 
         let venue2area = {
             'aaai':'AI',
