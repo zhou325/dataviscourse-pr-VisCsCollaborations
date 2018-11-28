@@ -7,8 +7,6 @@ with open(path+"articles.json") as f:
     data = json.load(f)
 f.close()
 
-temp = data[0:10]
-
 papers = {}
 for d in data:
     if d["title"] in papers:
@@ -18,11 +16,18 @@ for d in data:
         paperInfo["authors"] = [{"name":d["name"], "institution":d["institution"]}]
         papers[d["title"]] = paperInfo
 
+years = []
+for paper in papers:
+    if papers[paper]['year'] not in years:
+        years.append(papers[paper]['year'])
+years.sort()
+
 papersJson = []
 for item in papers:
     paperInfo = papers[item]
     paperInfo["title"] = item
     papersJson.append(paperInfo)
+temp = papersJson[0:10]
 
 with open(path+"confArticles.json","w") as outfile:
     json.dump(papersJson, outfile)
@@ -30,10 +35,11 @@ outfile.close()
 
 temp1 = papersJson[0:10]
 
-insList = []
-for d in data:
-    if d["institution"] not in insList:
-        insList.append(d["institution"])
+#insList = []
+#for d in data:
+#    if d["institution"] not in insList:
+#        insList.append(d["institution"])
+insList = pd.read_csv(path+"insList.csv")["aff_name"].tolist()
 
 confList = []
 for d in data:
@@ -44,42 +50,62 @@ confList.sort()
 
 
 collaborations = {}
+for year in years:
+    if year >= 1980:
+        collaborations[year] = {}
 for paper in papersJson:
-    ins = []
-    for author in paper["authors"]:
-        ins.append(author["institution"])
-    for i in ins:
-        if i not in collaborations:
-            collaborations[i] = {} 
-        for j in ins:
-            if j!= i:
-                if j not in collaborations[i]:
-                    collaborations[i][j] = 1
-                else:
-                    collaborations[i][j] += 1
+    year = paper['year']
+    if year in collaborations:
+        ins = []
+        for author in paper["authors"]:
+            if author["institution"] in insList:
+                ins.append(author["institution"])
+        for i in ins:
+            if i not in collaborations[year]:
+                collaborations[year][i] = {} 
+            for j in ins:
+                if j!= i:
+                    if j not in collaborations[year][i]:
+                        collaborations[year][i][j] = 1
+                    else:
+                        collaborations[year][i][j] += 1 
+
+## lenins = 2671
+#ins = "Carnegie Mellon University"
+#lenins = 0
+#for year in collaborations:
+#    if ins in collaborations[year]:
+#        for collins in collaborations[year][ins]:
+#            lenins += collaborations[year][ins][collins]
 
 with open(path+"collaborations.json","w") as outfile:
     json.dump(collaborations, outfile)
 outfile.close()
 
 collaborationsDetails = {}
+for year in years:
+    if year >= 1980:
+        collaborationsDetails[year] = {}
 for paper in papersJson:
-    ins = []
-    for author in paper["authors"]:
-        ins.append(author["institution"])
-    for i in ins:
-        if i not in collaborationsDetails:
-            collaborationsDetails[i] = {}
-        for j in ins:
-            if j!= i:
-                if j not in collaborationsDetails[i]:
-                    collaborationsDetails[i][j] = {}
-                    collaborationsDetails[i][j]["total"] = 1
-                else: collaborationsDetails[i][j]["total"] += 1
-                if paper["area"] not in collaborationsDetails[i][j]:
-                    collaborationsDetails[i][j][paper["area"]] = 1
-                else:
-                    collaborationsDetails[i][j][paper["area"]] += 1
+    year = paper['year']
+    if year in collaborations:
+        ins = []
+        for author in paper["authors"]:
+            if author["institution"] in insList:
+                ins.append(author["institution"])
+        for i in ins:
+            if i not in collaborationsDetails[year]:
+                collaborationsDetails[year][i] = {}
+            for j in ins:
+                if j!= i:
+                    if j not in collaborationsDetails[year][i]:
+                        collaborationsDetails[year][i][j] = {}
+                        collaborationsDetails[year][i][j]["total"] = 1
+                    else: collaborationsDetails[year][i][j]["total"] += 1
+                    if paper["area"] not in collaborationsDetails[year][i][j]:
+                        collaborationsDetails[year][i][j][paper["area"]] = 1
+                    else:
+                        collaborationsDetails[year][i][j][paper["area"]] += 1
 
 with open(path+"collaborationsDetails.json","w") as outfile:
     json.dump(collaborationsDetails, outfile)
@@ -101,3 +127,6 @@ collGeo1.index = range(0,len(collGeo1))
 outName = [i for i in collName if i not in inName]
 collGeo1.to_csv(path+"world-affiliationsSub.csv",index = False)
 
+collGeo1 = pd.read_csv(path+"world-affiliationsSub.csv")
+insList = pd.DataFrame(collGeo1["aff_name"])
+insList.to_csv(path+"insList.csv",index = False)
