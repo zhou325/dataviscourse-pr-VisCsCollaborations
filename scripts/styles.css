@@ -297,7 +297,8 @@ i.africa {
 } */
 
 .asia {
-    fill: #fcddbc;
+    /* fill: #fcddbc; */
+    fill: rgb(0,98,150);
 }
 
 /* path.asia.selected-country,
@@ -312,7 +313,8 @@ i.asia {
 } */
 
 .americas {
-    fill: #ecec84;
+    /* fill: #ecec84; */
+    fill: rgb(0,105,127);
 }
 
 /* path.americas.selected-country,
@@ -327,15 +329,18 @@ i.americas {
 } */
 
 .northamericas {
-    fill: #b8d8ba;
+    /* fill: #b8d8ba; */
+    fill: rgb(176,221,224);
 }
 
 .europe {
-    fill: #ef959d;
+    /* fill: #ef959d; */
+    fill: rgb(148,197,219);
 }
 
 .oceania {
-    fill: #a299ca
+    /* fill: #a299ca */
+    fill: rgb(0,46,90)
 }
 
 /* path.europe.selected-country,
