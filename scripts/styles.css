@@ -40,19 +40,19 @@ path.hidden {
 }
 
 .aff-link.ai{
-    stroke: red;
+    stroke: #D13C4B;
 }
 
 .aff-link.system{
-    stroke: blue;
+    stroke: #4288B5;
 }
 
 .aff-link.theroy{
-    stroke: green;
+    stroke: #D1EC9E;
 }
 
 .aff-link.interdisciplinary{
-    stroke: yellow;
+    stroke: #E68C5C;
 }
 
 .aff-link.selected {
@@ -383,6 +383,22 @@ i.europe {
     font-size: 22px;
     padding-bottom: 15px;
     font-weight: bold;
+}
+
+.System {
+    fill: #4288B5;
+}
+
+.AI {
+    fill: #D13C4B;
+}
+
+.Theory {
+    fill: #D1EC9E;
+}
+
+.Interdisciplinary {
+    fill: #E68C5C;
 }
 
 table {

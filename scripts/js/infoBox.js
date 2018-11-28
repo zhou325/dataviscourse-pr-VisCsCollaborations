@@ -161,14 +161,17 @@ class InfoBox{
             pies = newpies.merge(pies);
             pies
                 .attr("id",d=>"pie"+d.data.label)
-                .attr("fill", d => color(d.data.label))
+                // .attr("fill", d => color(d.data.label))
+                .attr("class",d=>d.data.label)
                 .attr("stroke", "white")
                 .attr("d", arc)
                 .attr("opacity",0.8)
                 .on("mouseover", d=> {
                     if(d){
-                        let totext = d.data.label+": "+d.data.value
+                        let totext = d.data.label+": "+d.data.value;
+                        let textclass = d.data.label;
                         d3.select("#piechartinfo")
+                            .attr("class","textinfo "+textclass)
                             .text(totext);
                         d3.select("#pie"+d.data.label)
                             .attr("d", arc1);
@@ -178,6 +181,7 @@ class InfoBox{
                     d3.select("#pie"+d.data.label)
                         .attr("d", arc);
                     d3.select("#piechartinfo")
+                        .attr("class","textinfo")
                         .text("Total: "+numberofPubs.total);
                 })
             
