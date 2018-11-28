@@ -175,33 +175,129 @@ class Map {
             .style("opacity", 0.2);
 
 
-            console.log('this.world_aff');
-            console.log(this.world_aff);
-            let link_data = Array();
-    
-            Object.keys(this.collabDetails).forEach(aff1 => {
-                Object.keys(this.collabDetails[aff1]).forEach(aff2 => {
-                    let aff1_geo,aff2_geo; 
-                    data.forEach(element => {
-                        if(element.aff_name === aff1){
-                            aff1_geo = element;
+        console.log('this.world_aff');
+        console.log(this.world_aff);
+        let link_data = Array();
+        console.log('this.collabDetails');
+        console.log(this.collabDetails);
+        Object.keys(this.collabDetails).forEach(year => {
+            Object.keys(this.collabDetails[year]).forEach(aff1 => {
+                // if(link_data[aff1]===undefined){link_data[aff1] = {};}
+                Object.keys(this.collabDetails[year][aff1]).forEach(aff2 => {
+                    let aff1aff2 = [aff1,aff2].sort();
+                    if(link_data[aff1aff2]===undefined){
+                        link_data[aff1aff2] = {};
+                        let aff1_geo,aff2_geo; 
+                        data.forEach(element => {
+                            if(element.aff_name === aff1){
+                                aff1_geo = element;
+                            }
+                            if(element.aff_name === aff2){
+                                aff2_geo = element;
+                            }
+                        });
+                        if(aff1_geo!=undefined && aff2_geo!=undefined){
+                            link_data[aff1aff2] = {
+                                'aff1_geo':aff1_geo,
+                                'aff2_geo':aff2_geo,
+                            }
                         }
-                        if(element.aff_name === aff2){
-                            aff2_geo = element;
+                        if(link_data[aff1aff2]['area_cnt'] === undefined){link_data[aff1aff2]['area_cnt'] = this.collabDetails[year][aff1][aff2] ;}
+                        else{
+                            Object.keys(this.collabDetails[year][aff1][aff2]).forEach(area => {
+                                link_data[aff1aff2]['area_cnt'][area] += this.collabDetails[year][aff1aff2][area]
+                            });
                         }
-                    });
-                    if(aff1_geo!=undefined && aff2_geo!=undefined){
-                        let weight = this.collabDetails[aff1][aff2]; 
-                        let elem = {
-                            'aff1_geo':aff1_geo,
-                            'aff2_geo':aff2_geo,
-                            'weight':weight
-                        }
-                        link_data.push(elem)
                     }
                 });
             });
-    
+        });
+        let link_data_copy = link_data;
+        link_data = [];
+        Object.keys(link_data_copy).forEach(aff1aff2 => {
+            link_data.push(link_data_copy[aff1aff2]);
+        });
+
+        let venue2area = {
+            'aaai':'AI',
+            'ijcai':'AI',
+            'cvpr':'AI',
+            'eccv':'AI',
+            'iccv':'AI',
+            'icml':'AI',
+            'kdd':'AI',
+            'nips':'AI',
+            'acl':'AI',
+            'emnlp':'AI',
+            'naacl':'AI',
+            'sigir':'AI',
+            'www':'AI',
+
+            'asplos':'System',
+            'isca':'System',
+            'micro':'System',
+            'hpca':'System',
+            'sicomm':'System',
+            'nsdi':'System',
+            'ccs':'System',
+            'oakland':'System',
+            'usenixatc':'System',
+            'ndss':'System',
+            'sigmod':'System',
+            'vldb':'System',
+            'icde':'System',
+            'pods':'System',
+            'dac':'System',
+            'iccad':'System',
+            'emsoft':'System',
+            'rtas':'System',
+            'rtss':'System',
+            'hpdc':'System',
+            'ics':'System',
+            'sc':'System',
+            'mobicom':'System',
+            'mobisys':'System',
+            'sensys':'System',
+            'imc':'System',
+            'sigmetrics':'System',
+            'osdi':'System',
+            'sosp':'System',
+            'eurosys':'System',
+            'fast':'System',
+            'usenixsec':'System',
+            'pldi':'System',
+            'popl':'System',
+            'icfp':'System',
+            'oopsla':'System',
+            'fse':'System',
+            'icse':'System',
+            'ase':'System',
+            'issta':'System',
+            
+            'focs':'Theory',
+            'soda':'Theory',
+            'stoc':'Theory',
+            'crypto':'Theory',
+            'eurocrypt':'Theory',
+            'cav':'Theory',
+            'lics':'Theory',
+
+            'ismb':'Interdisciplinary',
+            'recomb':'Interdisciplinary',
+            'siggraph':'Interdisciplinary',
+            'siggraph-asia':'Interdisciplinary',
+            'ec':'Interdisciplinary',
+            'wine':'Interdisciplinary',
+            'chi':'Interdisciplinary',
+            'ubicomp':'Interdisciplinary',
+            'uist':'Interdisciplinary',
+            'icra':'Interdisciplinary',
+            'iros':'Interdisciplinary',
+            'vis':'Interdisciplinary',
+            'vr':'Interdisciplinary',
+        }
+
+
         console.log('link_data');
         console.log(link_data);
 
@@ -213,8 +309,25 @@ class Map {
                 let classstr1 = 'link-'+d['aff1_geo'].aff_name;
                 classstr1 = classstr1.replace(/\s+/g,''); 
                 let classstr2 = 'link-'+d['aff2_geo'].aff_name;
-                classstr2 = classstr2.replace(/\s+/g,''); 
-                return classstr1 + ' ' + classstr2 + ' '+ 'aff-link'
+                classstr2 = classstr2.replace(/\s+/g,'');
+                // // console.log('d'); 
+                // // console.log(d); 
+                // // console.log(Object.keys(d['venue_cnt']));
+                // let area2times = {'AI':0,'System':0,'Theory':0,'Interdisciplinary':0};
+                // Object.keys(d['venue_cnt']).forEach(venue => {
+                //     if(venue2area[venue] === 'AI'){area2times['AI'] = area2times['AI']+1;}
+                //     if(venue2area[venue] === 'System'){area2times['System'] = area2times['System']+1;}
+                //     if(venue2area[venue] === 'Theory'){area2times['Theory'] = area2times['Theory']+1;}
+                //     if(venue2area[venue] === 'Interdisciplinary'){area2times['Interdisciplinary'] = area2times['Interdisciplinary']+1;}
+                // });
+                // // console.log('area2times');
+                // // console.log(area2times);
+                let major_area = 'ai';
+                // console.log(area2times['System']>area2times[major_area]);
+                if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
+                if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
+                if(d['area_cnt']['interdis']>d['area_cnt'][major_area]){major_area = 'interdis';}
+                return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link'
             })
             .attr('d',d=>{
                 return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
@@ -223,7 +336,7 @@ class Map {
             .attr('id',d=>{
                 let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
                 idstr = idstr.replace(/\s+/g,''); 
-                return 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
+                return d;
             })
             .attr('stroke-width','0.1');
 
@@ -240,7 +353,7 @@ class Map {
             .attr("cy", function (d) {
                 return projection([d.lon, d.lat])[1];
             })
-            .attr("r", 1)
+            .attr("r", 0.5)
             .attr('stroke-width',0)
             .style("fill", "yellow")
             .attr("transform","scale(1.5)")
@@ -250,29 +363,29 @@ class Map {
             .on('click',(d)=>{
                 this.updateMap(d);
             });
-    }
-
-    updateMap(aff_geo){
-        console.log('aff_geo');
-        console.log(aff_geo);
-        if(aff_geo===undefined){
-            console.log('undefined');
-            d3.selectAll('.aff-link')
-                .classed('selected', false);
-            d3.selectAll('.aff-link')
-                .classed('unselected', false);
         }
-        else{
-            d3.selectAll('.aff-link')
-                .classed('unselected',true)
+
+        updateMap(aff_geo){
             console.log('aff_geo');
             console.log(aff_geo);
-            let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
-            console.log('classstr');
-            console.log(classstr);
-            d3.selectAll('.'+classstr)
-                .classed('unselected',false)
-                .classed('selected', true);    
-        }
+            if(aff_geo===undefined){
+                console.log('undefined');
+                d3.selectAll('.aff-link')
+                    .classed('selected', false);
+                d3.selectAll('.aff-link')
+                    .classed('unselected', false);
+            }
+            else{
+                d3.selectAll('.aff-link')
+                    .classed('unselected',true)
+                console.log('aff_geo');
+                console.log(aff_geo);
+                let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
+                console.log('classstr');
+                console.log(classstr);
+                d3.selectAll('.'+classstr)
+                    .classed('unselected',false)
+                    .classed('selected', true);    
+            }
     }
 }
