@@ -43,10 +43,10 @@ class Map {
 
         this.link_tip = d3.tip();
         this.link_tip.attr('class', 'd3-tip')
-        .direction('se')
-        .offset(function() {
-            return [0,0];
-        })
+            .direction('se')
+            .offset(function() {
+                return [0,0];
+            });
 
     }
 
@@ -60,12 +60,27 @@ class Map {
         return text;
     }
 
+    linktip_render(linktip_data) {
+        console.log('linktip_data');
+        console.log(linktip_data);
+        let text = "<h3 class ="  +'linktip-' + linktip_data['aff_name'] + " >" + linktip_data['aff1_geo'].aff_name + "</h2>";
+        text += "<h3 class ="  +'linktip-' + linktip_data['aff_name'] + " >" + linktip_data['aff2_geo'].aff_name + "</h2>";
+        text += "<h4 class ="  +'linktip-' + linktip_data['aff_name'] + " >" +'Co-publication:' + linktip_data['area_cnt']['total'] + "</h2>";
+
+        return text;
+    }
 
     drawMap(){            
         this.svg.call(this.tip);
         this.tip.html((d)=>{
              return this.tooltip_render(d);
             });
+        this.svg.call(this.link_tip);
+        this.link_tip.html((d)=>{
+                return this.linktip_render(d);
+            })
+            .style("left", d=>1 + "px")     
+            .style("top", d=>1 + "px");
 
         let geojson = topojson.feature(this.world, this.world.objects.countries); 
         
@@ -87,9 +102,7 @@ class Map {
 
         console.log(countries)
         
-        this.linkgroup = this.group.append('g')
-        .attr("transform","scale(1.5)")
-        .attr('id','linkgroup');
+
         // let projection =  d3.geoWinkel3().scale(130).translate([width / 2, height / 2+100]);
         let projection = d3.geoPatterson()
         
@@ -160,6 +173,9 @@ class Map {
         // this.svg.append('path').datum(graticule).attr('class', "graticule").attr('d', path);
         // this.svg.append('path').datum(graticule.outline).classed('stroke',true).attr('d',path);
 
+        this.linkgroup = this.group.append('g')
+        .attr("transform","scale(1.5)")
+        .attr('id','linkgroup');
 
         console.log('this.world_aff');
         console.log(this.world_aff);
@@ -329,6 +345,8 @@ class Map {
             .data(link_data)
             .enter()
             .append('path')
+            .on('mouseover',this.link_tip.show)
+            .on('mouseleave',this.link_tip.hide)
             .attr('class',d=>{
                 let classstr1 = 'link-'+d['aff1_geo'].aff_name;
                 classstr1 = classstr1.replace(/\s+/g,''); 
@@ -350,8 +368,8 @@ class Map {
                 return d;
             })
             .attr('opacity',d=>{
-                if(d['area_cnt']['total']>6){return 6;}
-                else{return d['area_cnt']['total'];}
+                if(d['area_cnt']['total']>5){return 5;}
+                else{return d['area_cnt']['total']/5;}
             })
             .attr('stroke-width',0.5);
 
