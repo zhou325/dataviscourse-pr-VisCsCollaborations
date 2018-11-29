@@ -363,6 +363,8 @@ class Map {
     }
 
     updateMap(activeUniv, activeYear){
+        console.log("activeUniv", activeUniv)
+        console.log("activeYear",activeYear)
         let projection = d3.geoPatterson()
 
         if(activeYear===undefined){activeYear = Object.keys(this.collabDetails)};
@@ -375,6 +377,7 @@ class Map {
         node_data.forEach(elem => {
             elem.copub = 0;
         });
+        console.log(activeYear)
         activeYear.forEach(year => {
             Object.keys(this.collabDetails[year]).forEach(aff1 => {
                 Object.keys(this.collabDetails[year][aff1]).forEach(aff2 => {
@@ -382,6 +385,20 @@ class Map {
                         if(data_elem.aff_name === aff1){
                             if(data_elem['copub'] === undefined){data_elem['copub']=this.collabDetails[year][aff1][aff2]['total'];}
                             else{data_elem['copub']+=this.collabDetails[year][aff1][aff2]['total'];}
+                            if(data_elem['ai'] === undefined){data_elem['ai']=this.collabDetails[year][aff1][aff2]['ai'];}
+                            else{data_elem['ai']+=this.collabDetails[year][aff1][aff2]['ai'];}
+                            if(data_elem['system'] === undefined){data_elem['system']=this.collabDetails[year][aff1][aff2]['system'];}
+                            else{data_elem['system']+=this.collabDetails[year][aff1][aff2]['system'];}
+                            if(data_elem['theory'] === undefined){data_elem['theory']=this.collabDetails[year][aff1][aff2]['theory'];}
+                            else{data_elem['theory']+=this.collabDetails[year][aff1][aff2]['theory'];}
+                            if(data_elem['interdis'] === undefined){data_elem['interdis']=this.collabDetails[year][aff1][aff2]['interdis'];}
+                            else{data_elem['interdis']+=this.collabDetails[year][aff1][aff2]['interdis'];}
+                            
+                            data_elem['major_area'] = 'ai'
+
+                            if(data_elem['system']>data_elem['ai']){data_elem['major_area'] = 'system';}
+                            if(data_elem['theory']>data_elem['system']){data_elem['major_area'] = 'theory';}
+                            if(data_elem['interdis']>data_elem['theory']){data_elem['major_area'] = 'interdis';}
                         }
                             
                     });
@@ -422,87 +439,112 @@ class Map {
                 link_data.push(link_data_copy[aff1aff2]);
         });
 
-    // change outer nodes on map 
-    // this.circlegroup.selectAll(".aff-outer-circle").remove();
-        // this.circlegroup.selectAll("circle .aff-outer-circle")
-        //     .data(node_data)
-        //     .enter()
-        //     .append("circle")
-        //     .classed('aff-outer-circle',true)
-        //     .attr("cx", function (d) {
-        //         return projection([d.lon, d.lat])[0];
-        //     })
-        //     .attr("cy", function (d) {
-        //         return projection([d.lon, d.lat])[1];
-        //     })
-        //     .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5))
-        //     // .style("fill", "mediumturquoise")
-        //     .attr('stroke-width',0)
-        //     .attr("transform","scale(1.5)")
-        //     // .style("opacity", 0.2);
-    let circles = this.circlegroup.selectAll("circle")
-        .data(node_data);
-    circles.exit().remove();
-    let newcircles = circles.enter().append("circle");
-    circles = newcircles.merge(circles);
-    circles
-        .attr("class","aff-inner-circle")
-        .attr('id',d=>d.aff_name.replace(' ','-'))
-        .attr("cx", function (d) {
-            return projection([d.lon, d.lat])[0];
+        let univlistAll = []
+        if(activeUniv){
+            activeYear.forEach(year=>{
+                if(this.collabDetails[year][activeUniv]){
+                    let univlist = Object.keys(this.collabDetails[year][activeUniv]);
+                    univlist.forEach(u=>{
+                        if(univlistAll.indexOf(u)===-1){
+                            univlistAll.push(u);
+                    }
+                    })
+                } 
             })
-        .attr("cy", function (d) {
-            return projection([d.lon, d.lat])[1];
-            })
-        // .attr("r", 0.5)
-        .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5)*0.6)
-        .attr('stroke-width',0)
-        .attr("transform","scale(1.5)")
-        .style("opacity", 0.6)
-        .on('mouseover',this.tip.show)
-        .on('mouseleave',this.tip.hide)
-        .on('click',(d)=>{
-            console.log(d)
-            this.updateMap(d.aff_name, activeYear);
-            this.updateUniv(d.aff_name);
-        });
+        }
 
-    // change links on map
-    let llinks = this.linkgroup.selectAll("path")
-        .data(link_data);
-    llinks.exit().remove();
-    let newlinks = llinks.enter().append("path");
-    llinks = newlinks.merge(llinks);
-    // this.linkgroup.selectAll('.aff-link').remove();
-    llinks
-        .on('mouseover',this.link_tip.show)
-        .on('mouseleave',this.link_tip.hide)
-        .attr('class',d=>{
-            let classstr1 = 'link-'+d['aff1_geo'].aff_name;
-            classstr1 = classstr1.replace(/\s+/g,''); 
-            let classstr2 = 'link-'+d['aff2_geo'].aff_name;
-            classstr2 = classstr2.replace(/\s+/g,'');
-            let major_area = 'ai';
-            if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
-            if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
-            if(d['area_cnt']['interdis']>d['area_cnt'][major_area]){major_area = 'interdis';}
-            return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link' + ' ' + 'unselected'
-        })
-        .attr('d',d=>{
-            return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
-            + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1]
-        })
-        .attr('id',d=>{
-            let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
-            idstr = idstr.replace(/\s+/g,''); 
-            return idstr;
-        })
-        .attr('opacity',d=>{
-            if(d['area_cnt']['total']>5){return 5;}
-                else{return d['area_cnt']['total']/5;}
-        })
-        .attr("transform","scale(1.5)")
-        .attr('stroke-width',0.5);
+
+        // change outer nodes on map 
+        // this.circlegroup.selectAll(".aff-outer-circle").remove();
+            // this.circlegroup.selectAll("circle .aff-outer-circle")
+            //     .data(node_data)
+            //     .enter()
+            //     .append("circle")
+            //     .classed('aff-outer-circle',true)
+            //     .attr("cx", function (d) {
+            //         return projection([d.lon, d.lat])[0];
+            //     })
+            //     .attr("cy", function (d) {
+            //         return projection([d.lon, d.lat])[1];
+            //     })
+            //     .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5))
+            //     // .style("fill", "mediumturquoise")
+            //     .attr('stroke-width',0)
+            //     .attr("transform","scale(1.5)")
+            //     // .style("opacity", 0.2);
+        let circles = this.circlegroup.selectAll("circle")
+            .data(node_data);
+        circles.exit().remove();
+        let newcircles = circles.enter().append("circle");
+        circles = newcircles.merge(circles);
+        circles
+            .attr("class",d=>{
+                if(univlistAll.indexOf(d.aff_name)===-1){
+                    if(d.aff_name === activeUniv){
+                        return "selecteduniv"
+                    } else {
+                        return "aff-inner-circle"
+                    }
+                } else {
+                    return "connUniv "+d.major_area
+                }
+            })
+            .attr('id',d=>d.aff_name.replace(/[ \&]/g,'-'))
+            .attr("cx", function (d) {
+                return projection([d.lon, d.lat])[0];
+                })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1];
+                })
+            // .attr("r", 0.5)
+            .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5)*0.6)
+            .attr("transform","scale(1.5)")
+            .style("opacity", 0.6)
+            .on('mouseover',this.tip.show)
+            .on('mouseleave',this.tip.hide)
+            .on('click',(d)=>{
+                console.log(d)
+                this.updateMap(d.aff_name, activeYear);
+                this.updateUniv(d.aff_name);
+            });
+        
+        // change links on map
+        let links = this.linkgroup.selectAll("path")
+            .data(link_data);
+        links.exit().remove();
+        let newlinks = links.enter().append("path");
+        links = newlinks.merge(links);
+        // this.linkgroup.selectAll('.aff-link').remove();
+        links
+            .on('mouseover',this.link_tip.show)
+            .on('mouseleave',this.link_tip.hide)
+            .attr('class',d=>{
+                let classstr1 = 'link-'+d['aff1_geo'].aff_name;
+                classstr1 = classstr1.replace(/\s+/g,''); 
+                let classstr2 = 'link-'+d['aff2_geo'].aff_name;
+                classstr2 = classstr2.replace(/\s+/g,'');
+                let major_area = 'ai';
+                if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
+                if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
+                if(d['area_cnt']['interdis']>d['area_cnt'][major_area]){major_area = 'interdis';}
+                return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link' + ' ' + 'unselected'
+            })
+            .attr("stroke","grey")
+            .attr('d',d=>{
+                return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
+                + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1]
+            })
+            .attr('id',d=>{
+                let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
+                idstr = idstr.replace(/\s+/g,''); 
+                return idstr;
+            })
+            .attr('opacity',d=>{
+                if(d['area_cnt']['total']>5){return 5;}
+                    else{return d['area_cnt']['total']/5;}
+            })
+            .attr("transform","scale(1.5)")
+            .attr('stroke-width',0.5);
 
         if(activeUniv===undefined){
             d3.selectAll('.aff-link')
@@ -519,7 +561,7 @@ class Map {
             let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
             console.log('classstr');
             console.log(classstr);
-            d3.select("#linkgroup").selectAll('.'+classstr)
+            d3.selectAll('.'+classstr)
                 .classed('unselected',false)
                 .classed('selected', true);                
         }

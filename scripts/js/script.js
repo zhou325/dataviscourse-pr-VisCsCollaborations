@@ -1,12 +1,12 @@
 worldMapLoadData().then(data => {
-    this.activeUniv = null;
-    this.activeYear = '2015';
+    this.activeUniv = undefined;
+    this.activeYear = undefined;
     let that = this
 
     function updateUniv(univName) {
         // that.activeUniv = univName;
 
-        infoBox.updateInfoBox(univName, that.activeYear);
+        // infoBox.updateInfoBox(univName, that.activeYear);
         worldMap.updateMap(univName, that.activeYear)
     }
 
