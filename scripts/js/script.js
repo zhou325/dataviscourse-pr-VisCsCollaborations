@@ -50,10 +50,17 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             let that = this
         
             function updateUniv(univName) {
-                // that.activeUniv = univName;
+                that.activeUniv = univName
         
                 infoBox.updateInfoBox(univName, that.activeYear);
                 worldMap.updateMap(univName, that.activeYear)
+            }
+
+            function updateYear(yearArray) {
+                that.activeYear = yearArray
+                
+                infoBox.updateInfoBox(that.activeUniv, yearArray);
+                worldMap.updateMap(that.activeUniv, yearArray);
             }
         
             const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv,table);
