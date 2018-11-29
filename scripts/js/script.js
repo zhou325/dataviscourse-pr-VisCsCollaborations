@@ -58,16 +58,16 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
 
             function updateYear(yearArray) {
                 that.activeYear = yearArray
-                
+
                 infoBox.updateInfoBox(that.activeUniv, yearArray);
                 worldMap.updateMap(that.activeUniv, yearArray);
             }
         
-            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv,table);
+            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table);
             worldMap.drawMap();
             worldMap.updateMap(undefined,undefined);
             
-            const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
+            const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
             // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
         });
