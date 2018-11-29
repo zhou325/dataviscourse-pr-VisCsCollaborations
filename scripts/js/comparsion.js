@@ -44,7 +44,7 @@ class comparsion {
     this.TotalScale = null;
 
     this.selected_years = undefined;
-    this.selected_affs = undefined;
+    this.selected_affgeo = undefined;
 
 
   }
@@ -222,7 +222,7 @@ class comparsion {
         console.log('indicator d')
         console.log(d)
         this.rank_indicator = d;
-        this.update_comparsion({ 'aff_geo': undefined, 'years': undefined })
+        this.update_comparsion({ 'aff_geo': this.selected_affgeo, 'years': this.selected_years })
       })
 
 
@@ -403,16 +403,17 @@ class comparsion {
     data_used = univ_rank;
     console.log('update data_used')
     console.log(data_used)
-    let selected_affs = selected.aff_geo;
-    if (selected_affs === undefined) { selected_affs = data_used.map((d) => d['University']) }
+    let selected_affgeo = selected.aff_geo;
+    if (selected_affgeo === undefined) { selected_affgeo = data_used; }
     else {
-      if (selected_affs.length === 0) {
-        selected_affs = this.selected_affs;
-      } else {
-        selected_affs = selected.aff_geo.map((d) => d['aff_name']);
+      if (selected_affgeo.length === 0) {
+        selected_affgeo = this.selected_affgeo;
       }
     }
-    this.selected_affs = selected_affs;
+    this.selected_affgeo = selected_affgeo;
+    console.log('selected_affgeo');
+    console.log(selected_affgeo);
+    this.selected_affs = this.selected_affgeo.map((d) => d['aff_name']);
 
     data_used = data_used.filter((d) => this.selected_affs.indexOf(d['University']) !== -1)
     console.log('update data_used')
