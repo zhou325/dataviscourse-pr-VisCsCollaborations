@@ -327,8 +327,11 @@ class comparsion{
 
   let selected_years = selected.years;
 
-   if(selected_years!=undefined){this.selected_years = selected_years;}
-
+   if(selected_years!=undefined && selected_years.length!=0){this.selected_years = selected_years;}
+   else{selected_years = this.selected_years}
+   console.log('selected_years');
+   console.log(selected_years);
+ 
    let data = this.data;
    if(this.selected_years === undefined){
      this.selected_years = Object.keys(data);
@@ -381,7 +384,13 @@ class comparsion{
    console.log(data_used)
    let selected_affs = selected.aff_geo;
    if(selected_affs===undefined){selected_affs = data_used.map((d)=>d['University'])}
-   else{selected_affs = selected.aff_geo.map((d)=>d['aff_name']);}
+   else{
+     if(selected_affs.length ===0){
+      selected_affs = this.selected_affs; 
+     }else{
+      selected_affs = selected.aff_geo.map((d)=>d['aff_name']);
+     }
+    }
    this.selected_affs = selected_affs;
 
    data_used = data_used.filter((d)=>this.selected_affs.indexOf(d['University'])!==-1)
