@@ -1,18 +1,9 @@
 /** Class representing the information box. */
 
 class InfoBox{
-     /**
-     * Creates a Map Object
-     *
-     * @param world the full dataset
-     * country was updated (clicked)
-     */
     constructor(data, inslist, updateUniv) {
-        // ******* TODO: PART I *******
         this.data = data;
         this.inslist = inslist;
-        this.width = 500;
-        this.height = 800;
         this.infogroup = d3.select("#worldmap-svg").append("g")
             .attr("id","infobox")
             .attr("transform", "translate(-420, 0)");
@@ -20,7 +11,6 @@ class InfoBox{
         this.updateUniv = updateUniv
         
         this.infoButton = d3.select("#infoBoxbutton")
-        console.log(this.infoButton)
         this.ifDisplay = false;
         this.infoButton.on("click", function () {
             if (this.ifDisplay === false) {

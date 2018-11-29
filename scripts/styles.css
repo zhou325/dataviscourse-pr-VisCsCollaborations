@@ -63,6 +63,13 @@ path.hidden {
     stroke-width: 0;
 }
 
+.aff-inner-circle {
+    fill: rgb(236,212,67);
+    stroke: white;
+    stroke-width: 0.5px;
+    /* opacity: 0.5; */
+}
+
 
 /*ID Styling*/
 
@@ -367,9 +374,9 @@ i.europe {
 }
 
 .backgroundframe {
-    fill:lightgrey;
+    fill:white;
     stroke: none;
-    opacity: 0.3;
+    opacity: 0.8;
 }
 
 .boxframe {

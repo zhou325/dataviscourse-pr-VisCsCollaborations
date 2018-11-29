@@ -7,10 +7,12 @@ worldMapLoadData().then(data => {
         // that.activeUniv = univName;
 
         infoBox.updateInfoBox(univName, that.activeYear);
+        worldMap.updateMap(univName, that.activeYear)
     }
 
     const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv);
     worldMap.drawMap();
+    worldMap.updateMap(undefined,undefined);
     
     const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
     infoBox.drawInfoBox();
