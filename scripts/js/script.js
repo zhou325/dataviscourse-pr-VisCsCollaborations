@@ -45,8 +45,8 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
         table.create_comparsion();
 
         worldMapLoadData().then(data => {
-            this.activeUniv = null;
-            this.activeYear = '2015';
+            this.activeUniv = undefined;
+            this.activeYear = undefined;
             let that = this
         
             function updateUniv(univName) {
@@ -58,7 +58,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
 
             function updateYear(yearArray) {
                 that.activeYear = yearArray
-
+                console.log(that.activeUniv)
                 infoBox.updateInfoBox(that.activeUniv, yearArray);
                 worldMap.updateMap(that.activeUniv, yearArray);
             }
@@ -69,7 +69,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             
             const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
-            // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
+            // infoBox.updateInfoBox("Carnegie Mellon University",['2015','2016','2017']);
         });
 
 
