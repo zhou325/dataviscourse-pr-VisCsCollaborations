@@ -47,7 +47,6 @@ class Map {
 
         this.link_tip = d3.tip();
         this.link_tip.attr('class', 'd3-tip')
-            .direction('se')
             .offset(function() {
                 return [0,0];
             });
@@ -81,8 +80,8 @@ class Map {
         this.link_tip.html((d)=>{
                 return this.linktip_render(d);
             })
-            .style("left", d=>1 + "px")     
-            .style("top", d=>1 + "px");
+            .style("left", d=>100 + "px")     
+            .style("top", d=>100 + "px");
 
         let geojson = topojson.feature(this.world, this.world.objects.countries); 
         let countries = geojson.features;
@@ -607,7 +606,22 @@ class Map {
         links = newlinks.merge(links);
         // this.linkgroup.selectAll('.aff-link').remove();
         links
-            .on('mouseover',this.link_tip.show)
+            .on('mouseover',(d)=>{
+                let title_data = [d.aff1_geo.aff_name,d.aff2_geo.aff_name];
+                title_data = title_data.concat(Object.keys(d.area_cnt).map((a)=>'#'+a+': '+d.area_cnt[a]));
+                this.svg.selectAll('title.link-tooltip').remove();
+                let link_tip_div = this.svg.selectAll('title.link-tooltip')
+                    .data(title_data.join('\n')).enter().append("title")	
+                    .attr("class", "link-tooltip")				
+                    .style("opacity", 0);
+                link_tip_div.transition()		
+                    .duration(20)		
+                    .style("opacity", .9);		
+                link_tip_div	
+                    .html((d,i)=>title_data.join('\n'))	
+                    .style("left", (d,i)=>(d3.event.pageX) + "px")		
+                    .style("top", (d,i)=>i*10+(d3.event.pageY - 28) + "px");
+            })
             .on('mouseleave',this.link_tip.hide)
             .attr('class',d=>{
                 let classstr1 = 'link-'+d['aff1_geo'].aff_name;
