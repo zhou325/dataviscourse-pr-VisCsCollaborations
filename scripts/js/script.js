@@ -1,23 +1,4 @@
-worldMapLoadData().then(data => {
-    this.activeUniv = null;
-    this.activeYear = '2015';
-    let that = this
 
-    function updateUniv(univName) {
-        // that.activeUniv = univName;
-
-        infoBox.updateInfoBox(univName, that.activeYear);
-        worldMap.updateMap(univName, that.activeYear)
-    }
-
-    const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv);
-    worldMap.drawMap();
-    worldMap.updateMap(undefined,undefined);
-    
-    const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
-    infoBox.drawInfoBox();
-    // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
-});
 
 
 async function worldMapLoadData() {
@@ -64,7 +45,30 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
         
         
         let table = new comparsion(collDeData);
-        // table.create_comparsion();
+        table.create_comparsion();
+
+        worldMapLoadData().then(data => {
+            this.activeUniv = null;
+            this.activeYear = '2015';
+            let that = this
+        
+            function updateUniv(univName) {
+                // that.activeUniv = univName;
+        
+                infoBox.updateInfoBox(univName, that.activeYear);
+                worldMap.updateMap(univName, that.activeYear)
+            }
+        
+            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv,table);
+            worldMap.drawMap();
+            worldMap.updateMap(undefined,undefined);
+            
+            const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
+            infoBox.drawInfoBox();
+            // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
+        });
+
+
     });
     
 });
