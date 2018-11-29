@@ -20,6 +20,8 @@ class Map {
 
         this.width = 1400;
         this.height = 800;
+        this.margin = {'top':10,'bottom':10,'left':30,'right':30};
+
 
         this.map_chart = d3.select("#worldMap");
         this.map_chart.append('svg');
@@ -49,25 +51,24 @@ class Map {
                 return [0,0];
             });
 
+        // for update map, default year selection is all the years
+        this.selected = {'aff_geo':undefined,'years':undefined};
+
     }
 
 
+    // tooltip html render for inner nodes
     tooltip_render(tooltip_data) {
-        console.log('tooltip_data');
-        console.log(tooltip_data);
         let text = "<h2 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" + tooltip_data['aff_name'] + "</h2>";
-        text += "<h3 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" +'Co-publication:' + tooltip_data['total_pub'] + "</h2>";
-
+        text += "<h3 class ="  +'tooltip-' + tooltip_data['aff_name'] + " >" +'Co-publication:' + tooltip_data['copub'] + "</h2>";
         return text;
     }
 
+    // tooltip html render for links
     linktip_render(linktip_data) {
-        console.log('linktip_data');
-        console.log(linktip_data);
         let text = "<h3 class ="  +'linktip-' + linktip_data['aff_name'] + " >" + linktip_data['aff1_geo'].aff_name + "</h2>";
         text += "<h3 class ="  +'linktip-' + linktip_data['aff_name'] + " >" + linktip_data['aff2_geo'].aff_name + "</h2>";
         text += "<h4 class ="  +'linktip-' + linktip_data['aff_name'] + " >" +'Co-publication:' + linktip_data['area_cnt']['total'] + "</h2>";
-
         return text;
     }
 
@@ -84,7 +85,6 @@ class Map {
             .style("top", d=>1 + "px");
 
         let geojson = topojson.feature(this.world, this.world.objects.countries); 
-        
         let countries = geojson.features;
 
         for(let i=0;i<countries.length;i++){
@@ -132,35 +132,40 @@ class Map {
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-650,-300),scale(3.8)');
                         this.ifZoomedIn = true;
-                        this.updateMap(undefined);
+                        this.selected.aff_geo = undefined;
+                        this.updateMap(this.selected);
                     }
                     if(d.region === 'americas'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-1200,-1200),scale(3.5)');
                         this.ifZoomedIn = true;
-                        this.updateMap(undefined);
+                        this.selected.aff_geo = undefined;
+                        this.updateMap(this.selected);
                     }
                     if(d.region === 'europe'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-2000,-200),scale(3.5)');
                         this.ifZoomedIn = true;
-                        this.updateMap(undefined);
+                        this.selected.aff_geo = undefined;
+                        this.updateMap(this.selected);
                     }
                     if(d.region === 'asia'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-2000,-350),scale(2.5)');
                         this.ifZoomedIn = true;
-                        this.updateMap(undefined);
+                        this.selected.aff_geo = undefined;
+                        this.updateMap(this.selected);
                     }
                     if(d.region === 'oceania'){
                         this.group
                             .transition(d3.transition().duration(1000))
                             .attr('transform', 'translate(-3000,-1100),scale(3)');
                         this.ifZoomedIn = true;
-                        this.updateMap(undefined);
+                        this.selected.aff_geo = undefined;
+                        this.updateMap(this.selected);
                     }
                 }
                 else{
@@ -174,17 +179,18 @@ class Map {
         // this.svg.append('path').datum(graticule).attr('class', "graticule").attr('d', path);
         // this.svg.append('path').datum(graticule.outline).classed('stroke',true).attr('d',path);
 
+        // groups, the latter will be the upper
         this.linkgroup = this.group.append('g')
-        .attr("transform","scale(1.5)")
-        .attr('id','linkgroup');
+            .attr("transform","scale(1.5)")
+            .attr('id','linkgroup');
+        this.circlegroup = this.group.append("g")
+            .attr("id","circlegroup");
+        this.yeargroup = this.svg.append('g').attr('id','yeargoup').attr('transform','translate(0,'+(this.height-this.margin.bottom)+')')
 
         console.log('this.world_aff');
         console.log(this.world_aff);
-        // Load in affiliations data.
-        let data = this.world_aff;
-
-
         // data for link, and total co-pub for node
+        let node_data = this.world_aff;
         let link_data = Array();
         console.log('this.collabDetails');
         console.log(this.collabDetails);
@@ -192,15 +198,15 @@ class Map {
             Object.keys(this.collabDetails[year]).forEach(aff1 => {
                 // if(link_data[aff1]===undefined){link_data[aff1] = {};}
                 Object.keys(this.collabDetails[year][aff1]).forEach(aff2 => {
-                    data.forEach(data_elem => {
+                    node_data.forEach(data_elem => {
                         // console.log('this.collabDetails[year]');
                         // console.log(this.collabDetails[year]);
                         // console.log(this.collabDetails[year][aff1]);
                         // console.log(this.collabDetails[year][aff1][aff2]);
                         // console.log(this.collabDetails[year][aff1][aff2]['total']);
                         if(data_elem.aff_name === aff1){
-                            if(data_elem['total_pub'] === undefined){data_elem['total_pub']=this.collabDetails[year][aff1][aff2]['total'];}
-                            else{data_elem['total_pub']+=this.collabDetails[year][aff1][aff2]['total'];}
+                            if(data_elem['copub'] === undefined){data_elem['copub']=this.collabDetails[year][aff1][aff2]['total'];}
+                            else{data_elem['copub']+=this.collabDetails[year][aff1][aff2]['total'];}
                         }
                         
                     });
@@ -208,7 +214,7 @@ class Map {
                     if(link_data[aff1aff2]===undefined){
                         link_data[aff1aff2] = {};
                         let aff1_geo,aff2_geo; 
-                        data.forEach(element => {
+                        node_data.forEach(element => {
                             if(element.aff_name === aff1){
                                 aff1_geo = element;
                             }
@@ -232,18 +238,15 @@ class Map {
                 });
             });
         });
-        console.log('data');
-        console.log(data);
         let link_data_copy = link_data;
         link_data = [];
         Object.keys(link_data_copy).forEach(aff1aff2 => {
             link_data.push(link_data_copy[aff1aff2]);
         });
 
-        this.circlegroup = this.group.append("g")
-            .attr("id","circlegroup")
+        // append outer and inner nodes on map 
         this.circlegroup.selectAll("circle")
-            .data(data)
+            .data(node_data)
             .enter()
             .append("circle")
             .classed('aff-outer-circle',true)
@@ -253,95 +256,40 @@ class Map {
             .attr("cy", function (d) {
                 return projection([d.lon, d.lat])[1];
             })
-            .attr("r", (d)=>Math.min(Math.sqrt(d.total_pub/20),5))
+            .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5))
             .style("fill", "mediumturquoise")
             .attr('stroke-width',0)
             .attr("transform","scale(1.5)")
             .style("opacity", 0.2);
-
-        let venue2area = {
-            'aaai':'AI',
-            'ijcai':'AI',
-            'cvpr':'AI',
-            'eccv':'AI',
-            'iccv':'AI',
-            'icml':'AI',
-            'kdd':'AI',
-            'nips':'AI',
-            'acl':'AI',
-            'emnlp':'AI',
-            'naacl':'AI',
-            'sigir':'AI',
-            'www':'AI',
-
-            'asplos':'System',
-            'isca':'System',
-            'micro':'System',
-            'hpca':'System',
-            'sicomm':'System',
-            'nsdi':'System',
-            'ccs':'System',
-            'oakland':'System',
-            'usenixatc':'System',
-            'ndss':'System',
-            'sigmod':'System',
-            'vldb':'System',
-            'icde':'System',
-            'pods':'System',
-            'dac':'System',
-            'iccad':'System',
-            'emsoft':'System',
-            'rtas':'System',
-            'rtss':'System',
-            'hpdc':'System',
-            'ics':'System',
-            'sc':'System',
-            'mobicom':'System',
-            'mobisys':'System',
-            'sensys':'System',
-            'imc':'System',
-            'sigmetrics':'System',
-            'osdi':'System',
-            'sosp':'System',
-            'eurosys':'System',
-            'fast':'System',
-            'usenixsec':'System',
-            'pldi':'System',
-            'popl':'System',
-            'icfp':'System',
-            'oopsla':'System',
-            'fse':'System',
-            'icse':'System',
-            'ase':'System',
-            'issta':'System',
-            
-            'focs':'Theory',
-            'soda':'Theory',
-            'stoc':'Theory',
-            'crypto':'Theory',
-            'eurocrypt':'Theory',
-            'cav':'Theory',
-            'lics':'Theory',
-
-            'ismb':'Interdisciplinary',
-            'recomb':'Interdisciplinary',
-            'siggraph':'Interdisciplinary',
-            'siggraph-asia':'Interdisciplinary',
-            'ec':'Interdisciplinary',
-            'wine':'Interdisciplinary',
-            'chi':'Interdisciplinary',
-            'ubicomp':'Interdisciplinary',
-            'uist':'Interdisciplinary',
-            'icra':'Interdisciplinary',
-            'iros':'Interdisciplinary',
-            'vis':'Interdisciplinary',
-            'vr':'Interdisciplinary',
-        }
-
+        this.circlegroup.selectAll("circle .aff-inner-circle")
+            .data(node_data)
+            .enter()
+            .append("circle")
+            .classed('aff-inner-circle',true)
+            .attr('id',d=>d.aff_name.replace(' ','-'))
+            .attr("cx", function (d) {
+                return projection([d.lon, d.lat])[0];
+            })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1];
+            })
+            .attr("r", 0.5)
+            .attr('stroke-width',0)
+            .style("fill", "yellow")
+            .attr("transform","scale(1.5)")
+            .style("opacity", 0.8)
+            .on('mouseover',this.tip.show)
+            .on('mouseleave',this.tip.hide)
+            .on('click',(d)=>{
+                this.selected.aff_geo = d;
+                this.updateMap(this.selected);
+                this.updateUniv(d.aff_name);
+            });
 
         console.log('link_data');
         console.log(link_data);
 
+        // append links on map
         this.linkgroup.selectAll('path')
             .data(link_data)
             .enter()
@@ -374,9 +322,149 @@ class Map {
             })
             .attr('stroke-width',0.5);
 
-        
+
+
+        // append years text on bottom of map
+        let year_array = Object.keys(this.collabDetails);
+        let yearScale = d3.scaleLinear()
+            .domain([Math.min.apply(null,year_array),
+                Math.max.apply(null,year_array)])
+            .range([0.5*(this.margin.left), this.width - this.margin.right]);
+        console.log('year_array');
+        console.log(year_array);
+        this.yeargroup.selectAll('text')
+            .data(year_array)
+            .enter()
+            .append('text')
+            .classed('year-text',true)
+            .attr('x',(d)=>yearScale(d))
+            .attr('y',0)
+            .text(d=>d);
+        let that = this;
+        // append years brush on bottom of map
+        d3.selectAll('#brush-year').remove();
+        this.svg.append('g')
+            .attr('id','brush-year')
+            .attr("class", "brush")
+            .call(
+                d3.brushX()
+                    .extent([[0, this.height-this.margin.bottom*3], [this.width, this.height]])
+                    .on("end", function(){
+                        if (!d3.event.sourceEvent) return; // Only transition after input.
+                        if (!d3.event.selection) return; // Ignore empty selections.
+                        let selectedRange = d3.event.selection;
+                        let selectedElems = [];
+                        console.log('selectedRange')
+                        console.log(selectedRange);
+                        let year_array = Object.keys(that.collabDetails);
+                        year_array.forEach(year => {
+                            if(yearScale(year)>=selectedRange[0] && yearScale(year)<=selectedRange[1]){
+                                selectedElems.push(year);
+                            }
+                        // console.log('selectedElems');
+                        // console.log(selectedElems);
+                        that.selected.years = selectedElems;
+                        });
+                that.updateMap(that.selected);
+                }));
+
+
+        }
+
+        updateMap(selected){
+            let aff_geo = selected.aff_geo;
+            let years = selected.years;
+            let projection = d3.geoPatterson()
+
+            if(years===undefined){years = Object.keys(this.collabDetails)};
+            console.log('aff_geo');
+            console.log(aff_geo);
+            console.log(years);
+
+            // data for link, and total co-pub for node
+            let node_data = this.world_aff;
+            console.log('node_data');
+            console.log(node_data);
+            let link_data = Array();
+            node_data.forEach(elem => {
+                elem.copub = 0;
+            });
+            years.forEach(year => {
+                Object.keys(this.collabDetails[year]).forEach(aff1 => {
+                    // if(link_data[aff1]===undefined){link_data[aff1] = {};}
+                    Object.keys(this.collabDetails[year][aff1]).forEach(aff2 => {
+                        node_data.forEach(data_elem => {
+                            // console.log('this.collabDetails[year]');
+                            // console.log(this.collabDetails[year]);
+                            // console.log(this.collabDetails[year][aff1]);
+                            // console.log(this.collabDetails[year][aff1][aff2]);
+                            // console.log(this.collabDetails[year][aff1][aff2]['total']);
+                            if(data_elem.aff_name === aff1){
+                                if(data_elem['copub'] === undefined){data_elem['copub']=this.collabDetails[year][aff1][aff2]['total'];}
+                                else{data_elem['copub']+=this.collabDetails[year][aff1][aff2]['total'];}
+                            }
+                            
+                        });
+                        let aff1aff2 = [aff1,aff2].sort();
+                        if(link_data[aff1aff2]===undefined){
+                            link_data[aff1aff2] = {};
+                            let aff1_geo,aff2_geo; 
+                            node_data.forEach(element => {
+                                if(element.aff_name === aff1){
+                                    aff1_geo = element;
+                                }
+                                if(element.aff_name === aff2){
+                                    aff2_geo = element;
+                                }
+                            });
+                            if(aff1_geo!=undefined && aff2_geo!=undefined){
+                                link_data[aff1aff2] = {
+                                    'aff1_geo':aff1_geo,
+                                    'aff2_geo':aff2_geo,
+                                }
+                            }
+                            if(link_data[aff1aff2]['area_cnt'] === undefined){link_data[aff1aff2]['area_cnt'] = this.collabDetails[year][aff1][aff2] ;}
+                            else{
+                                Object.keys(this.collabDetails[year][aff1][aff2]).forEach(area => {
+                                    link_data[aff1aff2]['area_cnt'][area] += this.collabDetails[year][aff1aff2][area];
+                                });
+                            }
+                        }
+                    });
+                });
+            });
+            
+            console.log('node_data');
+            console.log(node_data);
+            let link_data_copy = link_data;
+            link_data = [];
+            Object.keys(link_data_copy).forEach(aff1aff2 => {
+                link_data.push(link_data_copy[aff1aff2]);
+            });
+
+
+
+        // change outer nodes on map 
+        this.circlegroup.selectAll(".aff-outer-circle").remove();
+        this.circlegroup.selectAll("circle .aff-outer-circle")
+            .data(node_data)
+            .enter()
+            .append("circle")
+            .classed('aff-outer-circle',true)
+            .attr("cx", function (d) {
+                return projection([d.lon, d.lat])[0];
+            })
+            .attr("cy", function (d) {
+                return projection([d.lon, d.lat])[1];
+            })
+            .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5))
+            .style("fill", "mediumturquoise")
+            .attr('stroke-width',0)
+            .attr("transform","scale(1.5)")
+            .style("opacity", 0.2);
+        this.circlegroup.selectAll("circle .aff-inner-circle").remove();
         this.circlegroup.selectAll("circle .aff-inner-circle")
-            .data(data)
+            .data(node_data)
             .enter()
             .append("circle")
             .classed('aff-inner-circle',true)
@@ -395,14 +483,46 @@ class Map {
             .on('mouseover',this.tip.show)
             .on('mouseleave',this.tip.hide)
             .on('click',(d)=>{
-                this.updateMap(d);
+                this.selected.aff_geo = d;
+                this.updateMap(this.selected);
                 this.updateUniv(d.aff_name);
             });
-        }
 
-        updateMap(aff_geo){
-            console.log('aff_geo');
-            console.log(aff_geo);
+        // change links on map
+        this.linkgroup.selectAll('.aff-link').remove();
+        this.linkgroup.selectAll('path')
+            .data(link_data)
+            .enter()
+            .append('path')
+            .on('mouseover',this.link_tip.show)
+            .on('mouseleave',this.link_tip.hide)
+            .attr('class',d=>{
+                let classstr1 = 'link-'+d['aff1_geo'].aff_name;
+                classstr1 = classstr1.replace(/\s+/g,''); 
+                let classstr2 = 'link-'+d['aff2_geo'].aff_name;
+                classstr2 = classstr2.replace(/\s+/g,'');
+                let major_area = 'ai';
+                if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
+                if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
+                if(d['area_cnt']['interdis']>d['area_cnt'][major_area]){major_area = 'interdis';}
+                return classstr1 + ' ' + classstr2 + ' '+ major_area +' '+ 'aff-link' + ' ' + 'unselected'
+            })
+            .attr('d',d=>{
+                return 'M ' + projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[0] +' '+projection([d['aff1_geo'].lon, d['aff1_geo'].lat])[1]
+                + ' L ' + projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[0] +' '+projection([d['aff2_geo'].lon, d['aff2_geo'].lat])[1]
+            })
+            .attr('id',d=>{
+                let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
+                idstr = idstr.replace(/\s+/g,''); 
+                return d;
+            })
+            .attr('opacity',d=>{
+                if(d['area_cnt']['total']>5){return 5;}
+                else{return d['area_cnt']['total']/5;}
+            })
+            .attr('stroke-width',0.5);
+
+
             if(aff_geo===undefined){
                 console.log('undefined');
                 d3.selectAll('.aff-link')
