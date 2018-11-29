@@ -430,7 +430,8 @@ class Map {
                                     console.log('selectedElems aff');
                                     console.log(selectedElems);
                                     that.selected.aff_geo = selectedElems;
-                            // that.updateMap(that.selected.affs,that.selected.years);
+                                    that.selected.affs = selectedElems.map((d)=>d['aff_name']);
+                            that.updateMap(that.selected.affs,that.selected.years);
                             that.compare_table.update_comparsion(that.selected);
                             }));
                 }else{
@@ -448,11 +449,16 @@ class Map {
     }
 
     updateMap(activeUniv, activeYear){
-        console.log("activeUniv", activeUniv)
-        console.log("activeYear",activeYear)
         let projection = d3.geoPatterson()
 
         if(activeYear===undefined){activeYear = Object.keys(this.collabDetails)};
+        if(activeUniv===undefined){activeUniv = [];}
+        // ensure input to be in array form
+        if(typeof(activeYear)==='string'){activeYear = [activeYear];}
+        if(typeof(activeUniv)==='string'){activeUniv = [activeUniv];}
+
+        console.log("activeUniv", activeUniv)
+        console.log("activeYear",activeYear)
 
         // data for link, and total co-pub for node
         let node_data = this.world_aff;
@@ -524,11 +530,11 @@ class Map {
                 link_data.push(link_data_copy[aff1aff2]);
         });
 
-        let univlistAll = []
-        if(activeUniv){
+        let univlistAll = [];
+        activeUniv.forEach(act_u => {
             activeYear.forEach(year=>{
-                if(this.collabDetails[year][activeUniv]){
-                    let univlist = Object.keys(this.collabDetails[year][activeUniv]);
+                if(this.collabDetails[year][act_u]){
+                    let univlist = Object.keys(this.collabDetails[year][act_u]);
                     univlist.forEach(u=>{
                         if(univlistAll.indexOf(u)===-1){
                             univlistAll.push(u);
@@ -536,7 +542,7 @@ class Map {
                     })
                 } 
             })
-        }
+        });
 
 
         // change outer nodes on map 
@@ -565,7 +571,7 @@ class Map {
         circles
             .attr("class",d=>{
                 if(univlistAll.indexOf(d.aff_name)===-1){
-                    if(d.aff_name === activeUniv){
+                    if(activeUniv.indexOf(d.aff_name) != -1){
                         return "selecteduniv"
                     } else {
                         return "aff-inner-circle"
@@ -638,17 +644,19 @@ class Map {
                 .classed('unselected', true);
         }
         else{
-            let aff_geo = node_data[node_data.map(d=>d.aff_name).indexOf(activeUniv)]
             d3.selectAll('.aff-link')
-                .classed('unselected',true)
-            console.log('aff_geo');
-            console.log(aff_geo);
-            let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
-            console.log('classstr');
-            console.log(classstr);
-            d3.selectAll('.'+classstr)
-                .classed('unselected',false)
-                .classed('selected', true);                
+                .classed('unselected',true);
+            activeUniv.forEach(act_u => {
+                let aff_geo = node_data[node_data.map(d=>d.aff_name).indexOf(act_u)]
+                console.log('aff_geo');
+                console.log(aff_geo);
+                let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
+                console.log('classstr');
+                console.log(classstr);
+                d3.selectAll('.'+classstr)
+                    .classed('unselected',false)
+                    .classed('selected', true); 
+            });
         }
     }
 }
