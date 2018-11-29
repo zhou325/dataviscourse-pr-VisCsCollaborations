@@ -34,6 +34,7 @@ class Map {
 
         this.displaySize = this.width*0.8;
         this.ifZoomedIn = false;
+        this.zoomedContinent = undefined;
 
         // Intialize tool-tip
         this.tip = d3.tip();
@@ -118,6 +119,7 @@ class Map {
                 if(this.ifZoomedIn === false){
                     this.mapgroup.selectAll('path').classed('clicked', false);
                     d3.select(d3.event.target).classed('clicked', true);
+                    this.zoomedContinent = d.region;
                     if(d.region === 'northamericas'){
                         this.group
                             .transition(d3.transition().duration(1000))
@@ -386,8 +388,39 @@ class Map {
                                     let selectedRange = d3.event.selection;
                                     let selectedElems = [];
                                     that.world_aff.forEach(aff_geo => {
-                                        let aff_x = projection([aff_geo['lon'], aff_geo['lat']])[0] * 1.5;
-                                        let aff_y = projection([aff_geo['lon'], aff_geo['lat']])[1] * 1.5;
+                                        let aff_x,aff_y;
+                                        console.log('that.zoomedContinent');
+                                        console.log(that.zoomedContinent);
+                                        switch(that.zoomedContinent){
+                                            case 'northamericas':
+                                                aff_x = (projection([aff_geo['lon'], aff_geo['lat']])[0] -650) * 3.8;
+                                                aff_y = (projection([aff_geo['lon'], aff_geo['lat']])[1] -300)* 3.8;
+
+
+                                            case 'americas':
+                                                aff_x = (projection([aff_geo['lon'], aff_geo['lat']])[0] -1200) * 3.5;
+                                                aff_y = (projection([aff_geo['lon'], aff_geo['lat']])[1] -1200)* 3.5;
+
+                                            case 'europe':
+                                                aff_x = (projection([aff_geo['lon'], aff_geo['lat']])[0] -200) * 3.5;
+                                                aff_y = (projection([aff_geo['lon'], aff_geo['lat']])[1] -200)* 3.5;
+
+                                            case 'asia':
+                                                aff_x = (projection([aff_geo['lon'], aff_geo['lat']])[0] -2000) * 2.5;
+                                                aff_y = (projection([aff_geo['lon'], aff_geo['lat']])[1] -350)* 2.5;
+
+                                            case 'oceania':
+                                                aff_x = (projection([aff_geo['lon'], aff_geo['lat']])[0] -3000) * 3;
+                                                aff_y = (projection([aff_geo['lon'], aff_geo['lat']])[1] -1100)* 3;
+
+                                            case undefined:
+                                                aff_x = projection([aff_geo['lon'], aff_geo['lat']])[0] * 1.5;
+                                                aff_y = projection([aff_geo['lon'], aff_geo['lat']])[1] * 1.5;
+                                            default:
+                                                aff_x = projection([aff_geo['lon'], aff_geo['lat']])[0] * 1.5;
+                                                aff_y = projection([aff_geo['lon'], aff_geo['lat']])[1] * 1.5;
+
+                                        }
                                         if(aff_x>=selectedRange[0][0] && aff_x<=selectedRange[1][0] && aff_y>=selectedRange[0][1] && aff_y<=selectedRange[1][1]){
                                             selectedElems.push(aff_geo);
                                         }
