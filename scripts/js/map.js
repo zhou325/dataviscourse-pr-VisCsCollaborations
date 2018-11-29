@@ -7,7 +7,7 @@ class Map {
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(world,world_aff,population,collabDetails, updateUniv) {
+    constructor(world,world_aff,population,collabDetails, updateUniv, compare_table) {
         this.world = world;
         this.world_aff = world_aff;
         this.population = population;
@@ -15,6 +15,7 @@ class Map {
         this.regionArray = this.population.map(d=>d.region);
         this.collabDetails = collabDetails;
         this.updateUniv = updateUniv;
+        this.compare_table = compare_table;
 
         this.width = 1400;
         this.height = 800;
@@ -357,6 +358,7 @@ class Map {
                         that.selected.years = selectedElems;
                         });
                 that.updateMap(undefined, that.selected.years);
+                that.compare_table.update_comparsion(that.selected);
                 }));
 
 
