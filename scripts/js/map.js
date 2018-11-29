@@ -611,9 +611,9 @@ class Map {
             .on('mouseleave',this.link_tip.hide)
             .attr('class',d=>{
                 let classstr1 = 'link-'+d['aff1_geo'].aff_name;
-                classstr1 = classstr1.replace(/\s+/g,''); 
+                classstr1 = classstr1.replace('&','AND').replace(/\s+/g,''); 
                 let classstr2 = 'link-'+d['aff2_geo'].aff_name;
-                classstr2 = classstr2.replace(/\s+/g,'');
+                classstr2 = classstr2.replace('&','AND').replace(/\s+/g,'');
                 let major_area = 'ai';
                 if(d['area_cnt']['system']>d['area_cnt'][major_area]){major_area = 'system';}
                 if(d['area_cnt']['theory']>d['area_cnt'][major_area]){major_area = 'theory';}
@@ -627,7 +627,7 @@ class Map {
             })
             .attr('id',d=>{
                 let idstr = 'link-'+d['aff1_geo'].aff_name+'-'+d['aff2_geo'].aff_name;
-                idstr = idstr.replace(/\s+/g,''); 
+                idstr = idstr.replace('&','AND').replace(/\s+/g,''); 
                 return idstr;
             })
             .attr('opacity',d=>{
@@ -650,7 +650,7 @@ class Map {
                 let aff_geo = node_data[node_data.map(d=>d.aff_name).indexOf(act_u)]
                 console.log('aff_geo');
                 console.log(aff_geo);
-                let classstr = 'link-'+aff_geo.aff_name.replace(/\s+/g,'')
+                let classstr = 'link-'+aff_geo.aff_name.replace('&','AND').replace(/\s+/g,'')
                 console.log('classstr');
                 console.log(classstr);
                 d3.selectAll('.'+classstr)
