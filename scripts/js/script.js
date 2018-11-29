@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-worldMapLoadData().then(data => {
-    this.activeUniv = undefined;
-    this.activeYear = undefined;
-    let that = this
-
-    function updateUniv(univName) {
-        // that.activeUniv = univName;
-
-        // infoBox.updateInfoBox(univName, that.activeYear);
-        worldMap.updateMap(univName, that.activeYear)
-    }
-
-    const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv);
-    worldMap.drawMap();
-    worldMap.updateMap(undefined,undefined);
-    
-    const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv);
-    infoBox.drawInfoBox();
-    // infoBox.updateInfoBox("Carnegie Mellon University",'2015');
-});
-=======
-
->>>>>>> e7f998a812833924c015d1909159fbee7852b006
-
-
 async function worldMapLoadData() {
     // Load in GeoJSON and filliation data 
     let world = await d3.json("data/world.json");

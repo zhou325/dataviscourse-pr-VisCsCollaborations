@@ -322,8 +322,10 @@ class comparsion{
 
 
  update_comparsion(selected){
-   let selected_affs = selected.aff_geo;
-   let selected_years = selected.years;
+  console.log('selected');
+  console.log(selected);
+
+  let selected_years = selected.years;
 
    if(selected_years!=undefined){this.selected_years = selected_years;}
 
@@ -375,11 +377,14 @@ class comparsion{
      return content;
    });
    data_used = univ_rank;
-
-   if(selected_affs===undefined){selected_affs = Object.keys(data_used)}
+   console.log('update data_used')
+   console.log(data_used)
+   let selected_affs = selected.aff_geo;
+   if(selected_affs===undefined){selected_affs = data_used.map((d)=>d['University'])}
+   else{selected_affs = selected.aff_geo.map((d)=>d['aff_name']);}
    this.selected_affs = selected_affs;
 
-   data_used = data_used.filter((d)=>this.selected_affs.indexOf(d)===-1)
+   data_used = data_used.filter((d)=>this.selected_affs.indexOf(d['University'])!==-1)
    console.log('update data_used')
    console.log(data_used)
    function mappingData(d){

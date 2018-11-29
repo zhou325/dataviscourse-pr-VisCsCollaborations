@@ -361,6 +361,55 @@ class Map {
                 that.compare_table.update_comparsion(that.selected);
                 }));
 
+                d3.selectAll('#brush-aff').remove();
+                d3.select('#circlegroup').append('g')
+                    .attr('id','brush-aff')
+                    .attr("class", "brush");
+        
+        this.aff_brush_used = false;
+        this.svg.append('text').attr('id','brush-checkbox').classed('checkbox',true)
+            .attr('stroke','red').text('Brush For Affiliations').attr('x',this.width-200).attr('y',20)
+            .on('click',(d)=>{
+                console.log('that.aff_brush_used');
+                console.log(that.aff_brush_used);
+                if(that.aff_brush_used === false){
+                    d3.select('#brush-checkbox').attr('stroke','green').text('Map ZoomedIn');
+                    console.log('t');
+                    that.aff_brush_used = true;
+                    d3.select('#brush-aff')
+                        .call(
+                            d3.brush()
+                                .extent([[0, 0], [this.width, this.height]])
+                                .on("end", function(){
+                                    if (!d3.event.sourceEvent) return; // Only transition after input.
+                                    if (!d3.event.selection) return; // Ignore empty selections.
+                                    let selectedRange = d3.event.selection;
+                                    let selectedElems = [];
+                                    that.world_aff.forEach(aff_geo => {
+                                        let aff_x = projection([aff_geo['lon'], aff_geo['lat']])[0] * 1.5;
+                                        let aff_y = projection([aff_geo['lon'], aff_geo['lat']])[1] * 1.5;
+                                        if(aff_x>=selectedRange[0][0] && aff_x<=selectedRange[1][0] && aff_y>=selectedRange[0][1] && aff_y<=selectedRange[1][1]){
+                                            selectedElems.push(aff_geo);
+                                        }
+            
+                                    });
+                                    console.log('selectedElems aff');
+                                    console.log(selectedElems);
+                                    that.selected.aff_geo = selectedElems;
+                            // that.updateMap(that.selected.affs,that.selected.years);
+                            that.compare_table.update_comparsion(that.selected);
+                            }));
+                }else{
+                    d3.select('#brush-checkbox').attr('stroke','red').text('Brush For Affiliations');
+                    console.log('f');
+                    d3.selectAll('#brush-aff').remove();
+                    d3.select('#circlegroup').append('g')
+                        .attr('id','brush-aff')
+                        .attr("class", "brush");
+                    that.aff_brush_used = false;
+                }
+            });
+
 
     }
 
