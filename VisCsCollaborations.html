@@ -6,7 +6,8 @@
     <title>CS6630-Project VisCsCollaborations</title>
     <link rel="stylesheet" href="scripts/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
     <script src="https://d3js.org/d3.v5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.js"></script>
@@ -26,34 +27,35 @@
     </div>
 
     <div id="worldMap" class="view">
-            <a href="#" data-target="#infoBox" data-toggle="collapse">
-                    <span style="font-size: 2.5em; color: grey;">
-                        <i id="infoBoxbutton" class="fas fa-arrow-alt-circle-left" style="position:absolute;top:68%;left:0px;z-index:999;visibility:hidden"></i>
-                    </span>
-            </a>
+        <a href="#" data-target="#infoBox" data-toggle="collapse">
+            <span style="font-size: 2.5em; color: grey;">
+                <i id="infoBoxbutton" class="fas fa-arrow-alt-circle-left" style="position:absolute;top:68%;left:0px;z-index:999;visibility:hidden"></i>
+            </span>
+        </a>
     </div>
     <div id="connChar" class="view">
     </div>
-    
-    <div id="comparisonTable" class="view">
-    <h2> Collaborations Table</h2>
-    <table id = "ComparsionTable">
-      <thead>
-      <tr>
-      <td> University </td>
-      <td> AI </td>
-      <td> System </td>
-      <td> Theory </td>
-      <td> Interdisciplinary </td>
-      <td> Total </td>
-    </tr>
-  </thead>
-   <tbody>
 
-  </tbody>
-</table>
-</div>
+    <div id="comparisonDiv" class="view">
+        <h2> Collaborations Table</h2>
+        <table id="ComparsionTable">
+            <thead>
+                <tr>
+                    <td> University </td>
+                    <td> AI </td>
+                    <td> System </td>
+                    <td> Theory </td>
+                    <td> Interdisciplinary </td>
+                    <td> Total </td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
 
 
 </body>
+
 </html>
