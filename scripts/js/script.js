@@ -58,6 +58,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
                 } else {
                     that.activeunivList = univName;
                     forceDirected.updateGraph(univName, that.activeYear);
+                    stats.updateStats(univName, that.activeYear);
                 }
                 
             }
@@ -68,11 +69,11 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
                 infoBox.updateInfoBox(that.activeUniv, yearArray);
                 worldMap.updateMap(that.activeUniv, yearArray);
                 forceDirected.updateGraph(that.activeunivList, yearArray);
+                stats.updateStats(that.activeunivList, yearArray);
             }
 
             const forceDirected = new ForceDirected(data.collabDetails, updateUniv, updateYear);
             forceDirected.drawGraph();
-            // forceDirected.updateGraph(["University of Minnesota", "University of Kentucky", "Purdue University", "Michigan State University", "University of Wisconsin - Madison", "University of Illinois at Chicago", "Northwestern University", "Univ. of Illinois at Urbana-Champaign", "Illinois Institute of Technology", "University of Chicago", "Indiana University", "University of Kansas", "Iowa State University", "Washington University in St. Louis", "Missouri University of Technology", "University of Notre Dame", "University of Iowa"],['2015','2016','2017']);
         
             const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected);
             worldMap.drawMap();
@@ -80,7 +81,11 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             
             const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
-            // infoBox.updateInfoBox("Carnegie Mellon University",['2015','2016','2017']);
+            // infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
+
+            const stats = new Stats(data.collabDetails, data.inslist);
+            stats.drawStats();
+            stats.updateStats(undefined, undefined);
 
             
         });
