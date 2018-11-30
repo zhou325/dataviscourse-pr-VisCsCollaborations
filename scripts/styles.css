@@ -118,6 +118,33 @@ circle.nodeinterdis {
     stroke-width: 0.5px;
 }
 
+.x-axis path,
+.x-axis line {
+    fill:none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.AveCopub {
+    stroke: #000;
+    /* shape-rendering: crispEdges; */
+}
+.AveAi {
+    stroke: rgb(211,56,28);
+    /* shape-rendering: crispEdges; */
+}
+.AveSystem {
+    stroke: #4288B5;
+    /* shape-rendering: crispEdges; */
+}
+.AveTheory {
+    stroke: rgb(158,188,43);
+    /* shape-rendering: crispEdges; */
+}
+.AveInterdis {
+    stroke: rgb(241,141,0);
+    /* shape-rendering: crispEdges; */
+}
 
 /*ID Styling*/
 
