@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .sub_view {
@@ -708,8 +708,11 @@ tbody tr .game {
 
 h1 {
     margin-top: 0;
-    font-family: 'font2';
-    color: #af161e;
+    /* font-family: 'font2'; */
+    /* font-family: "Times New Roman", Times, serif; */
+    font-family: "arial", Sans-serif;
+    color: rgb(83,74,70);
+    text-align:center;
 }
 
 h2 {
@@ -724,6 +727,15 @@ h3 {
     padding-bottom: 0px;
     margin-bottom: 0px;
     color: #354050;
+}
+
+.info {
+    text-align:center;
+    font-family: "arial", Sans-serif;
+    font-size: 12pt;
+    color: rgb(83,74,70);
+    font-style: bold;
+
 }
 
 h4 {
