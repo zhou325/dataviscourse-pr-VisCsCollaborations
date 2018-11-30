@@ -15,7 +15,7 @@ class Map {
         this.regionArray = this.population.map(d=>d.region);
         this.collabDetails = collabDetails;
         this.updateUniv = updateUniv;
-        this.updataYear = updateYear;
+        this.updateYear = updateYear;
         this.compare_table = compare_table;
 
         this.width = 1400;
@@ -359,7 +359,8 @@ class Map {
                         // console.log(selectedElems);
                         that.selected.years = selectedElems;
                         });
-                that.updateMap(that.selected.affs, that.selected.years);
+                // that.updateMap(that.selected.affs, that.selected.years);
+                that.updateYear(that.selected.years);
                 that.compare_table.update_comparsion(that.selected);
                 }));
 
