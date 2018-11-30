@@ -46,6 +46,7 @@ class comparsion {
     this.selected_years = undefined;
     this.selected_affgeo = undefined;
 
+    this.rank_indicator = 'Total';
 
   }
   create_comparsion() {
@@ -401,21 +402,18 @@ class comparsion {
       return content;
     });
     data_used = univ_rank;
-    console.log('update data_used')
-    console.log(data_used)
     let selected_affgeo = selected.aff_geo;
     if (selected_affgeo === undefined) { selected_affgeo = data_used; }
     else {
       if (selected_affgeo.length === 0) {
         selected_affgeo = this.selected_affgeo;
       }
+      this.selected_affgeo = selected_affgeo;
+      this.selected_affs = this.selected_affgeo.map((d) => d['aff_name']);
+      data_used = data_used.filter((d) => this.selected_affs.indexOf(d['University']) !== -1)
     }
-    this.selected_affgeo = selected_affgeo;
     console.log('selected_affgeo');
     console.log(selected_affgeo);
-    this.selected_affs = this.selected_affgeo.map((d) => d['aff_name']);
-
-    data_used = data_used.filter((d) => this.selected_affs.indexOf(d['University']) !== -1)
     console.log('update data_used')
     console.log(data_used)
     function mappingData(d) {
