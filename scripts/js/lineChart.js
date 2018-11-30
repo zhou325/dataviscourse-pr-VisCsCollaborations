@@ -8,7 +8,7 @@ class lineChart {
 
         this.width = 800;
         this.height = 1000;
-        this.margin = { 'top': 10, 'bottom': 10, 'left': 30, 'right': 30 };
+        this.margin = { 'top': 10, 'bottom': 10, 'left': 50, 'right': 50 };
 
         this.svg = d3.select('body').append('div')
             .append('svg')
@@ -114,7 +114,7 @@ class lineChart {
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
             .classed('axistext', true)
-            .text("coworkers")
+            .text("co-publication")
             .attr('fill', 'black')
             .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
@@ -145,7 +145,7 @@ class lineChart {
             .attr('id', 'line-scatter-checkbox')
             .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x', this.width - 20 * this.margin.right)
+            .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
                 if (that.scatterOrLine === 0) {
@@ -333,7 +333,7 @@ class lineChart {
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
             .classed('axistext', true)
-            .text("coworkers")
+            .text("co-publication")
             .attr('fill', 'black')
             .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
@@ -364,7 +364,7 @@ class lineChart {
             .attr('id', 'line-scatter-checkbox')
             .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x', this.width - 20 * this.margin.right)
+            .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
                 if (that.scatterOrLine === 0) {

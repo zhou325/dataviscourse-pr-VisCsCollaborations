@@ -82,6 +82,7 @@ h2 {
 #line-scatter-checkbox {
     font-family: fantasy;
     stroke: orangered;
+    text-anchor: end;
     font-size: 30px
 }
 #line-scatter-checkbox.checked {
