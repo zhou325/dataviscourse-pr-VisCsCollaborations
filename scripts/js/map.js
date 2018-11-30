@@ -433,6 +433,7 @@ class Map {
                                     that.selected.affs = selectedElems.map((d)=>d['aff_name']);
                             that.updateMap(that.selected.affs,that.selected.years);
                             that.compare_table.update_comparsion(that.selected);
+                            that.updateUniv(that.selected.affs)
                             }));
                 }else{
                     d3.select('#brush-checkbox').attr('stroke','red').text('Brush For Affiliations');

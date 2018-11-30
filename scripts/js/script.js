@@ -47,29 +47,41 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
         worldMapLoadData().then(data => {
             this.activeUniv = undefined;
             this.activeYear = undefined;
+            this.activeunivList = undefined;
             let that = this
         
             function updateUniv(univName) {
-                that.activeUniv = univName
-        
-                infoBox.updateInfoBox(univName, that.activeYear);
-                worldMap.updateMap(univName, that.activeYear)
+                if(typeof(univName)==='string'){
+                    that.activeUniv = univName
+                    infoBox.updateInfoBox(univName, that.activeYear);
+                    worldMap.updateMap(univName, that.activeYear)
+                } else {
+                    that.activeunivList = univName;
+                    forceDirected.updateGraph(univName, that.activeYear);
+                }
+                
             }
 
             function updateYear(yearArray) {
                 that.activeYear = yearArray
-                console.log(that.activeUniv)
+
                 infoBox.updateInfoBox(that.activeUniv, yearArray);
                 worldMap.updateMap(that.activeUniv, yearArray);
+                forceDirected.updateGraph(that.activeunivList, yearArray);
             }
+
+            const forceDirected = new ForceDirected(data.collabDetails, updateUniv, updateYear);
+            // forceDirected.updateGraph("Carnegie Mellon University",['2015','2016','2017']);
         
-            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table);
+            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected);
             worldMap.drawMap();
             worldMap.updateMap(undefined,undefined);
             
             const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
             // infoBox.updateInfoBox("Carnegie Mellon University",['2015','2016','2017']);
+
+            
         });
 
 
