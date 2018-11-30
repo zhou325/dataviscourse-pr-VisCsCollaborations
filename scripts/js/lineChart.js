@@ -8,7 +8,7 @@ class lineChart {
 
         this.width = 800;
         this.height = 1000;
-        this.margin = { 'top': 10, 'bottom': 10, 'left': 30, 'right': 30 };
+        this.margin = { 'top': 10, 'bottom': 10, 'left': 50, 'right': 50 };
 
         this.svg = d3.select('#linechartGroup')
             .append('svg')
@@ -30,6 +30,8 @@ class lineChart {
             }
         });
 
+        this.link_tip = this.svg.append('g').classed('scatter-tooltip', true)
+            .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
     }
 
     draw() {
@@ -112,7 +114,7 @@ class lineChart {
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
             .classed('axistext', true)
-            .text("coworkers")
+            .text("co-publication")
             .attr('fill', 'black')
             .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
@@ -143,7 +145,7 @@ class lineChart {
             .attr('id', 'line-scatter-checkbox')
             .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x', this.width - 20 * this.margin.right)
+            .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
                 if (that.scatterOrLine === 0) {
@@ -176,7 +178,7 @@ class lineChart {
                 Object.keys(d.coworker).forEach(area => {
                     if (area != 'total') {
                         if (d.coworker[area] > major_area['cnt']) {
-                            major_area = { 'area': area, 'cnt': d.coworker['area'] }
+                            major_area = { 'area': area, 'cnt': d.coworker[area] }
                         }
                     }
                 });
@@ -193,12 +195,15 @@ class lineChart {
                 title_data = title_data.concat(Object.keys(d.coworker).map(area => area + ': ' + d.coworker[area]));
                 console.log('title_data')
                 console.log(title_data)
-                this.svg.selectAll('g.scatter-tooltip').remove();
-                this.svg.append('g').classed('scatter-tooltip', true)
-                    .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
-                let link_tip = this.svg.select('.scatter-tooltip');
-                link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
-                link_tip.selectAll('text').data(title_data).enter().append('text')
+                // this.svg.selectAll('g.scatter-tooltip').remove();
+                // this.svg.append('g').classed('scatter-tooltip', true)
+                //     .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
+                // let link_tip = this.svg.select('.scatter-tooltip');
+                this.link_tip.selectAll('rect').remove();
+                this.link_tip.selectAll('text').remove();
+                this.link_tip.attr('visibility', 'visible');
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
                             case 0:
@@ -223,7 +228,7 @@ class lineChart {
 
             })
             .on('mouseleave', (d) => {
-                this.svg.selectAll('g.scatter-tooltip').remove();
+                this.link_tip.attr('visibility', 'hidden');
             });
     }
 
@@ -328,7 +333,7 @@ class lineChart {
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
             .classed('axistext', true)
-            .text("coworkers")
+            .text("co-publication")
             .attr('fill', 'black')
             .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
@@ -359,7 +364,7 @@ class lineChart {
             .attr('id', 'line-scatter-checkbox')
             .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x', this.width - 20 * this.margin.right)
+            .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
                 if (that.scatterOrLine === 0) {
@@ -392,7 +397,7 @@ class lineChart {
                 Object.keys(d.coworker).forEach(area => {
                     if (area != 'total') {
                         if (d.coworker[area] > major_area['cnt']) {
-                            major_area = { 'area': area, 'cnt': d.coworker['area'] }
+                            major_area = { 'area': area, 'cnt': d.coworker[area] }
                         }
                     }
                 });
@@ -409,12 +414,15 @@ class lineChart {
                 title_data = title_data.concat(Object.keys(d.coworker).map(area => area + ': ' + d.coworker[area]));
                 console.log('title_data')
                 console.log(title_data)
-                this.svg.selectAll('g.scatter-tooltip').remove();
-                this.svg.append('g').classed('scatter-tooltip', true)
-                    .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
-                let link_tip = this.svg.select('.scatter-tooltip');
-                link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
-                link_tip.selectAll('text').data(title_data).enter().append('text')
+                // this.svg.selectAll('g.scatter-tooltip').remove();
+                // this.svg.append('g').classed('scatter-tooltip', true)
+                //     .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
+                // let link_tip = this.svg.select('.scatter-tooltip');
+                this.link_tip.selectAll('rect').remove();
+                this.link_tip.selectAll('text').remove();
+                this.link_tip.attr('visibility', 'visible');
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
                             case 0:
@@ -439,7 +447,7 @@ class lineChart {
 
             })
             .on('mouseleave', (d) => {
-                this.svg.selectAll('g.scatter-tooltip').remove();
+                this.link_tip.attr('visibility', 'hidden');
             });
     }
 
