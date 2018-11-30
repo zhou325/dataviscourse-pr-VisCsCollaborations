@@ -35,42 +35,72 @@ class lineChart {
     draw() {
         let dist_cowork = {};
 
-        Object.keys(this.collabDetails).forEach(year => {
+        this.selected.years.forEach(year => {
             Object.keys(this.collabDetails[year]).forEach(univ1 => {
-                Object.keys(this.collabDetails[year][univ1]).forEach(univ2 => {
-                    let distance = this.univsDistance(univ1, univ2);
-                    if (dist_cowork[distance] === undefined) { dist_cowork[distance] = 1; }
-                    else { dist_cowork[distance] += 1; }
+                if (this.selected.affs.indexOf(univ1) != -1) {
+                    Object.keys(this.collabDetails[year][univ1]).forEach(univ2 => {
+                        let distance = this.univsDistance(univ1, univ2);
+                        let univpair = [univ1, univ2].sort().join('___');
+                        if (dist_cowork[univpair] === undefined) {
+                            dist_cowork[univpair] = {
+                                'distance': distance,
+                                'coworker': {
+                                    'ai': 0,
+                                    'interdis': 0,
+                                    'system': 0,
+                                    'theory': 0,
+                                    'total': 0,
+                                },
+                            };
+                        }
+                        else {
+                            Object.keys(this.collabDetails[year][univ1][univ2]).forEach(area => {
+                                dist_cowork[univpair]['coworker'][area] += this.collabDetails[year][univ1][univ2][area];
+                            });
+                        }
 
-                });
+                    });
+                }
 
             });
 
         });
-
-        dist_cowork = Object.keys(dist_cowork).map((dist) => {
-            let r = { 'distance': dist, 'coworker': dist_cowork[dist] };
+        console.log('dist_cowork');
+        console.log(dist_cowork);
+        dist_cowork = Object.keys(dist_cowork).map((univpair) => {
+            let r = { 'univpair': univpair, 'distance': dist_cowork[univpair]['distance'], 'coworker': dist_cowork[univpair]['coworker'] };
             return r
         });
+        console.log('dist_cowork');
+        console.log(dist_cowork);
         dist_cowork = dist_cowork.sort((a, b) => parseFloat(a['distance']) - parseFloat(b['distance']));
+        console.log('dist_cowork');
+        console.log(dist_cowork);
+
+        console.log([Math.min.apply(null, dist_cowork.map((d) => d['coworker']['total'])),
+        Math.max.apply(null, dist_cowork.map((d) => d['coworker']['total']))]);
+
 
         let yScale = d3.scaleLinear()
-            .domain([Math.min.apply(null, dist_cowork.map((d) => d['coworker'])),
-            Math.max.apply(null, dist_cowork.map((d) => d['coworker']))])
+            .domain([Math.min.apply(null, dist_cowork.map((d) => d['coworker']['total'])),
+            Math.max.apply(null, dist_cowork.map((d) => d['coworker']['total']))])
             .range([this.height - 2 * (this.margin.top + this.margin.bottom), 0]);
+        console.log(yScale(3));
+        let abc = dist_cowork[0]['coworker']['total']
+        console.log(yScale(abc));
 
         let xScale = d3.scaleLinear()
             .domain([Math.min.apply(null, dist_cowork.map((d) => d['distance'])),
             Math.max.apply(null, dist_cowork.map((d) => d['distance']))])
             .range([0, this.width - 2 * (this.margin.right + this.margin.left)]);
 
-
+        this.svg.selectAll('.axis').remove();
         this.svg.append("g")
             .attr("class", "axis")
             .call(d3.axisBottom(xScale).ticks(10))
             .attr("transform", "translate(" + this.margin.left + "," + (this.height - 2 * this.margin.bottom) + ")")
             .append("text")
-            .classed('axistext',true)
+            .classed('axistext', true)
             .text("distance")
             .attr('fill', 'black')
             .attr('x', this.width - (this.margin.right + this.margin.left))
@@ -81,16 +111,17 @@ class lineChart {
             .call(d3.axisLeft(yScale).ticks(10))
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
-            .classed('axistext',true)
+            .classed('axistext', true)
             .text("coworkers")
             .attr('fill', 'black')
-            .attr('x', 2*this.margin.right)
+            .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
 
         let line = d3.line()
             .x(d => xScale(d.distance))
-            .y(d => yScale(d.coworker))
+            .y(d => yScale(d['coworker']['total']));
 
+        d3.selectAll('path.linechart-path').remove();
         this.svg
             .append('g')
             .attr('id', 'linechartpath')
@@ -98,7 +129,7 @@ class lineChart {
             .append("path")
             .datum(dist_cowork)
             .attr("fill", "none")
-            .classed('linechart-path',true)
+            .classed('linechart-path', true)
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr("stroke-width", 1)
@@ -107,43 +138,93 @@ class lineChart {
         this.scatterOrLine = 0;
         let that = this;
 
+        d3.selectAll('#line-scatter-checkbox').remove();
         this.svg.append('text')
-            .attr('id','line-scatter-checkbox')
-            .classed('checked',true)
+            .attr('id', 'line-scatter-checkbox')
+            .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x',this.width-20*this.margin.right)
-            .attr('y',3*this.margin.top)
-            .on('click',d=>{
-                if(that.scatterOrLine === 0){
+            .attr('x', this.width - 20 * this.margin.right)
+            .attr('y', 3 * this.margin.top)
+            .on('click', d => {
+                if (that.scatterOrLine === 0) {
                     that.scatterOrLine = 1;
-                    d3.selectAll('#scatter').classed('selected',false);
-                    d3.selectAll('#linechartpath').classed('selected',true);
+                    d3.selectAll('#scatter').classed('selected', false);
+                    d3.selectAll('#linechartpath').classed('selected', true);
                     d3.select('#line-scatter-checkbox').text('Show Scatter Chart')
-                        .classed('checked',false);
-                }else{
+                        .classed('checked', false);
+                } else {
                     that.scatterOrLine = 0;
-                    d3.selectAll('#scatter').classed('selected',true);
-                    d3.selectAll('#linechartpath').classed('selected',false);
+                    d3.selectAll('#scatter').classed('selected', true);
+                    d3.selectAll('#linechartpath').classed('selected', false);
                     d3.select('#line-scatter-checkbox').text('Back to Line Chart')
-                        .classed('checked',true);
+                        .classed('checked', true);
                 }
             })
 
+        d3.selectAll('circle.scatter-circle').remove();
         this.svg
             .append('g')
-            .attr('id','scatter')
-            .classed('selected',true)
+            .attr('id', 'scatter')
+            .classed('selected', true)
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .selectAll('circle')
             .data(dist_cowork)
             .enter()
             .append('circle')
-            .classed('scatter-circle',true)
-            .classed('selected',false)
-            .attr('r',1)
-            .attr('cx',d=>xScale(d.distance))
-            .attr('cy',d=>yScale(d.coworker))
-            .attr('stroke','red');
+            .attr('class', d => {
+                let major_area = { 'area': 'ai', 'cnt': 0 };
+                Object.keys(d.coworker).forEach(area => {
+                    if (area != 'total') {
+                        if (d.coworker[area] > major_area['cnt']) {
+                            major_area = { 'area': area, 'cnt': d.coworker['area'] }
+                        }
+                    }
+                });
+                return major_area.area;
+            })
+            .classed('scatter-circle', true)
+            .classed('selected', false)
+            .attr('r', 5)
+            .attr('cx', d => xScale(d.distance))
+            .attr('cy', d => yScale(d.coworker.total))
+            .attr('stroke', 'red')
+            .on('mouseover', (d) => {
+                let title_data = [(d.univpair.split('___')[0]), (d.univpair.split('___')[1]), 'Distance: ' + d.distance];
+                title_data = title_data.concat(Object.keys(d.coworker).map(area => area + ': ' + d.coworker[area]));
+                console.log('title_data')
+                console.log(title_data)
+                this.svg.selectAll('g.scatter-tooltip').remove();
+                this.svg.append('g').classed('scatter-tooltip', true)
+                    .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
+                let link_tip = this.svg.select('.scatter-tooltip');
+                link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                link_tip.selectAll('text').data(title_data).enter().append('text')
+                    .attr('class', (d, i) => {
+                        switch (i) {
+                            case 0:
+                                return 'Univ1'
+                            case 1:
+                                return 'Univ2'
+                            case 2:
+                                return 'Distance'
+                            case 3:
+                                return 'AI'
+                            case 4:
+                                return 'Interdisciplinary'
+                            case 5:
+                                return 'System'
+                            case 6:
+                                return 'Theory'
+                            case 7:
+                                return 'Total'
+                        }
+
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+
+            })
+            .on('mouseleave', (d) => {
+                this.svg.selectAll('g.scatter-tooltip').remove();
+            });
     }
 
     univsDistance(univ1, univ2) {
@@ -165,45 +246,69 @@ class lineChart {
         if (typeof (activeYear) === 'string') { activeYear = [activeYear]; }
         if (typeof (activeUniv) === 'string') { activeUniv = [activeUniv]; }
         if (activeYear === undefined || activeYear.length === 0) { activeYear = this.selected.years; } else { this.selected.years = activeYear; }
-        if (activeUniv === undefined || activeUniv.length === 0) { activeUniv = this.selected.affs; }else{this.selected.affs = activeUniv;}
+        if (activeUniv === undefined || activeUniv.length === 0) { activeUniv = this.selected.affs; } else { this.selected.affs = activeUniv; }
 
 
         let dist_cowork = {};
 
         this.selected.years.forEach(year => {
             Object.keys(this.collabDetails[year]).forEach(univ1 => {
-                if(this.selected.affs.indexOf(univ1)!=-1){
+                if (this.selected.affs.indexOf(univ1) != -1) {
                     Object.keys(this.collabDetails[year][univ1]).forEach(univ2 => {
                         let distance = this.univsDistance(univ1, univ2);
-                        if (dist_cowork[distance] === undefined) { dist_cowork[distance] = 1; }
-                        else { dist_cowork[distance] += 1; }
-    
+                        let univpair = [univ1, univ2].sort().join('___');
+                        if (dist_cowork[univpair] === undefined) {
+                            dist_cowork[univpair] = {
+                                'distance': distance,
+                                'coworker': {
+                                    'ai': 0,
+                                    'interdis': 0,
+                                    'system': 0,
+                                    'theory': 0,
+                                    'total': 0,
+                                },
+                            };
+                        }
+                        else {
+                            Object.keys(this.collabDetails[year][univ1][univ2]).forEach(area => {
+                                dist_cowork[univpair]['coworker'][area] += this.collabDetails[year][univ1][univ2][area];
+                            });
+                        }
+
                     });
                 }
 
             });
 
         });
-
+        console.log('dist_cowork');
+        console.log(dist_cowork);
+        dist_cowork = Object.keys(dist_cowork).map((univpair) => {
+            let r = { 'univpair': univpair, 'distance': dist_cowork[univpair]['distance'], 'coworker': dist_cowork[univpair]['coworker'] };
+            return r
+        });
+        console.log('dist_cowork');
+        console.log(dist_cowork);
+        dist_cowork = dist_cowork.sort((a, b) => parseFloat(a['distance']) - parseFloat(b['distance']));
         console.log('dist_cowork');
         console.log(dist_cowork);
 
-        dist_cowork = Object.keys(dist_cowork).map((dist) => {
-            let r = { 'distance': dist, 'coworker': dist_cowork[dist] };
-            return r
-        });
-        dist_cowork = dist_cowork.sort((a, b) => parseFloat(a['distance']) - parseFloat(b['distance']));
+        console.log([Math.min.apply(null, dist_cowork.map((d) => d['coworker']['total'])),
+        Math.max.apply(null, dist_cowork.map((d) => d['coworker']['total']))]);
+
 
         let yScale = d3.scaleLinear()
-            .domain([Math.min.apply(null, dist_cowork.map((d) => d['coworker'])),
-            Math.max.apply(null, dist_cowork.map((d) => d['coworker']))])
+            .domain([Math.min.apply(null, dist_cowork.map((d) => d['coworker']['total'])),
+            Math.max.apply(null, dist_cowork.map((d) => d['coworker']['total']))])
             .range([this.height - 2 * (this.margin.top + this.margin.bottom), 0]);
+        console.log(yScale(3));
+        let abc = dist_cowork[0]['coworker']['total']
+        console.log(yScale(abc));
 
         let xScale = d3.scaleLinear()
             .domain([Math.min.apply(null, dist_cowork.map((d) => d['distance'])),
             Math.max.apply(null, dist_cowork.map((d) => d['distance']))])
             .range([0, this.width - 2 * (this.margin.right + this.margin.left)]);
-
 
         this.svg.selectAll('.axis').remove();
         this.svg.append("g")
@@ -211,6 +316,7 @@ class lineChart {
             .call(d3.axisBottom(xScale).ticks(10))
             .attr("transform", "translate(" + this.margin.left + "," + (this.height - 2 * this.margin.bottom) + ")")
             .append("text")
+            .classed('axistext', true)
             .text("distance")
             .attr('fill', 'black')
             .attr('x', this.width - (this.margin.right + this.margin.left))
@@ -221,14 +327,15 @@ class lineChart {
             .call(d3.axisLeft(yScale).ticks(10))
             .attr("transform", "translate(" + this.margin.left + "," + (2 * this.margin.top) + ")")
             .append("text")
+            .classed('axistext', true)
             .text("coworkers")
             .attr('fill', 'black')
-            .attr('x', 0)
+            .attr('x', 2 * this.margin.right)
             .attr('y', -this.margin.top);
 
         let line = d3.line()
             .x(d => xScale(d.distance))
-            .y(d => yScale(d.coworker))
+            .y(d => yScale(d['coworker']['total']));
 
         d3.selectAll('path.linechart-path').remove();
         this.svg
@@ -238,63 +345,102 @@ class lineChart {
             .append("path")
             .datum(dist_cowork)
             .attr("fill", "none")
-            .classed('linechart-path',true)
+            .classed('linechart-path', true)
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 1)
             .attr("d", line);
 
+        this.scatterOrLine = 0;
         let that = this;
 
         d3.selectAll('#line-scatter-checkbox').remove();
         this.svg.append('text')
-            .attr('id','line-scatter-checkbox')
-            .classed('checked',true)
+            .attr('id', 'line-scatter-checkbox')
+            .classed('checked', true)
             .text('Show Scatter Chart')
-            .attr('x',this.width-20*this.margin.right)
-            .attr('y',3*this.margin.top)
-            .on('click',d=>{
-                if(that.scatterOrLine === 0){
+            .attr('x', this.width - 20 * this.margin.right)
+            .attr('y', 3 * this.margin.top)
+            .on('click', d => {
+                if (that.scatterOrLine === 0) {
                     that.scatterOrLine = 1;
-                    d3.selectAll('#scatter').classed('selected',false);
-                    d3.selectAll('#linechartpath').classed('selected',true);
+                    d3.selectAll('#scatter').classed('selected', false);
+                    d3.selectAll('#linechartpath').classed('selected', true);
                     d3.select('#line-scatter-checkbox').text('Show Scatter Chart')
-                        .classed('checked',false);
-                }else{
+                        .classed('checked', false);
+                } else {
                     that.scatterOrLine = 0;
-                    d3.selectAll('#scatter').classed('selected',true);
-                    d3.selectAll('#linechartpath').classed('selected',false);
+                    d3.selectAll('#scatter').classed('selected', true);
+                    d3.selectAll('#linechartpath').classed('selected', false);
                     d3.select('#line-scatter-checkbox').text('Back to Line Chart')
-                        .classed('checked',true);
+                        .classed('checked', true);
                 }
             })
 
         d3.selectAll('circle.scatter-circle').remove();
         this.svg
             .append('g')
-            .attr('id','scatter')
+            .attr('id', 'scatter')
+            .classed('selected', true)
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .selectAll('circle')
             .data(dist_cowork)
             .enter()
             .append('circle')
-            .classed('scatter-circle',true)
-            .classed('selected',false)
-            .attr('r',10)
-            .attr('cx',d=>xScale(d.distance))
-            .attr('cy',d=>yScale(d.coworker))
-            .attr('stroke','red');
-        if(this.scatterOrLine===1){
-            d3.selectAll('#scatter').classed('selected',false);
-            d3.selectAll('#linechartpath').classed('selected',true);
-            d3.select('#line-scatter-checkbox').text('Show Scatter Chart')
-                .classed('checked',false);
-        }else{
-            d3.selectAll('#scatter').classed('selected',true);
-            d3.selectAll('#linechartpath').classed('selected',false);
-            d3.select('#line-scatter-checkbox').text('Back to Line Chart')
-                .classed('checked',true);
-        }
+            .attr('class', d => {
+                let major_area = { 'area': 'ai', 'cnt': 0 };
+                Object.keys(d.coworker).forEach(area => {
+                    if (area != 'total') {
+                        if (d.coworker[area] > major_area['cnt']) {
+                            major_area = { 'area': area, 'cnt': d.coworker['area'] }
+                        }
+                    }
+                });
+                return major_area.area;
+            })
+            .classed('scatter-circle', true)
+            .classed('selected', false)
+            .attr('r', 5)
+            .attr('cx', d => xScale(d.distance))
+            .attr('cy', d => yScale(d.coworker.total))
+            .attr('stroke', 'red')
+            .on('mouseover', (d) => {
+                let title_data = [(d.univpair.split('___')[0]), (d.univpair.split('___')[1]), 'Distance: ' + d.distance];
+                title_data = title_data.concat(Object.keys(d.coworker).map(area => area + ': ' + d.coworker[area]));
+                console.log('title_data')
+                console.log(title_data)
+                this.svg.selectAll('g.scatter-tooltip').remove();
+                this.svg.append('g').classed('scatter-tooltip', true)
+                    .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
+                let link_tip = this.svg.select('.scatter-tooltip');
+                link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                link_tip.selectAll('text').data(title_data).enter().append('text')
+                    .attr('class', (d, i) => {
+                        switch (i) {
+                            case 0:
+                                return 'Univ1'
+                            case 1:
+                                return 'Univ2'
+                            case 2:
+                                return 'Distance'
+                            case 3:
+                                return 'AI'
+                            case 4:
+                                return 'Interdisciplinary'
+                            case 5:
+                                return 'System'
+                            case 6:
+                                return 'Theory'
+                            case 7:
+                                return 'Total'
+                        }
+
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+
+            })
+            .on('mouseleave', (d) => {
+                this.svg.selectAll('g.scatter-tooltip').remove();
+            });
     }
 
 

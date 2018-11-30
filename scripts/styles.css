@@ -89,11 +89,68 @@ h2 {
     stroke: dodgerblue;
     font-size: 30px
 }
-.scatter-circle {
+.scatter-circle.ai {
     stroke: orangered;
-    fill: orange;
+    fill: crimson;
     opacity: .5;
 }
+.scatter-circle.system {
+    stroke: deepskyblue;
+    fill: blue;
+    opacity: .5;
+}
+.scatter-circle.theory {
+    stroke: yellow;
+    fill: chartreuse;
+    opacity: .5;
+}
+.scatter-circle.interdis {
+    stroke: coral;
+    fill: chocolate;
+    opacity: .5;
+}
+
+.scatter-tooltip rect {
+    fill: grey;
+    opacity: .5;
+}
+.scatter-tooltip text.Univ1 {
+    font-size: 20px;
+    font-family: 'font2';
+    stroke: black
+}
+.scatter-tooltip text.Univ2 {
+    font-size: 20px;
+    font-family: 'font2';
+    stroke: black
+}
+.scatter-tooltip text.Distance {
+    font-size: 15px;
+    font-family: 'font2';
+    stroke: black
+}
+.scatter-tooltip text.AI {
+    font-size: 15px;
+    stroke: red
+}
+.scatter-tooltip text.System {
+    font-size: 15px;
+    stroke: blue
+}
+.scatter-tooltip text.Theory {
+    font-size: 15px;
+    stroke: saddlebrown
+}
+.scatter-tooltip text.Interdisciplinary {
+    font-size: 15px;
+    stroke: #E68C5C
+}
+.scatter-tooltip text.Total {
+    font-size: 15px;
+    stroke: crimson;
+}
+
+
 .linechart-path {
     stroke: dodgerblue;
 }
@@ -143,7 +200,7 @@ path.hidden {
     stroke: #4288B5;
 }
 
-.aff-link.theroy{
+.aff-link.theory{
     stroke: #D1EC9E;
 }
 
