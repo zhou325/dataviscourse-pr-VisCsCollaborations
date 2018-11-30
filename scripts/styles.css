@@ -66,6 +66,45 @@ h2 {
 
 }
 
+#scatter.selected {
+    opacity: 1;
+}
+#scatter {
+    opacity: 0;
+}
+#linechartpath.selected {
+    opacity: 1;
+}
+#linechartpath {
+    opacity: 0;
+}
+
+#line-scatter-checkbox {
+    font-family: fantasy;
+    stroke: orangered;
+    font-size: 30px
+}
+#line-scatter-checkbox.checked {
+    font-family: fantasy;
+    stroke: dodgerblue;
+    font-size: 30px
+}
+.scatter-circle {
+    stroke: orangered;
+    fill: orange;
+    opacity: .5;
+}
+.linechart-path {
+    stroke: dodgerblue;
+}
+
+.axistext {
+    font-size: 15px;
+    stroke: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 h3 {
     padding-bottom: 0px;
     margin-bottom: 0px;

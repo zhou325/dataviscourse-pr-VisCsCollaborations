@@ -75,14 +75,17 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             // const forceDirected = new ForceDirected(data.collabDetails, data.inslist, updateUniv, updateYear);
             // forceDirected.drawGraph();
             // forceDirected.updateGraph(this.activeunivList, this.activeYear);
-        
-            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected);
+            const linechart = new lineChart(data.collabDetails,data.world_aff);
+            linechart.draw();
+
+            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected,linechart);
             worldMap.drawMap();
             worldMap.updateMap(undefined,undefined);
             
             const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
             infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
+
 
             // const stats = new Stats(data.collabDetails, data.inslist);
             // stats.drawStats();

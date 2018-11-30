@@ -7,7 +7,7 @@ class Map {
      * @param world the full dataset
      * country was updated (clicked)
      */
-    constructor(world,world_aff,population,collabDetails, updateUniv, updateYear, compare_table) {
+    constructor(world,world_aff,population,collabDetails, updateUniv, updateYear, compare_table,forceDirected,linechart) {
         this.world = world;
         this.world_aff = world_aff;
         this.population = population;
@@ -17,6 +17,8 @@ class Map {
         this.updateUniv = updateUniv;
         this.updateYear = updateYear;
         this.compare_table = compare_table;
+
+        this.linechart = linechart;
 
         this.width = 1400;
         this.height = 800;
@@ -362,6 +364,9 @@ class Map {
                 // that.updateMap(that.selected.affs, that.selected.years);
                 that.updateYear(that.selected.years);
                 that.compare_table.update_comparsion(that.selected);
+                console.log('that.selected.aff_geo')
+                console.log(that.selected.aff_geo)
+                that.linechart.update(that.selected.affs,that.selected.years);
                 }));
 
                 d3.selectAll('#brush-aff').remove();
@@ -434,6 +439,7 @@ class Map {
                             that.updateMap(that.selected.affs,that.selected.years);
                             that.compare_table.update_comparsion(that.selected);
                             that.updateUniv(that.selected.affs)
+                            that.linechart.update(that.selected.affs,that.selected.years)
                             }));
                 }else{
                     d3.select('#brush-checkbox').attr('stroke','red').text('Brush For Affiliations');
