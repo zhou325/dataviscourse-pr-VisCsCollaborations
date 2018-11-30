@@ -451,6 +451,11 @@ class Map {
                     that.aff_brush_used = false;
                 }
             });
+        
+        let buttonGroup = d3.select("#worldmap-svg").append("g")
+            .attr("id","buttonGroup")
+        let comparisonButton = buttonGroup.append("button")
+                .text("comparison table")
 
 
     }

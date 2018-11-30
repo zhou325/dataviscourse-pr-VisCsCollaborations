@@ -46,7 +46,8 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
 
         worldMapLoadData().then(data => {
             this.activeUniv = undefined;
-            this.activeYear = undefined;
+            // this.activeYear = undefined;
+            this.activeYear = ['2018']
             this.activeunivList = undefined;
             let that = this
         
@@ -90,6 +91,16 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             const stats = new Stats(data.collabDetails, data.inslist);
             stats.drawStats();
             stats.updateStats(undefined, undefined);
+
+            const drawer = new Drawer();
+
+            document.addEventListener("click", function(e) {
+                e.stopPropagation();
+                d3.select("#drawerContent")
+                    .transition().duration(350)
+                    .attr("transform", "translate(-420, 0)");
+                drawer.ifClose = true;
+            });
 
             
         });

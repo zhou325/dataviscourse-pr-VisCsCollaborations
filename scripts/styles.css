@@ -679,7 +679,8 @@ tbody td {
     padding-right: 5px;
     padding-left: 5px;
     border-left: solid 1px #000;
-    color:black
+    color:black;
+    text-align:center;
 }
 
 tbody tr:hover {
@@ -716,10 +717,11 @@ h1 {
 }
 
 h2 {
-    font-family: 'font2';
-    color: #af161e;
     /* font-size: 50pt; */
     /* font-weight:300; */
+    font-family: "arial", Sans-serif;
+    color: rgb(83,74,70);
+    text-align:left;
 
 }
 

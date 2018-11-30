@@ -10,7 +10,7 @@ class lineChart {
         this.height = 1000;
         this.margin = { 'top': 10, 'bottom': 10, 'left': 30, 'right': 30 };
 
-        this.svg = d3.select('body').append('div')
+        this.svg = d3.select('#linechartGroup')
             .append('svg')
             .attr('id', 'linechart')
             .attr('height', this.height)
