@@ -74,6 +74,10 @@ class InfoBox{
             .attr("text-anchor", "middle");
         textgroup.append("text")
             .classed("textinfo",true)
+            .attr("id", "csrankingsSub")
+            .attr("text-anchor", "middle");
+        textgroup.append("text")
+            .classed("textinfo",true)
             .attr("id", "numberofColls")
             .attr("text-anchor", "middle");
         textgroup.append("text")
@@ -196,7 +200,35 @@ class InfoBox{
             d3.select("#univName")
                 .attr("class","name")
                 .text(activeUniv);
-            
+
+            let univ_copub = {};
+            let activeUniv2rank = {};
+            activeYear.forEach(year => {
+                Object.keys(this.collabDetails[year]).forEach(univ1 => {
+                    Object.keys(this.collabDetails[year][univ1]).forEach(univ2 => {
+                        if(univ_copub[univ1]===undefined){univ_copub[univ1] = this.collabDetails[year][univ1][univ2];}
+                        else{
+                            ['ai','system','theory','total','interdis'].forEach(area => {
+                                univ_copub[univ1][area] += this.collabDetails[year][univ1][univ2][area];
+                            });
+                        }
+                    });
+                });
+            });
+            let csrankingsSub = [];
+            univ_copub = Object.keys(univ_copub).map(univ=>[univ,univ_copub[univ]]);
+            ['ai','system','theory','total','interdis'].forEach(area => {
+                univ_copub = univ_copub.sort((a,b)=>(b[1][area]-a[1][area]))
+                for (let index = 0; index < univ_copub.length; index++) {
+                    if(univ_copub[index][0]===activeUniv){
+                        activeUniv2rank[area] = index+1;
+                        if(area!='total'){csrankingsSub.push(area+'-'+(index+1));}
+                    }
+
+                }
+            });
+            csrankingsSub = csrankingsSub.join(' ')
+
             let yearPeriod = []
             yearPeriod.push(activeYear[0])
             yearPeriod.push(activeYear[activeYear.length-1])
@@ -205,7 +237,10 @@ class InfoBox{
                 .text("Selected Period: "+yearPeriod[0]+"-"+yearPeriod[1]);
             d3.select("#csrankings")
                 .attr("dy", 90)
-                .text("CS Rankings: 1");
+                .text("CS Rankings: "+activeUniv2rank['total']);
+            // d3.select("#csrankingsSub")
+            //     .attr("dy", 120)
+            //     .text('('+csrankingsSub+')');
             d3.select("#numberofColls")
                 .attr("dy", 120)
                 .text("Number of Collaborators: "+infoData.totalColl);
