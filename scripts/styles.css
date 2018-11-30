@@ -97,6 +97,26 @@ path.hidden {
     stroke: white;
     stroke-width: 0.5px;
 }
+circle.nodeai {
+    fill:rgb(211,56,28);
+    stroke: white;
+    stroke-width: 0.5px;
+}
+circle.nodesystem {
+    fill:#4288B5;
+    stroke: white;
+    stroke-width: 0.5px;
+}
+circle.nodetheory {
+    fill:rgb(158,188,43);
+    stroke: white;
+    stroke-width: 0.5px;
+}
+circle.nodeinterdis {
+    fill:rgb(241,141,0);
+    stroke: white;
+    stroke-width: 0.5px;
+}
 
 
 /*ID Styling*/

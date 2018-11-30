@@ -71,7 +71,8 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             }
 
             const forceDirected = new ForceDirected(data.collabDetails, updateUniv, updateYear);
-            // forceDirected.updateGraph("Carnegie Mellon University",['2015','2016','2017']);
+            forceDirected.drawGraph();
+            // forceDirected.updateGraph(["University of Minnesota", "University of Kentucky", "Purdue University", "Michigan State University", "University of Wisconsin - Madison", "University of Illinois at Chicago", "Northwestern University", "Univ. of Illinois at Urbana-Champaign", "Illinois Institute of Technology", "University of Chicago", "Indiana University", "University of Kansas", "Iowa State University", "Washington University in St. Louis", "Missouri University of Technology", "University of Notre Dame", "University of Iowa"],['2015','2016','2017']);
         
             const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected);
             worldMap.drawMap();
