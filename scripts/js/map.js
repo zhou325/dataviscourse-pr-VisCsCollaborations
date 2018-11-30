@@ -24,9 +24,9 @@ class Map {
 
 
         this.map_chart = d3.select("#worldMap");
-        this.map_chart.append('svg');
+        
 
-        this.svg = this.map_chart.select('svg')
+        this.svg = this.map_chart.append('svg')
             .attr('id','worldmap-svg')   
             .attr('height',this.height)
             .attr('width',this.width);

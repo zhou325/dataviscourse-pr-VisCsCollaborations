@@ -46,18 +46,14 @@ class InfoBox{
             .classed("frameGroup", true);
         framegroup.append("rect")
             .classed("backgroundframe",true)
-            .attr("x","10")
-            .attr("y","100")
             .attr("rx","15")
             .attr("width","400")
-            .attr("height","600");
+            .attr("height","780");
         framegroup.append("rect")
             .classed("boxframe", true)
-            .attr("x","10")
-            .attr("y","100")
             .attr("rx","15")
             .attr("width","400")
-            .attr("height","600");
+            .attr("height","780");
         let textgroup = this.infogroup.append("g")
             .attr("transform","translate(210,150)")
             .classed("textGroup", true);
@@ -97,7 +93,6 @@ class InfoBox{
     updateInfoBox(activeUniv, activeYear){
         if(this.inslist.indexOf(activeUniv)!=-1){
             if(activeYear===undefined){activeYear = Object.keys(this.collabDetails)};
-            console.log("aaaaa",activeYear)
             this.infoButton.style("visibility", "initial");
             this.showButton();
             this.ifDisplay = true;

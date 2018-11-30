@@ -513,8 +513,8 @@ i.europe {
 
 .boxframe {
     fill: none;
-    stroke: darkgrey;
-    stroke-width: 3px;
+    /* stroke: darkgrey; */
+    /* stroke-width: 3px; */
 }
 
 .textinfo {

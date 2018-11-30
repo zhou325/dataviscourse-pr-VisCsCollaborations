@@ -342,6 +342,9 @@ class comparsion {
     console.log('selected');
     console.log(selected);
 
+    d3.select("#comparisonDiv").style("visibility","initial")
+    d3.select("#infobox").style("visibility", "hidden")
+
     let selected_years = selected.years;
 
     if (selected_years != undefined && selected_years.length != 0) { this.selected_years = selected_years; }

@@ -1,8 +1,9 @@
 class ForceDirected{
-    constructor(collabDetails, updateUniv, updateYear){
+    constructor(collabDetails, inslist, updateUniv, updateYear){
         this.collabDetails = collabDetails;
         this.updateUniv = updateUniv;
         this.updateYear = updateYear;
+        this.inslist = inslist;
 
         this.width = 800;
         this.height = 800;
@@ -31,7 +32,9 @@ class ForceDirected{
 
     }
     updateGraph(activeunivList, activeYear){
-        console.log(activeunivList, activeYear)
+        if(!activeunivList){
+            activeunivList = this.inslist.slice(0,100);
+        }
         if(activeunivList){
             if(activeYear===undefined){activeYear = Object.keys(this.collabDetails)};
             let univ_data = {};
