@@ -95,14 +95,14 @@ class Stats{
         })
         
         let xScale = d3.scaleLinear()
-            .domain([1980,2018])
+            .domain([Math.min.apply(null,activeYear.map(y=>parseInt(y))),Math.max.apply(null,activeYear.map(y=>parseInt(y)))])
             .range([25, this.width-20]);
         let yScale = d3.scaleLinear()
             .domain([Math.ceil(maxpub),0])
             .range([20, this.height-40]);
 
         let xAxis = d3.select("#yearline_svg").select('.x-axis')
-            .call(d3.axisBottom(xScale))
+            .call(d3.axisBottom(xScale).ticks(Math.min.apply(null, [10, (1 + Math.max.apply(null, activeYear.map(y => parseInt(y))) - Math.min.apply(null, activeYear.map(y => parseInt(y))))])))
             .attr("transform", "translate(0," + (this.height-40) + ")")
         let yAxis = d3.select("#yearline_svg").select('.y-axis')
             .call(d3.axisLeft(yScale))
