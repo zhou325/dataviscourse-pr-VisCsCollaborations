@@ -15,6 +15,63 @@
 
 /*Element Styling*/
 
+svg .tooltip {
+    visibility: hidden,
+}
+
+svg:hover .tooltip {
+    visibility: visible,
+}
+
+.link-tooltip rect {
+    fill: deepskyblue;
+    opacity: .7;
+}
+
+.link-tooltip text.Univ1 {
+    font-size: 30px;
+    font-family: 'font2';
+    stroke: black
+}
+.link-tooltip text.Univ2 {
+    font-size: 30px;
+    font-family: 'font2';
+    stroke: black
+}
+.link-tooltip text.AI {
+    font-size: 20px;
+    stroke: red
+}
+.link-tooltip text.System {
+    font-size: 20px;
+    stroke: blue
+}
+.link-tooltip text.Theory {
+    font-size: 20px;
+    stroke: yellow
+}
+.link-tooltip text.Interdisciplinary {
+    font-size: 20px;
+    stroke: #E68C5C
+}
+.link-tooltip text.Total {
+    font-size: 20px;
+    stroke: crimson;
+}
+h2 {
+    font-family: 'font2';
+    color: #af161e;
+    /* font-size: 50pt; */
+    /* font-weight:300; */
+
+}
+
+h3 {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: #354050;
+}
+
 circle {
     fill: #d9d9d9;
     stroke: gray;

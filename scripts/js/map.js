@@ -610,21 +610,35 @@ class Map {
         links
             .on('mouseover',(d)=>{
                 let title_data = [d.aff1_geo.aff_name,d.aff2_geo.aff_name];
-                title_data = title_data.concat(Object.keys(d.area_cnt).map((a)=>'#'+a+': '+d.area_cnt[a]));
-                this.svg.selectAll('title.link-tooltip').remove();
-                let link_tip_div = this.svg.selectAll('title.link-tooltip')
-                    .data(title_data.join('\n')).enter().append("title")	
-                    .attr("class", "link-tooltip")				
-                    .style("opacity", 0);
-                link_tip_div.transition()		
-                    .duration(20)		
-                    .style("opacity", .9);		
-                link_tip_div	
-                    .html((d,i)=>title_data.join('\n'))	
-                    .style("left", (d,i)=>(d3.event.pageX) + "px")		
-                    .style("top", (d,i)=>i*10+(d3.event.pageY - 28) + "px");
+                title_data = title_data.concat(Object.keys(d.area_cnt).map((a)=>'#  '+a+':  '+d.area_cnt[a]));
+                this.svg.selectAll('g.link-tooltip').remove();
+                this.svg.append('g').classed('link-tooltip',true).attr('transform','translate('+(d3.event.pageX)+','+(d3.event.pageY-10*this.margin.top)+')');
+                let link_tip = this.svg.select('.link-tooltip');
+                link_tip.append('rect').attr('rx',5).attr('width',500).attr('height',300);
+                link_tip.selectAll('text').data(title_data).enter().append('text').attr('class',(d,i)=>{
+                    switch(i){
+                        case 0:
+                            return 'Univ1'
+                        case 1:
+                            return 'Univ2'
+                        case 2:
+                            return 'AI'
+                        case 3:
+                            return 'System'
+                        case 4:
+                            return 'Theory'
+                        case 5:
+                            return 'Interdisciplinary'
+                        case 6:
+                            return 'Total'
+                    }
+                    
+                }).attr('x',(d,i)=>10).attr('y',(d,i)=>(i+1)*40).text(d=>d);
+
             })
-            .on('mouseleave',this.link_tip.hide)
+            .on('mouseleave',(d)=>{
+                this.svg.selectAll('g.link-tooltip').remove();
+            })
             .attr('class',d=>{
                 let classstr1 = 'link-'+d['aff1_geo'].aff_name;
                 classstr1 = classstr1.replace('&','AND').replace(/\s+/g,''); 
