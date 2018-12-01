@@ -19,7 +19,7 @@ class Drawer{
 
         let backRect = this.drawerContent.append("rect")
             .attr("height", this.height)
-            .attr("width", this.width)
+            .attr("width", 300)
             .attr("fill", "lightgrey")
             .style("opacity",0.3)
             .on("click", function() { d3.event.stopPropagation(); });
@@ -32,17 +32,16 @@ class Drawer{
                     d3.select("#drawerContent")
                         .transition().duration(350)
                         .attr("transform", "translate(0, 0)")
-                        // .style("visibility","initial");
                     this.ifClose = false;
                 } else {
                     d3.select("#drawerContent")
                         .transition().duration(350)
-                        .attr("transform", "translate(420, 0)");
-                        // .style("visibility","hidden");
+                        .attr("transform", "translate(4200, 0)")
+                    
                     this.ifClose = true;
                 }
-                
             })
+       
         let comparison = this.drawerContent.append("text")
             .attr("id","comparisonButton")
             .attr("transform","translate(20,100)")

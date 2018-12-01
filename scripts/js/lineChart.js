@@ -6,8 +6,8 @@ class lineChart {
         this.collabDetails = collabDetails;
         this.world_aff = world_aff;
 
-        this.width = 800;
-        this.height = 1000;
+        this.width = 600;
+        this.height = 500;
         this.margin = { 'top': 10, 'bottom': 10, 'left': 50, 'right': 50 };
 
         this.svg = d3.select('#linechartGroup')

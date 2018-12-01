@@ -32,13 +32,15 @@
     </div>
 
     <div id="graph-corner">
-        <button class="md-button md-icon-button header-icon header-menu-button md-button md-ink-ripple" type="button" ng-transclude="" md-button="" ng-click="app.openNavDrawer()" aria-label="Open navigation drawer" style="position:absolute;top:10%;right:0%">
+        <button class="md-button md-icon-button header-icon header-menu-button md-button md-ink-ripple" type="button" ng-transclude="" md-button="" ng-click="app.openNavDrawer()" aria-label="Open navigation drawer" style="position:absolute;top:10%;right:0%;z-index:2000;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
             </svg>
           <div class="md-ripple-container"></div></button>
     </div>
-    <div id="drawerGroup" style="visibility:initial;position:absolute;top:20%;right:0;"></div>
+    <div id="drawerGroup" style="visibility:initial;position:absolute;top:10%;right:-80%;z-index:1000;">
+    </div>
+    <div id="linechartGroup" class="view" style="visibility:hidden;position:absolute;top:25%;left:20%;"></div>
     <div id="worldMap" class="view">
         <a href="#" data-target="#infoBox" data-toggle="collapse">
             <span style="font-size: 2.5em; color: grey;">
@@ -49,7 +51,7 @@
     </div>
     <!-- <div id="connChar" class="view"> -->
     </div>
-    <div id="comparisonDiv" class="view" style="visibility:hidden;position:absolute;top:10%;right:-40%;">
+    <div id="comparisonDiv" class="view" style="visibility:hidden;position:absolute;top:25%;left:20%;">
         <h2> Comparison Table</h2>
         <table id="ComparsionTable">
             <thead>
@@ -70,10 +72,10 @@
 
     
 
-    <div id="forceDirected" class="view" style="visibility:hidden;position:absolute;top:10%;right:-40%;"></div>
-    <div id="linechartGroup" class="view" style="visibility:hidden;position:absolute;top:10%;right:-40%;"></div>
+    <div id="forceDirected" class="view" style="visibility:hidden;position:absolute;top:25%;left:20%;"></div>
+    
     <div id="statistics" class="view">
-        <div id="yearline" class="view" style="visibility:hidden;position:absolute;top:10%;right:-40%;"></div>
+        <div id="yearline" class="view" style="visibility:hidden;position:absolute;top:25%;left:20%;"></div>
     </div>
 
 
