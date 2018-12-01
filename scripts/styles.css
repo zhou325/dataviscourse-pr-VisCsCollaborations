@@ -617,13 +617,15 @@ i.europe {
 }
 
 .textinfo {
-    font-size: 20px;
+    font-size: 15px;
     padding-bottom: 15px;
+    font-family: "arial", Sans-serif;
+    color: rgb(83,74,70);
 }
 
 .pietext {
     /* fill:darkred; */
-    font-size: 22px;
+    font-size: 15px;
     padding-bottom: 15px;
     font-weight: bold;
 }
