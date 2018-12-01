@@ -216,7 +216,7 @@ class lineChart {
                 this.link_tip.selectAll('rect').remove();
                 this.link_tip.selectAll('text').remove();
                 this.link_tip.attr('visibility', 'visible');
-                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', 30 * 9);
                 this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
@@ -238,7 +238,7 @@ class lineChart {
                                 return 'Total'
                         }
 
-                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 30).text(d => d);
 
             })
             .on('mouseleave', (d) => {
@@ -447,7 +447,7 @@ class lineChart {
                 this.link_tip.selectAll('rect').remove();
                 this.link_tip.selectAll('text').remove();
                 this.link_tip.attr('visibility', 'visible');
-                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', 30 * 9);
                 this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
@@ -469,7 +469,7 @@ class lineChart {
                                 return 'Total'
                         }
 
-                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 30).text(d => d);
 
             })
             .on('mouseleave', (d) => {

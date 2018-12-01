@@ -140,11 +140,11 @@ h2 {
 }
 .scatter-tooltip text.Theory {
     font-size: 15px;
-    stroke: saddlebrown
+    stroke: green
 }
 .scatter-tooltip text.Interdisciplinary {
     font-size: 15px;
-    stroke: #E68C5C
+    stroke: peru
 }
 .scatter-tooltip text.Total {
     font-size: 15px;
