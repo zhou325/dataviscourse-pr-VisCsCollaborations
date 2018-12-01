@@ -1,4 +1,4 @@
-# dataviscourse-pr-VisCsRankings
+# dataviscourse-pr-VisCsCollaborations
 
 ## GOAL
 
