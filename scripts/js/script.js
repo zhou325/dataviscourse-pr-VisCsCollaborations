@@ -79,20 +79,20 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             const linechart = new lineChart(data.collabDetails,data.world_aff);
             linechart.draw();
 
-            // const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected,linechart);
-            // worldMap.drawMap();
-            // worldMap.updateMap(undefined,undefined);
+            const worldMap = new Map(data.world,data.world_aff,data.population,data.collabDetails, updateUniv, updateYear, table, forceDirected,linechart);
+            worldMap.drawMap();
+            worldMap.updateMap(undefined,undefined);
             
-            // const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
-            // infoBox.drawInfoBox();
-            // infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
+            const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
+            infoBox.drawInfoBox();
+            infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
 
 
             const stats = new Stats(data.collabDetails, data.inslist);
             stats.drawStats();
             stats.updateStats(undefined, undefined);
 
-            const drawer = new Drawer();
+            const drawer = new Drawer(worldMap);
 
             document.addEventListener("click", function(e) {
                 e.stopPropagation();

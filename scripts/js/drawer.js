@@ -1,5 +1,5 @@
 class Drawer{
-    constructor(){
+    constructor(worldMap){
 
         this.height = 800;
         this.width = 1400;
@@ -13,8 +13,11 @@ class Drawer{
         // this.selectedChart = null;
         this.drawDrawer();
 
+        this.worldMap = worldMap;
+
     }
     drawDrawer(){
+        let that = this;
         let cornerbutton = d3.select("#graph-corner").select("button");
 
         let backRect = this.drawerContent.append("rect")
@@ -34,6 +37,7 @@ class Drawer{
                         .attr("transform", "translate(0, 0)")
                     this.ifClose = false;
                 } else {
+                    that.worldMap.maskgroup.attr('visibility','hidden')
                     d3.select("#drawerContent")
                         .transition().duration(350)
                         .attr("transform", "translate(4200, 0)")
@@ -49,6 +53,7 @@ class Drawer{
             .text("Comparison Table")
             .on("click", function() { d3.event.stopPropagation(); })
             .on("click.log",d=>{
+                that.worldMap.maskgroup.attr('visibility','visible')
                 d3.select("#comparisonDiv")
                     .style("visibility","initial");
                 d3.select("#yearline")
@@ -65,6 +70,7 @@ class Drawer{
             .text("Line Chart")
             .on("click.log", function() { d3.event.stopPropagation(); })
             .on("click",d=>{
+                that.worldMap.maskgroup.attr('visibility','visible')
                 d3.select("#comparisonDiv")
                     .style("visibility","hidden");
                 d3.select("#yearline")
@@ -81,6 +87,7 @@ class Drawer{
             .text("Force Directed Graph")
             .on("click.log", function() { d3.event.stopPropagation(); })
             .on("click",d=>{
+                that.worldMap.maskgroup.attr('visibility','visible')
                 d3.select("#comparisonDiv")
                     .style("visibility","hidden");
                 d3.select("#yearline")
@@ -98,6 +105,7 @@ class Drawer{
             .text("Distance vs Co-Publications")
             .on("click.log", function() { d3.event.stopPropagation(); })
             .on("click",d=>{
+                that.worldMap.maskgroup.attr('visibility','visible')
                 d3.select("#comparisonDiv")
                     .style("visibility","hidden");
                 d3.select("#yearline")
