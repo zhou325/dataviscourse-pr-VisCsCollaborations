@@ -34,7 +34,7 @@ class InfoBox{
     }
 
     showButton() {
-        this.infoButton.transition().duration(350).style("left","360px");
+        this.infoButton.transition().duration(350).style("left","250px");
         this.infoButton.classed("fa-arrow-alt-circle-right",false).classed("fa-arrow-alt-circle-left",true);
         d3.select("#infobox")
             .transition().duration(350)
@@ -47,15 +47,15 @@ class InfoBox{
         framegroup.append("rect")
             .classed("backgroundframe",true)
             .attr("rx","15")
-            .attr("width","400")
+            .attr("width","300")
             .attr("height","780");
         framegroup.append("rect")
             .classed("boxframe", true)
             .attr("rx","15")
-            .attr("width","400")
+            .attr("width","300")
             .attr("height","780");
         let textgroup = this.infogroup.append("g")
-            .attr("transform","translate(210,150)")
+            .attr("transform","translate(150,100)")
             .classed("textGroup", true);
         textgroup.append("text")
             .attr("id","univName")
@@ -148,17 +148,17 @@ class InfoBox{
             //     .range(d3.quantize(t => d3.interpolateSpectral(t * 0.8 + 0.1), pieData1.length).reverse())
 
             let arc = d3.arc()
-                .innerRadius(120)
-                .outerRadius(170);
+                .innerRadius(80)
+                .outerRadius(110);
             let arc1 = d3.arc()
-                .innerRadius(120)
-                .outerRadius(180);
+                .innerRadius(80)
+                .outerRadius(120);
 
             d3.select("#piechartinfo")
                 .text("Total: "+infoData.totalcoPub);
 
             let pies = d3.select("#univPieChart")
-            .attr("transform","translate(210,500)")
+            .attr("transform","translate(160,450)")
                 .selectAll("path")
                 .data(arcs);
             
@@ -177,7 +177,7 @@ class InfoBox{
                         let totext = d.data.label+": "+d.data.value;
                         let textclass = d.data.label;
                         d3.select("#piechartinfo")
-                            .attr("class","textinfo "+textclass)
+                            .attr("class","pietext "+textclass)
                             .text(totext);
                         d3.select("#pie"+d.data.label)
                             .attr("d", arc1);
@@ -187,7 +187,7 @@ class InfoBox{
                     d3.select("#pie"+d.data.label)
                         .attr("d", arc);
                     d3.select("#piechartinfo")
-                        .attr("class","textinfo")
+                        .attr("class","pietext")
                         .text("Total: "+infoData.totalcoPub);
                 });
 

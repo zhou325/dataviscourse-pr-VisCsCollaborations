@@ -41,6 +41,15 @@ class Drawer{
                     d3.select("#drawerContent")
                         .transition().duration(350)
                         .attr("transform", "translate(4200, 0)")
+                    d3.select("#linechartGroup")
+                    d3.select("#comparisonDiv")
+                        .style("visibility","hidden");
+                    d3.select("#yearline")
+                        .style("visibility","hidden");
+                    d3.select("#forceDirected")
+                        .style("visibility","hidden");
+                    d3.select("#linechartGroup")
+                        .style("visibility","hidden");
                     
                     this.ifClose = true;
                 }
@@ -62,6 +71,7 @@ class Drawer{
                     .style("visibility","hidden");
                 d3.select("#linechartGroup")
                     .style("visibility","hidden");
+                
             })
         let linechart = this.drawerContent.append("text")
             .attr("id","yearchartButton")
