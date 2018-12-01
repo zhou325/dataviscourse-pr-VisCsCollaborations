@@ -1,5 +1,5 @@
 * {
-    font-family: "Times New Roman", Times, serif;
+    font-family: "arial", Sans-serif;
 }
 
 .sub_view {
@@ -24,45 +24,53 @@ svg:hover .tooltip {
 }
 
 .link-tooltip rect {
-    fill: deepskyblue;
-    opacity: .7;
+    fill: rgb(211,211,212);
+    opacity: .6;
 }
 
 .link-tooltip text.Univ1 {
-    font-size: 30px;
-    font-family: 'font2';
-    stroke: black
+    font-size: 14px;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
 }
 .link-tooltip text.Univ2 {
-    font-size: 30px;
-    font-family: 'font2';
-    stroke: black
+    font-size: 14px;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
 }
 .link-tooltip text.AI {
-    font-size: 20px;
-    stroke: red
+    font-size: 14px;
+    stroke: #D13C4B
 }
 .link-tooltip text.System {
-    font-size: 20px;
-    stroke: blue
+    font-size: 14px;
+    stroke: #4288B5
 }
 .link-tooltip text.Theory {
-    font-size: 20px;
-    stroke: yellow
+    font-size: 14px;
+    stroke: rgb(61,125,82)
 }
 .link-tooltip text.Interdisciplinary {
-    font-size: 20px;
+    font-size: 14px;
     stroke: #E68C5C
 }
 .link-tooltip text.Total {
-    font-size: 20px;
-    stroke: crimson;
+    font-size: 14px;
+    stroke: rgb(83,74,70);
 }
 h2 {
     font-family: 'font2';
     color: #af161e;
     /* font-size: 50pt; */
     /* font-weight:300; */
+
+}
+
+.info.selectedchart {
+    font-style: bold;
+    font-size: 20px;
 
 }
 
@@ -80,34 +88,34 @@ h2 {
 }
 
 #line-scatter-checkbox {
-    font-family: fantasy;
-    stroke: orangered;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
     text-anchor: end;
     font-size: 30px
 }
 #line-scatter-checkbox.checked {
-    font-family: fantasy;
-    stroke: dodgerblue;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
     font-size: 30px
 }
 .scatter-circle.ai {
-    stroke: orangered;
-    fill: crimson;
+    stroke: #D13C4B;
+    fill: #D13C4B;
     opacity: .5;
 }
 .scatter-circle.system {
-    stroke: deepskyblue;
-    fill: blue;
+    stroke: #4288B5;
+    fill: #4288B5;
     opacity: .5;
 }
 .scatter-circle.theory {
-    stroke: yellow;
-    fill: chartreuse;
+    stroke: rgb(61,125,82);
+    fill: rgb(61,125,82);
     opacity: .5;
 }
 .scatter-circle.interdis {
-    stroke: coral;
-    fill: chocolate;
+    stroke: #E68C5C;
+    fill: #E68C5C;
     opacity: .5;
 }
 
@@ -116,14 +124,16 @@ h2 {
     opacity: .5;
 }
 .scatter-tooltip text.Univ1 {
-    font-size: 20px;
-    font-family: 'font2';
-    stroke: black
+    font-size: 14px;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
 }
 .scatter-tooltip text.Univ2 {
-    font-size: 20px;
-    font-family: 'font2';
-    stroke: black
+    font-size: 14px;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
 }
 .scatter-tooltip text.Distance {
     font-size: 15px;
@@ -132,19 +142,19 @@ h2 {
 }
 .scatter-tooltip text.AI {
     font-size: 15px;
-    stroke: red
+    stroke: #D13C4B
 }
 .scatter-tooltip text.System {
     font-size: 15px;
-    stroke: blue
+    stroke: #4288B5
 }
 .scatter-tooltip text.Theory {
     font-size: 15px;
-    stroke: green
+    stroke: rgb(61,125,82)
 }
 .scatter-tooltip text.Interdisciplinary {
     font-size: 15px;
-    stroke: peru
+    stroke: #E68C5C
 }
 .scatter-tooltip text.Total {
     font-size: 15px;
@@ -202,7 +212,7 @@ path.hidden {
 }
 
 .aff-link.theory{
-    stroke: #D1EC9E;
+    stroke: rgb(61,125,82);
 }
 
 .aff-link.interdisciplinary{
@@ -232,7 +242,7 @@ path.hidden {
 }
 
 .connUniv.ai {
-    fill:rgb(211,56,28);
+    fill:#D13C4B;
     stroke: white;
     stroke-width: 0.5px;
 }
@@ -242,17 +252,17 @@ path.hidden {
     stroke-width: 0.5px;
 }
 .connUniv.theory {
-    fill:rgb(158,188,43);
+    fill:rgb(61,125,82);
     stroke: white;
     stroke-width: 0.5px;
 }
 .connUniv.interdis {
-    fill:rgb(241,141,0);
+    fill:#E68C5C;
     stroke: white;
     stroke-width: 0.5px;
 }
 circle.nodeai {
-    fill:rgb(211,56,28);
+    fill:#D13C4B;
     stroke: white;
     stroke-width: 0.5px;
 }
@@ -262,12 +272,12 @@ circle.nodesystem {
     stroke-width: 0.5px;
 }
 circle.nodetheory {
-    fill:rgb(158,188,43);
+    fill:rgb(61,125,82);
     stroke: white;
     stroke-width: 0.5px;
 }
 circle.nodeinterdis {
-    fill:rgb(241,141,0);
+    fill:#E68C5C;
     stroke: white;
     stroke-width: 0.5px;
 }
@@ -284,7 +294,7 @@ circle.nodeinterdis {
     /* shape-rendering: crispEdges; */
 }
 .AveAi {
-    stroke: rgb(211,56,28);
+    stroke: #D13C4B;
     /* shape-rendering: crispEdges; */
 }
 .AveSystem {
@@ -292,12 +302,28 @@ circle.nodeinterdis {
     /* shape-rendering: crispEdges; */
 }
 .AveTheory {
-    stroke: rgb(158,188,43);
+    stroke:rgb(61,125,82);
     /* shape-rendering: crispEdges; */
 }
 .AveInterdis {
-    stroke: rgb(241,141,0);
+    stroke: #E68C5C;
     /* shape-rendering: crispEdges; */
+}
+
+.tdai {
+    fill: #D13C4B;
+}
+.tdsystem {
+    fill:#4288B5;
+}
+.tdinterdis {
+    fill:#E68C5C;
+}
+.tdtheory{
+    fill: rgb(61,125,82);
+}
+.tdtotal{
+    fill: rgb(83,74,70);
 }
 
 /*ID Styling*/
@@ -507,12 +533,12 @@ div.tooltip {
     stroke: gray;
     border-radius: 8px;
     pointer-events: none;
-}
+}*/
 
-.tooltip h2 {
+.tooltip {
     margin: auto;
     font: 14px sans-serif;
-} */
+}
 
 
 /* Styling for Counties */
@@ -639,7 +665,9 @@ i.europe {
 }
 
 .Theory {
-    fill: #D1EC9E;
+    /* fill: #D1EC9E; */
+    /* fill: rgb(0,103,69); */
+    fill: rgb(61,125,82);
 }
 
 .Interdisciplinary {
@@ -726,7 +754,6 @@ h2 {
     /* font-weight:300; */
     font-family: "arial", Sans-serif;
     color: rgb(83,74,70);
-    text-align:left;
 
 }
 
@@ -746,11 +773,21 @@ h3 {
 }
 
 h4 {
-    color: dodgerblue;
+    font-size: 14px;
+    font-family: "arial", Sans-serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
 }
-* {
+
+h5 {
+    font-size: 12px;
+    font-family: "Times New Roman", Times, serif;
+    stroke: rgb(83,74,70);
+    text-align:center;
+}
+/* * {
     font-family: 'font1';
-}
+} */
 
 .year-text {
     font-size: 10px;

@@ -47,7 +47,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
         worldMapLoadData().then(data => {
             this.activeUniv = undefined;
             this.activeYear = undefined;
-            // this.activeYear = ['2018']
+            // this.activeYear = ['2015','2016','2017','2018']
             this.activeunivList = undefined;
             let that = this
         
@@ -85,7 +85,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             
             const infoBox = new InfoBox(data.collabDetails, data.inslist, updateUniv, updateYear);
             infoBox.drawInfoBox();
-            infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
+            // infoBox.updateInfoBox("Carnegie Mellon University",['2017']);
 
 
             const stats = new Stats(data.collabDetails, data.inslist);

@@ -1,5 +1,5 @@
 class Drawer{
-    constructor(worldMap){
+    constructor(worldMap, infobox){
 
         this.height = 800;
         this.width = 1400;
@@ -23,7 +23,7 @@ class Drawer{
             .attr("height", this.height)
             .attr("width", 300)
             .attr("fill", "lightgrey")
-            .style("opacity",0.3)
+            .style("opacity",0.5)
             .on("click", function() { d3.event.stopPropagation(); });
             
         cornerbutton
@@ -62,7 +62,7 @@ class Drawer{
        
         let comparison = this.drawerContent.append("text")
             .attr("id","comparisonButton")
-            .attr("transform","translate(20,100)")
+            .attr("transform","translate(20,150)")
             .attr("class", "info")
             .text("Comparison Table")
             .on("click", function() { d3.event.stopPropagation(); })
@@ -78,9 +78,15 @@ class Drawer{
                     .style("visibility","hidden");
                 
             })
+            .on("mouseover",d=>{
+                d3.select("#comparisonButton").classed("selectedchart", true);
+            })
+            .on("mouseout",d=>{
+                d3.select("#comparisonButton").classed("selectedchart", false);
+            });
         let linechart = this.drawerContent.append("text")
             .attr("id","yearchartButton")
-            .attr("transform","translate(20,130)")
+            .attr("transform","translate(20,200)")
             .attr("class", "info")
             .text("Line Chart")
             .on("click.log", function() { d3.event.stopPropagation(); })
@@ -95,9 +101,15 @@ class Drawer{
                 d3.select("#linechartGroup")
                     .style("visibility","hidden");
             })
+            .on("mouseover",d=>{
+                d3.select("#yearchartButton").classed("selectedchart", true);
+            })
+            .on("mouseout",d=>{
+                d3.select("#yearchartButton").classed("selectedchart", false);
+            });
         let forceDirected = this.drawerContent.append("text")
             .attr("id","forcedirectedButton")
-            .attr("transform","translate(20,160)")
+            .attr("transform","translate(20,250)")
             .attr("class", "info")
             .text("Force Directed Graph")
             .on("click.log", function() { d3.event.stopPropagation(); })
@@ -112,10 +124,16 @@ class Drawer{
                 d3.select("#linechartGroup")
                     .style("visibility","hidden");
             })
+            .on("mouseover",d=>{
+                d3.select("#forcedirectedButton").classed("selectedchart", true);
+            })
+            .on("mouseout",d=>{
+                d3.select("#forcedirectedButton").classed("selectedchart", false);
+            });
 
         let scatterchart = this.drawerContent.append("text")
             .attr("id","sctterButton")
-            .attr("transform","translate(20,190)")
+            .attr("transform","translate(20,300)")
             .attr("class", "info")
             .text("Distance vs Co-Publications")
             .on("click.log", function() { d3.event.stopPropagation(); })
@@ -129,7 +147,14 @@ class Drawer{
                     .style("visibility","hidden");
                 d3.select("#linechartGroup")
                     .style("visibility","initial");
-        })
+            })
+            .on("mouseover",d=>{
+                d3.select("#sctterButton").classed("selectedchart", true);
+            })
+            .on("mouseout",d=>{
+                d3.select("#sctterButton").classed("selectedchart", false);
+            });
+        
 
     }
 }

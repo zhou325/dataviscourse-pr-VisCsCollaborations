@@ -256,7 +256,8 @@ class comparsion {
     td_svg_ai.append('rect')
       .attr('width', d => (this.AiScale(d["value"]) + 0.5))
       .attr('height', cellHeight)
-      .attr('fill', "#af161e");
+      // .attr('fill', "#af161e");
+      .attr("class","tdai")
 
 
     let td_text_uni = td.filter((d) => {
@@ -288,7 +289,8 @@ class comparsion {
     td_svg_system.append('rect')
       .attr('width', d => (this.SystemScale(d["value"]) + 0.5))
       .attr('height', cellHeight)
-      .attr('fill', "green");
+      // .attr('fill', "green");
+      .attr("class","tdsystem");
 
 
 
@@ -304,7 +306,8 @@ class comparsion {
     td_svg_theory.append('rect')
       .attr('width', d => (this.TheoryScale(d["value"]) + 0.5))
       .attr('height', cellHeight)
-      .attr('fill', "blue");
+      // .attr('fill', "blue");
+      .attr("class","tdtheory");
 
 
 
@@ -320,7 +323,8 @@ class comparsion {
     td_svg_Inter.append('rect')
       .attr('width', d => (this.InterScale(d["value"]) + 0.5))
       .attr('height', cellHeight)
-      .attr('fill', "orange");
+      // .attr('fill', "orange");
+      .attr("class","tdinterdis");
 
 
     let td_bars_Total = td.filter((d) => {
@@ -334,7 +338,8 @@ class comparsion {
     td_svg_Total.append('rect')
       .attr('width', d => (this.TotalScale(d["value"]) + 0.5))
       .attr('height', cellHeight)
-      .attr('fill', "#E68C5C");
+      // .attr('fill', "#E68C5C");
+      .attr("class","tdtotal");
 
   }
 

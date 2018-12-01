@@ -174,10 +174,15 @@ class Stats{
         let legendOrdinal = d3.legendColor()
             .orient("horizontal")
             .shape("path", d3.symbol().type(d3.symbolSquare).size(80)())
-            .shapePadding(130)
+            .shapePadding(100)
             .scale(colorScale);
         
-        d3.select("#yearlegend_svg").call(legendOrdinal)
+        d3.select("#yearlegend_svg")
+            .call(legendOrdinal)
+        d3.select("#yearlegend_svg").select(".legendCells")
+            .attr("transform","translate(50,0)")
+        d3.select("#yearlegend_svg").selectAll("text")
+            .style("fill","black")
 
     }
 }
