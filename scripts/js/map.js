@@ -33,7 +33,8 @@ class Map {
             .attr('height',this.height)
             .attr('width',this.width);
         
-        this.group = this.svg.append("g")
+        this.group = this.svg.append("g");
+
 
         this.displaySize = this.width*0.8;
         this.ifZoomedIn = false;
@@ -181,6 +182,21 @@ class Map {
         this.circlegroup = this.group.append("g")
             .attr("id","circlegroup");
         this.yeargroup = this.svg.append('g').attr('id','yeargoup').attr('transform','translate(0,'+(this.height-this.margin.bottom)+')')
+
+        this.maskgroup = this.group.append('g')
+            .append('rect')
+            .attr('id','mapmask')
+            // .attr('visibility','hidden')
+            .attr('x',this.width/2-(this.width/1.2)/2)
+            .attr('y',this.height/2-(this.height/1.2)/2)
+            .attr('width',this.width/1.2)
+            .attr('height',this.height/1.2)
+            .attr('fill','white')
+            .attr('visibility','hidden')
+            .attr('stroke','red')
+            .attr('opacity',0.8)
+            .attr('stroke-width',0);
+
 
         console.log('this.world_aff');
         console.log(this.world_aff);

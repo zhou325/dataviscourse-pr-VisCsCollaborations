@@ -92,7 +92,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
             stats.drawStats();
             stats.updateStats(this.activeUniv, this.activeYear);
 
-            const drawer = new Drawer();
+            const drawer = new Drawer(worldMap);
 
             document.addEventListener("click", function(e) {
                 e.stopPropagation();
