@@ -376,12 +376,12 @@ class Map {
         
         this.aff_brush_used = false;
         this.svg.append('text').attr('id','brush-checkbox').classed('checkbox',true)
-            .attr('stroke','red').text('Brush For Affiliations').attr('x',this.width-200).attr('y',20)
+            .attr('stroke','black').text('Brush For Affiliations').attr('x',this.width-800).attr('y',20)
             .on('click',(d)=>{
                 console.log('that.aff_brush_used');
                 console.log(that.aff_brush_used);
                 if(that.aff_brush_used === false){
-                    d3.select('#brush-checkbox').attr('stroke','green').text('Map ZoomedIn');
+                    d3.select('#brush-checkbox').attr('stroke','black').text('Click to Cancel the Brush');
                     console.log('t');
                     that.aff_brush_used = true;
                     d3.select('#brush-aff')
@@ -442,7 +442,7 @@ class Map {
                             that.linechart.update(that.selected.affs,that.selected.years)
                             }));
                 }else{
-                    d3.select('#brush-checkbox').attr('stroke','red').text('Brush For Affiliations');
+                    d3.select('#brush-checkbox').attr('stroke','black').text('Brush For Affiliations');
                     console.log('f');
                     d3.selectAll('#brush-aff').remove();
                     d3.select('#circlegroup').append('g')
@@ -602,10 +602,25 @@ class Map {
             // .attr("r", 0.5)
             .attr("r", (d)=>Math.min(Math.sqrt(d.copub/20),5)*0.6)
             .attr("transform","scale(1.5)")
-            .style("opacity", 0.6)
+            // .style("opacity", 0.6)
+            .style("opacity", d=>{
+                if(activeUniv.length!=0){
+                    if(univlistAll.indexOf(d.aff_name)===-1){
+                        if(activeUniv.indexOf(d.aff_name) != -1){
+                            return 0.8
+                        } else {
+                            return 0.2
+                        }
+                    } else {
+                        return 0.8
+                    }
+                } else {return 0.6}
+                
+            })
             .on('mouseover',this.tip.show)
             .on('mouseleave',this.tip.hide)
-            .on('click',(d)=>{
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on('click.log',(d)=>{
                 console.log(d)
                 this.updateMap(d.aff_name, activeYear);
                 this.updateUniv(d.aff_name);

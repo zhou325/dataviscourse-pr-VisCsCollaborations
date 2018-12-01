@@ -194,7 +194,8 @@ class InfoBox{
 
             d3.select("#univName")
                 .attr("class","name")
-                .text(activeUniv);
+                .text(activeUniv)
+                .style("white-space","nowrap");
 
             let univ_copub = {};
             let activeUniv2rank = {};

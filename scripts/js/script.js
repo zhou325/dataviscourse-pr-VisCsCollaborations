@@ -90,7 +90,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
 
             const stats = new Stats(data.collabDetails, data.inslist);
             stats.drawStats();
-            stats.updateStats(undefined, undefined);
+            stats.updateStats(this.activeUniv, this.activeYear);
 
             const drawer = new Drawer();
 
@@ -100,6 +100,7 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
                     .transition().duration(350)
                     .attr("transform", "translate(4200, 0)");
                 drawer.ifClose = true;
+                worldMap.updateMap(undefined,this.activeYear);
             });
 
             
