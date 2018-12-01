@@ -149,7 +149,7 @@ class lineChart {
         this.svg.append('text')
             .attr('id', 'line-scatter-checkbox')
             .attr('class', d=>{
-                if(this.scatterOrLine ===0){return 'checked';}
+                if(this.scatterOrLine ===1){return 'checked';}
                 else{return '';}
             })
             .text(d=>{
@@ -159,20 +159,20 @@ class lineChart {
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
-                if (that.scatterOrLine === 1) {
-                    that.scatterOrLine = 0;
+                if (that.scatterOrLine === 0) {
+                    that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', false);
                     d3.selectAll('#linechartpath').classed('selected', true);
-                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
+                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
                         .classed('checked', true);
                 } else {
-                    that.scatterOrLine = 1;
+                    that.scatterOrLine = 0;
                     d3.selectAll('#scatter').classed('selected', true);
                     d3.selectAll('#linechartpath').classed('selected', false);
-                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
+                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
                         .classed('checked', false);
                 }
-            })
+            });
 
         d3.selectAll('circle.scatter-circle').remove();
         this.svg
@@ -216,7 +216,7 @@ class lineChart {
                 this.link_tip.selectAll('rect').remove();
                 this.link_tip.selectAll('text').remove();
                 this.link_tip.attr('visibility', 'visible');
-                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', 30 * 9);
                 this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
@@ -238,7 +238,7 @@ class lineChart {
                                 return 'Total'
                         }
 
-                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 30).text(d => d);
 
             })
             .on('mouseleave', (d) => {
@@ -380,7 +380,7 @@ class lineChart {
         this.svg.append('text')
             .attr('id', 'line-scatter-checkbox')
             .attr('class', d=>{
-                if(this.scatterOrLine ===0){return 'checked';}
+                if(this.scatterOrLine ===1){return 'checked';}
                 else{return '';}
             })
             .text(d=>{
@@ -390,20 +390,20 @@ class lineChart {
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
-                if (that.scatterOrLine === 1) {
-                    that.scatterOrLine = 0;
+                if (that.scatterOrLine === 0) {
+                    that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', false);
                     d3.selectAll('#linechartpath').classed('selected', true);
-                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
+                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
                         .classed('checked', true);
                 } else {
-                    that.scatterOrLine = 1;
+                    that.scatterOrLine = 0;
                     d3.selectAll('#scatter').classed('selected', true);
                     d3.selectAll('#linechartpath').classed('selected', false);
-                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
+                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
                         .classed('checked', false);
                 }
-            })
+            });
 
         d3.selectAll('circle.scatter-circle').remove();
         this.svg
@@ -447,7 +447,7 @@ class lineChart {
                 this.link_tip.selectAll('rect').remove();
                 this.link_tip.selectAll('text').remove();
                 this.link_tip.attr('visibility', 'visible');
-                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', this.height / 3);
+                this.link_tip.append('rect').attr('rx', 5).attr('width', this.width / 2).attr('height', 30 * 9);
                 this.link_tip.selectAll('text').data(title_data).enter().append('text')
                     .attr('class', (d, i) => {
                         switch (i) {
@@ -469,7 +469,7 @@ class lineChart {
                                 return 'Total'
                         }
 
-                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 40).text(d => d);
+                    }).attr('x', (d, i) => 10).attr('y', (d, i) => (i + 1) * 30).text(d => d);
 
             })
             .on('mouseleave', (d) => {
