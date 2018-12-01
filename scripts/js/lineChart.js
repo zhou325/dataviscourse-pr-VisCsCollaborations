@@ -158,7 +158,8 @@ class lineChart {
             })
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
-            .on('click', d => {
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on('click.log', d => {
                 if (that.scatterOrLine === 0) {
                     that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', false);
@@ -389,7 +390,8 @@ class lineChart {
             })
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
-            .on('click', d => {
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on('click.log', d => {
                 if (that.scatterOrLine === 0) {
                     that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', false);

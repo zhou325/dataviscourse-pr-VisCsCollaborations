@@ -219,7 +219,8 @@ class comparsion {
       .enter()
       .append('td')
       .text(d => d)
-      .on('click', (d) => {
+      .on("click", function() { d3.event.stopPropagation(); })
+      .on('click.log', (d) => {
         console.log('indicator d')
         console.log(d)
         this.rank_indicator = d;

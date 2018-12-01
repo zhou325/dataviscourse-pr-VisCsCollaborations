@@ -13,16 +13,18 @@ class InfoBox{
         
         this.infoButton = d3.select("#infoBoxbutton")
         this.ifDisplay = false;
-        this.infoButton.on("click", function () {
-            if (this.ifDisplay === false) {
-                this.showButton();
-                this.ifDisplay = true;
-            }
-            else {
-                this.hideButton();
-                this.ifDisplay = false;
-            }
-        }.bind(this));
+        this.infoButton
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on("click.log", function () {
+                if (this.ifDisplay === false) {
+                    this.showButton();
+                    this.ifDisplay = true;
+                }
+                else {
+                    this.hideButton();
+                    this.ifDisplay = false;
+                }
+            }.bind(this));
 
     }
     hideButton() {

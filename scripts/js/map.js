@@ -118,7 +118,8 @@ class Map {
             .attr('class',d=>d.region)
             .attr("transform","scale(1.5)")
             .style("opacity","0.4")
-            .on('click', (d) => {
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on('click.log', (d) => {
                 if(this.ifZoomedIn === false){
                     this.mapgroup.selectAll('path').classed('clicked', false);
                     d3.select(d3.event.target).classed('clicked', true);
@@ -187,6 +188,7 @@ class Map {
             .append('rect')
             .attr('id','mapmask')
             // .attr('visibility','hidden')
+            .attr("transform", "translate(0,-20)")
             .attr('x',this.width/2-(this.width/1.2)/2)
             .attr('y',this.height/2-(this.height/1.2)/2)
             .attr('width',this.width/1.2)
@@ -393,7 +395,8 @@ class Map {
         this.aff_brush_used = false;
         this.svg.append('text').attr('id','brush-checkbox').classed('checkbox',true)
             .attr('stroke','black').text('Brush For Affiliations').attr('x',this.width-800).attr('y',20)
-            .on('click',(d)=>{
+            .on("click", function() { d3.event.stopPropagation(); })
+            .on('click.log',(d)=>{
                 console.log('that.aff_brush_used');
                 console.log(that.aff_brush_used);
                 if(that.aff_brush_used === false){
