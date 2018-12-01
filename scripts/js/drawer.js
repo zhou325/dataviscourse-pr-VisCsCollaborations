@@ -10,7 +10,6 @@ class Drawer{
             .attr("transform", "translate(420, 0)")
             .attr("id","drawerContent");
         this.ifClose = true;
-        // this.selectedChart = null;
         this.drawDrawer();
 
         this.worldMap = worldMap;
@@ -35,6 +34,12 @@ class Drawer{
                     d3.select("#drawerContent")
                         .transition().duration(350)
                         .attr("transform", "translate(0, 0)")
+                    d3.select("#infoBoxbutton").transition().duration(350).style("left","0px");
+                    d3.select("#infoBoxbutton").classed("fa-arrow-alt-circle-right",true).classed("fa-arrow-alt-circle-left",false);
+                    d3.select("#infobox")
+                        .transition().duration(350)
+                        .attr("transform", "translate(-420, 0)");                    
+                    
                     this.ifClose = false;
                 } else {
                     that.worldMap.maskgroup.attr('visibility','hidden')

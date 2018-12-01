@@ -46,8 +46,8 @@ d3.json('data/collaborationsDetails.json').then(collDeData => {
 
         worldMapLoadData().then(data => {
             this.activeUniv = undefined;
-            // this.activeYear = undefined;
-            this.activeYear = ['2018']
+            this.activeYear = undefined;
+            // this.activeYear = ['2018']
             this.activeunivList = undefined;
             let that = this
         
