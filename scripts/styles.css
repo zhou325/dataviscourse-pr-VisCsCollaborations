@@ -597,9 +597,11 @@ i.europe {
 
 /* comparison table*/
 .name {
-    font-size: 25px;
+    font-size: 20px;
     padding-bottom: 15px;
     font-weight: bold;
+    font-family: "arial", Sans-serif;
+    color: rgb(83,74,70);
 }
 
 .backgroundframe {
