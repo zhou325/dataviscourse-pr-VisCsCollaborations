@@ -32,6 +32,8 @@ class lineChart {
 
         this.link_tip = this.svg.append('g').classed('scatter-tooltip', true)
             .attr('transform', 'translate(' + (this.width / 2) + ',' + (3 * this.margin.top) + ')');
+
+        this.scatterOrLine = 0;
     }
 
     draw() {
@@ -127,6 +129,10 @@ class lineChart {
         this.svg
             .append('g')
             .attr('id', 'linechartpath')
+            .attr('class',d=>{
+                if(this.scatterOrLine ===1){return 'selected';}
+                else{return '';}
+            })
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .append("path")
             .datum(dist_cowork)
@@ -137,29 +143,34 @@ class lineChart {
             .attr("stroke-width", 1)
             .attr("d", line);
 
-        this.scatterOrLine = 0;
         let that = this;
 
         d3.selectAll('#line-scatter-checkbox').remove();
         this.svg.append('text')
             .attr('id', 'line-scatter-checkbox')
-            .classed('checked', true)
-            .text('Show Scatter Chart')
+            .attr('class', d=>{
+                if(this.scatterOrLine ===0){return 'checked';}
+                else{return '';}
+            })
+            .text(d=>{
+                if(that.scatterOrLine===1){return 'Back to Scatter Chart';}
+                else{return 'Show Line Chart';}
+            })
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
-                if (that.scatterOrLine === 0) {
-                    that.scatterOrLine = 1;
+                if (that.scatterOrLine === 1) {
+                    that.scatterOrLine = 0;
                     d3.selectAll('#scatter').classed('selected', false);
                     d3.selectAll('#linechartpath').classed('selected', true);
-                    d3.select('#line-scatter-checkbox').text('Show Scatter Chart')
-                        .classed('checked', false);
+                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
+                        .classed('checked', true);
                 } else {
-                    that.scatterOrLine = 0;
+                    that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', true);
                     d3.selectAll('#linechartpath').classed('selected', false);
-                    d3.select('#line-scatter-checkbox').text('Back to Line Chart')
-                        .classed('checked', true);
+                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
+                        .classed('checked', false);
                 }
             })
 
@@ -167,7 +178,10 @@ class lineChart {
         this.svg
             .append('g')
             .attr('id', 'scatter')
-            .classed('selected', true)
+            .attr('class',d=>{
+                if(this.scatterOrLine ===0){return 'selected';}
+                else{return '';}
+            })
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .selectAll('circle')
             .data(dist_cowork)
@@ -346,6 +360,10 @@ class lineChart {
         this.svg
             .append('g')
             .attr('id', 'linechartpath')
+            .attr('class',d=>{
+                if(this.scatterOrLine ===1){return 'selected';}
+                else{return '';}
+            })
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .append("path")
             .datum(dist_cowork)
@@ -356,29 +374,34 @@ class lineChart {
             .attr("stroke-width", 1)
             .attr("d", line);
 
-        this.scatterOrLine = 0;
         let that = this;
 
         d3.selectAll('#line-scatter-checkbox').remove();
         this.svg.append('text')
             .attr('id', 'line-scatter-checkbox')
-            .classed('checked', true)
-            .text('Show Scatter Chart')
+            .attr('class', d=>{
+                if(this.scatterOrLine ===0){return 'checked';}
+                else{return '';}
+            })
+            .text(d=>{
+                if(that.scatterOrLine===1){return 'Back to Scatter Chart';}
+                else{return 'Show Line Chart';}
+            })
             .attr('x', this.width)
             .attr('y', 3 * this.margin.top)
             .on('click', d => {
-                if (that.scatterOrLine === 0) {
-                    that.scatterOrLine = 1;
+                if (that.scatterOrLine === 1) {
+                    that.scatterOrLine = 0;
                     d3.selectAll('#scatter').classed('selected', false);
                     d3.selectAll('#linechartpath').classed('selected', true);
-                    d3.select('#line-scatter-checkbox').text('Show Scatter Chart')
-                        .classed('checked', false);
+                    d3.select('#line-scatter-checkbox').text('Show Line Chart')
+                        .classed('checked', true);
                 } else {
-                    that.scatterOrLine = 0;
+                    that.scatterOrLine = 1;
                     d3.selectAll('#scatter').classed('selected', true);
                     d3.selectAll('#linechartpath').classed('selected', false);
-                    d3.select('#line-scatter-checkbox').text('Back to Line Chart')
-                        .classed('checked', true);
+                    d3.select('#line-scatter-checkbox').text('Back to Scatter Chart')
+                        .classed('checked', false);
                 }
             })
 
@@ -386,7 +409,10 @@ class lineChart {
         this.svg
             .append('g')
             .attr('id', 'scatter')
-            .classed('selected', true)
+            .attr('class',d=>{
+                if(that.scatterOrLine===0){return 'selected';}
+                else{return '';}
+            })
             .attr("transform", "translate(" + this.margin.left + ',' + (2 * this.margin.top) + ")")
             .selectAll('circle')
             .data(dist_cowork)
