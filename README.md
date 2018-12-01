@@ -1,6 +1,16 @@
 # dataviscourse-pr-VisCsRankings
 
+## GOAL
+
+### This project aims to visualize the worldwide cooperation among Computer Science institutions.
+
 Our website: [http://www.taowenzheng.com/csCollaboration/](http://www.taowenzheng.com/csCollaboration/)
+
+## File clarification
+
+### Code
+
+The code files are in the ~/scripts directory.
 
 `articles.json` is the original data from [https://github.com/emeryberger/CSrankings](https://github.com/emeryberger/CSrankings)
 
